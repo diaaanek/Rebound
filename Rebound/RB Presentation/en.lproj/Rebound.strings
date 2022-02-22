@@ -1,0 +1,13 @@
+/* 
+  Rebound.strings
+  ReboundV2
+
+  Created by Ethan Keiser on 2/22/22.
+  
+*/
+
+"MAIN_VIEW_TITLE" = "Rebound";
+"MAIN_VIEW_ERROR" = "An error has occured. Please try again later.";
+"MAIN_VIEW_SECTIONHEADER1" = "Recent Updates";
+"MAIN_VIEW_SECTIONHEADER2" = "Everything else"
+

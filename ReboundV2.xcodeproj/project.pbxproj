@@ -31,6 +31,17 @@
 		29751C2627C56A9B00E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */; };
 		29751C2727C56A9B00E97E16 /* XCTest+RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */; };
 		29751C2827C56A9C00E97E16 /* RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */; };
+		29751C2C27C56DC000E97E16 /* RBUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C2B27C56DC000E97E16 /* RBUrl.swift */; };
+		29751C2E27C56DCD00E97E16 /* RBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C2D27C56DCD00E97E16 /* RBUser.swift */; };
+		29751C3027C572D900E97E16 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C2F27C572D900E97E16 /* FeedPresenter.swift */; };
+		29751C3227C573B400E97E16 /* LoadingModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3127C573B400E97E16 /* LoadingModelView.swift */; };
+		29751C3427C573F500E97E16 /* ErrorModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3327C573F500E97E16 /* ErrorModelView.swift */; };
+		29751C3627C575EF00E97E16 /* MainModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3527C575EF00E97E16 /* MainModelView.swift */; };
+		29751C3927C5774300E97E16 /* Rebound.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29751C3B27C5774300E97E16 /* Rebound.strings */; };
+		29751C3D27C57E7800E97E16 /* RBUrlPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3C27C57E7800E97E16 /* RBUrlPresenter.swift */; };
+		29751C3F27C57F1700E97E16 /* RBUrlModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */; };
+		29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4027C5883400E97E16 /* WebKitCellController.swift */; };
+		29751C4627C588B500E97E16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751C4527C588B500E97E16 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		293A87B627C32555005A2BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		293A87B827C32555005A2BDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
-		293A87C227C32556005A2BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		293A87C727C32556005A2BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293A87CE27C32662005A2BDE /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		293A87D027C32723005A2BDE /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+RBUrlStore.swift"; sourceTree = "<group>"; };
@@ -81,6 +88,17 @@
 		29751BFC27C568B500E97E16 /* Rebound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rebound.h; sourceTree = "<group>"; };
 		29751BFD27C568B500E97E16 /* Rebound.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Rebound.docc; sourceTree = "<group>"; };
 		29751C0327C568B500E97E16 /* ReboundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReboundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29751C2B27C56DC000E97E16 /* RBUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrl.swift; sourceTree = "<group>"; };
+		29751C2D27C56DCD00E97E16 /* RBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUser.swift; sourceTree = "<group>"; };
+		29751C2F27C572D900E97E16 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		29751C3127C573B400E97E16 /* LoadingModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModelView.swift; sourceTree = "<group>"; };
+		29751C3327C573F500E97E16 /* ErrorModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModelView.swift; sourceTree = "<group>"; };
+		29751C3527C575EF00E97E16 /* MainModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelView.swift; sourceTree = "<group>"; };
+		29751C3A27C5774300E97E16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Rebound.strings; sourceTree = "<group>"; };
+		29751C3C27C57E7800E97E16 /* RBUrlPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlPresenter.swift; sourceTree = "<group>"; };
+		29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlModelView.swift; sourceTree = "<group>"; };
+		29751C4027C5883400E97E16 /* WebKitCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitCellController.swift; sourceTree = "<group>"; };
+		29751C4527C588B500E97E16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +138,6 @@
 		293A87AA27C32555005A2BDE = {
 			isa = PBXGroup;
 			children = (
-				293A87B527C32555005A2BDE /* ReboundV2 */,
 				29751BD827C5683A00E97E16 /* ReboundiOS */,
 				29751BE627C5683B00E97E16 /* ReboundiOSTests */,
 				29751BFB27C568B500E97E16 /* Rebound */,
@@ -140,18 +157,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		293A87B527C32555005A2BDE /* ReboundV2 */ = {
-			isa = PBXGroup;
-			children = (
-				293A87B627C32555005A2BDE /* AppDelegate.swift */,
-				293A87B827C32555005A2BDE /* SceneDelegate.swift */,
-				293A87C227C32556005A2BDE /* Assets.xcassets */,
-				293A87C727C32556005A2BDE /* Info.plist */,
-			);
-			path = ReboundV2;
-			sourceTree = "<group>";
-		};
-		293A87CD27C32648005A2BDE /* LocalRBCache */ = {
+		293A87CD27C32648005A2BDE /* RB Cache */ = {
 			isa = PBXGroup;
 			children = (
 				29751BCE27C5659700E97E16 /* Infranstructure */,
@@ -160,7 +166,7 @@
 				293A87D727C32841005A2BDE /* LocalRBUrl.swift */,
 				293A87D927C32A02005A2BDE /* LocalRBUser.swift */,
 			);
-			path = LocalRBCache;
+			path = "RB Cache";
 			sourceTree = "<group>";
 		};
 		293A87D427C327DB005A2BDE /* CoreData */ = {
@@ -175,7 +181,7 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		293A87E127C33B45005A2BDE /* CoreDataTest */ = {
+		293A87E127C33B45005A2BDE /* RBStoreTest */ = {
 			isa = PBXGroup;
 			children = (
 				293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */,
@@ -185,7 +191,7 @@
 				293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */,
 				29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */,
 			);
-			path = CoreDataTest;
+			path = RBStoreTest;
 			sourceTree = "<group>";
 		};
 		29751BCE27C5659700E97E16 /* Infranstructure */ = {
@@ -199,10 +205,8 @@
 		29751BD827C5683A00E97E16 /* ReboundiOS */ = {
 			isa = PBXGroup;
 			children = (
-				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
-				29751BD027C567C100E97E16 /* MainViewController.swift */,
-				29751BD927C5683A00E97E16 /* ReboundiOS.h */,
-				29751BDA27C5683A00E97E16 /* ReboundiOS.docc */,
+				29751C4727C5891B00E97E16 /* FeedUI */,
+				29751C4427C5889900E97E16 /* Doc */,
 			);
 			path = ReboundiOS;
 			sourceTree = "<group>";
@@ -218,7 +222,9 @@
 		29751BFB27C568B500E97E16 /* Rebound */ = {
 			isa = PBXGroup;
 			children = (
-				293A87CD27C32648005A2BDE /* LocalRBCache */,
+				29751C2A27C56DA700E97E16 /* RB Feature */,
+				29751C2927C56CD300E97E16 /* RB Presentation */,
+				293A87CD27C32648005A2BDE /* RB Cache */,
 				29751BFC27C568B500E97E16 /* Rebound.h */,
 				29751BFD27C568B500E97E16 /* Rebound.docc */,
 			);
@@ -228,9 +234,68 @@
 		29751C0927C568B500E97E16 /* ReboundTests */ = {
 			isa = PBXGroup;
 			children = (
-				293A87E127C33B45005A2BDE /* CoreDataTest */,
+				293A87E127C33B45005A2BDE /* RBStoreTest */,
 			);
 			path = ReboundTests;
+			sourceTree = "<group>";
+		};
+		29751C2927C56CD300E97E16 /* RB Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				29751C2F27C572D900E97E16 /* FeedPresenter.swift */,
+				29751C3127C573B400E97E16 /* LoadingModelView.swift */,
+				29751C3327C573F500E97E16 /* ErrorModelView.swift */,
+				29751C3527C575EF00E97E16 /* MainModelView.swift */,
+				29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */,
+				29751C3C27C57E7800E97E16 /* RBUrlPresenter.swift */,
+				29751C3B27C5774300E97E16 /* Rebound.strings */,
+			);
+			path = "RB Presentation";
+			sourceTree = "<group>";
+		};
+		29751C2A27C56DA700E97E16 /* RB Feature */ = {
+			isa = PBXGroup;
+			children = (
+				29751C2B27C56DC000E97E16 /* RBUrl.swift */,
+				29751C2D27C56DCD00E97E16 /* RBUser.swift */,
+			);
+			path = "RB Feature";
+			sourceTree = "<group>";
+		};
+		29751C4227C5888000E97E16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				29751BD027C567C100E97E16 /* MainViewController.swift */,
+				29751C4027C5883400E97E16 /* WebKitCellController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		29751C4327C5888C00E97E16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29751C4527C588B500E97E16 /* Assets.xcassets */,
+				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29751C4427C5889900E97E16 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				29751BD927C5683A00E97E16 /* ReboundiOS.h */,
+				29751BDA27C5683A00E97E16 /* ReboundiOS.docc */,
+			);
+			path = Doc;
+			sourceTree = "<group>";
+		};
+		29751C4727C5891B00E97E16 /* FeedUI */ = {
+			isa = PBXGroup;
+			children = (
+				29751C4227C5888000E97E16 /* Controller */,
+				29751C4327C5888C00E97E16 /* View */,
+			);
+			path = FeedUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29751C4627C588B500E97E16 /* Assets.xcassets in Resources */,
 				29751C2127C569B200E97E16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29751C3927C5774300E97E16 /* Rebound.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
+				29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,13 +497,21 @@
 				29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */,
 				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
 				29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */,
+				29751C3D27C57E7800E97E16 /* RBUrlPresenter.swift in Sources */,
 				29751C1C27C5690800E97E16 /* CoreDataHelpers.swift in Sources */,
 				29751C1927C568ED00E97E16 /* RBUserStore.swift in Sources */,
+				29751C3427C573F500E97E16 /* ErrorModelView.swift in Sources */,
 				29751BFE27C568B500E97E16 /* Rebound.docc in Sources */,
+				29751C3027C572D900E97E16 /* FeedPresenter.swift in Sources */,
 				29751C1A27C568ED00E97E16 /* LocalRBUser.swift in Sources */,
+				29751C2C27C56DC000E97E16 /* RBUrl.swift in Sources */,
+				29751C3227C573B400E97E16 /* LoadingModelView.swift in Sources */,
 				29751C1F27C5690800E97E16 /* CoreDataStore+RBUserStore.swift in Sources */,
 				29751C1B27C568ED00E97E16 /* LocalRBUrl.swift in Sources */,
+				29751C3F27C57F1700E97E16 /* RBUrlModelView.swift in Sources */,
+				29751C2E27C56DCD00E97E16 /* RBUser.swift in Sources */,
 				29751C1827C568E700E97E16 /* RBUrlStore.swift in Sources */,
+				29751C3627C575EF00E97E16 /* MainModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +542,17 @@
 			targetProxy = 29751C0527C568B500E97E16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29751C3B27C5774300E97E16 /* Rebound.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29751C3A27C5774300E97E16 /* en */,
+			);
+			name = Rebound.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		293A87C827C32556005A2BDE /* Debug */ = {
