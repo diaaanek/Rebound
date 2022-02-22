@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RBUrl {
+public struct RBUrl {
     public let urlId : String
     public let isPrimary: Bool
     public  let createdDate: Date

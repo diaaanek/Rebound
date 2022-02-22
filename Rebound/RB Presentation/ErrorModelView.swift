@@ -9,10 +9,10 @@ import Foundation
 
 struct ErrorModelView {
     public let message: String?
-    static var noError: ErrorModelView {
+    public static var noError: ErrorModelView {
         return ErrorModelView(message: nil)
     }
-    static func error(message: String) -> ErrorModelView {
+   public static func error(message: String) -> ErrorModelView {
         return ErrorModelView(message: message)
     }
 }

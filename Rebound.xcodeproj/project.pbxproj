@@ -43,6 +43,7 @@
 		29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4027C5883400E97E16 /* WebKitCellController.swift */; };
 		29751C4627C588B500E97E16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751C4527C588B500E97E16 /* Assets.xcassets */; };
 		29751C4927C58AAE00E97E16 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BFA27C568B500E97E16 /* Rebound.framework */; };
+		29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4E27C598DD00E97E16 /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlModelView.swift; sourceTree = "<group>"; };
 		29751C4027C5883400E97E16 /* WebKitCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitCellController.swift; sourceTree = "<group>"; };
 		29751C4527C588B500E97E16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29751C4E27C598DD00E97E16 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 			children = (
 				29751C4527C588B500E97E16 /* Assets.xcassets */,
 				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
+				29751C4E27C598DD00E97E16 /* SectionHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,7 +437,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 293A87AE27C32555005A2BDE /* Build configuration list for PBXProject "ReboundV2" */;
+			buildConfigurationList = 293A87AE27C32555005A2BDE /* Build configuration list for PBXProject "Rebound" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -494,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
 				29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
@@ -885,7 +889,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		293A87AE27C32555005A2BDE /* Build configuration list for PBXProject "ReboundV2" */ = {
+		293A87AE27C32555005A2BDE /* Build configuration list for PBXProject "Rebound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				293A87C827C32556005A2BDE /* Debug */,

@@ -13,16 +13,19 @@ public struct MainModelView {
     public let noUpdates: [RBUser] // all users whose first url is last opened date
     
    public init(users : [RBUser], lastOpened:Date) {
-        recentUpdates = [RBUser]()
-        noUpdates = [RBUser]()
+        var tempRecentUpdates = [RBUser]()
+        var tempNoUpdates = [RBUser]()
+       
         for user in users {
-            if let firstUrl = user.userId.first {
+            if let firstUrl = user.urls.first {
                 if firstUrl.createdDate > lastOpened {
-                    recentUpdates.append(user)
+                    tempRecentUpdates.append(user)
                 } else {
-                    noUpdates.append(user)
+                    tempNoUpdates.append(user)
                 }
             }
         }
+       recentUpdates = tempRecentUpdates
+       noUpdates = tempNoUpdates
     }
 }

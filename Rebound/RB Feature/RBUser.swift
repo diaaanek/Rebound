@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RBUser {
+public struct RBUser {
     public let userId : String
     public let userName : String
     public let createdDate : Date

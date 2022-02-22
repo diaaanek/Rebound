@@ -46,10 +46,10 @@ public class FeedPresenter {
     }
     public func didHaveError(error: Error) {
         loadingView.displayLoading(loadingModelView: LoadingModelView(isLoading: false))
-        errorView.displayError(.error(message: feedError))
+        errorView.displayError(errorModelView: .error(message: error.localizedDescription))
     }
-    public func didDisplay(items: [RBUser]) {
+    public func didDisplay(items: [RBUser], lastOpened: Date) {
         loadingView.displayLoading(loadingModelView: LoadingModelView(isLoading: false))
-        mainView.display(mainModelView: MainModelView(items: items))
+        mainView.display(mainModelView: MainModelView(users: items, lastOpened: lastOpened))
     }
 }

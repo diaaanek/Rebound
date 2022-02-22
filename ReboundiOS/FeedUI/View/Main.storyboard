@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M2h-Cr-dVG">
-                            <size key="itemSize" width="414" height="204"/>
+                            <size key="itemSize" width="414" height="242"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dbi-r1-r0Q">
-                                <rect key="frame" x="0.0" y="50" width="414" height="204"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3V-Hz-mcJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="242"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mfM-TK-3TY">
@@ -45,19 +45,80 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y4i-am-M5C">
+                                            <rect key="frame" x="8" y="47" width="398" height="187"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7vg-ny-GvD">
+                                                <size key="itemSize" width="196" height="184"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gyo-7q-2Xm">
+                                                    <rect key="frame" x="0.0" y="1.5" width="196" height="184"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fzJ-oP-zaT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="196" height="184"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="G6i-dW-hXz">
+                                                                <rect key="frame" x="8" y="8" width="180" height="168"/>
+                                                                <subviews>
+                                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXN-cz-T1S">
+                                                                        <rect key="frame" x="2" y="0.0" width="176" height="152.5"/>
+                                                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <wkWebViewConfiguration key="configuration">
+                                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                                            <wkPreferences key="preferences"/>
+                                                                        </wkWebViewConfiguration>
+                                                                    </wkWebView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shown on profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ham-Bl-UgT">
+                                                                        <rect key="frame" x="46" y="154.5" width="88" height="13.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="G6i-dW-hXz" secondAttribute="bottom" constant="8" id="QRU-AS-5YN"/>
+                                                            <constraint firstItem="G6i-dW-hXz" firstAttribute="top" secondItem="fzJ-oP-zaT" secondAttribute="top" constant="8" id="cRo-dx-cC2"/>
+                                                            <constraint firstItem="G6i-dW-hXz" firstAttribute="leading" secondItem="fzJ-oP-zaT" secondAttribute="leading" constant="8" id="f0a-Is-lVu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="G6i-dW-hXz" secondAttribute="trailing" constant="8" id="qAi-Mb-bkY"/>
+                                                        </constraints>
+                                                    </collectionViewCellContentView>
+                                                    <size key="customSize" width="196" height="184"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="y4i-am-M5C" secondAttribute="trailing" constant="8" id="7lN-PZ-Pwl"/>
                                         <constraint firstAttribute="trailing" secondItem="mfM-TK-3TY" secondAttribute="trailing" constant="8" id="9Wx-CP-FJq"/>
+                                        <constraint firstItem="y4i-am-M5C" firstAttribute="top" secondItem="mfM-TK-3TY" secondAttribute="bottom" constant="8" id="DCR-dD-awp"/>
+                                        <constraint firstItem="y4i-am-M5C" firstAttribute="leading" secondItem="C3V-Hz-mcJ" secondAttribute="leading" constant="8" id="IVF-bD-dfb"/>
+                                        <constraint firstAttribute="bottom" secondItem="y4i-am-M5C" secondAttribute="bottom" constant="8" id="gdN-Gb-o7N"/>
                                         <constraint firstItem="mfM-TK-3TY" firstAttribute="top" secondItem="C3V-Hz-mcJ" secondAttribute="top" constant="8" id="nIU-eS-LCu"/>
                                         <constraint firstItem="mfM-TK-3TY" firstAttribute="leading" secondItem="C3V-Hz-mcJ" secondAttribute="leading" constant="8" id="qoG-la-H1O"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="414" height="204"/>
+                                <size key="customSize" width="414" height="242"/>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hu5-bk-T5Y">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="hu5-bk-T5Y" customClass="SectionHeader" customModule="ReboundiOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-QK-O0f">
+                                    <rect key="frame" x="8" y="15" width="190" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="pUg-Y4-nvb" id="kAL-5j-0D9"/>

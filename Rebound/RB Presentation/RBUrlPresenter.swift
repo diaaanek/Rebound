@@ -7,24 +7,24 @@
 
 import Foundation
 
-public protocol RBUrlWebViewDelegate {
-    func display(_ model: RBUrl)
+protocol RBUrlWebViewDelegate {
+    func display(_ model: RBUrlModelView)
 }
 
 
 class RBUrlPresenter {
    private let view: RBUrlWebViewDelegate
-    init(view: RBUrlWebViewDelegate, ) {
+    public init(view: RBUrlWebViewDelegate) {
         self.view = view
     }
     
-    func didStartLoading() {
+  public func didStartLoading() {
         view.display(RBUrlModelView(stateDescription: nil, html: nil, isLoading: true))
     }
-    func didFinishedLoading(html: String, stateDescription: String) {
+    public func didFinishedLoading(html: String, stateDescription: String) {
         view.display(RBUrlModelView(stateDescription: stateDescription, html: html, isLoading: false))
     }
-    func didFinishedLoading(with error: Error) {
+    public func didFinishedLoading(with error: Error) {
        // view.display(RBUrlModelView(stateDescription: stateDescription, html: html, isLoading: false))
     }
     

@@ -32,4 +32,7 @@ class MainViewController : UICollectionViewController {
         
         return UICollectionViewCell()
     }
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        fatalError()
+    }
 }

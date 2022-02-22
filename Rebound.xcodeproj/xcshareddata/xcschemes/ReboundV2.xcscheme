@@ -17,7 +17,7 @@
                BlueprintIdentifier = "293A87B227C32555005A2BDE"
                BuildableName = "ReboundV2.app"
                BlueprintName = "ReboundV2"
-               ReferencedContainer = "container:ReboundV2.xcodeproj">
+               ReferencedContainer = "container:Rebound.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "293A87EB27C33D8E005A2BDE"
                BuildableName = "CoreDataTests.xctest"
                BlueprintName = "CoreDataTests"
-               ReferencedContainer = "container:ReboundV2.xcodeproj">
+               ReferencedContainer = "container:Rebound.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "29751BDF27C5683B00E97E16"
                BuildableName = "ReboundiOSTests.xctest"
                BlueprintName = "ReboundiOSTests"
-               ReferencedContainer = "container:ReboundV2.xcodeproj">
+               ReferencedContainer = "container:Rebound.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -55,7 +55,7 @@
                BlueprintIdentifier = "29751C0227C568B500E97E16"
                BuildableName = "ReboundTests.xctest"
                BlueprintName = "ReboundTests"
-               ReferencedContainer = "container:ReboundV2.xcodeproj">
+               ReferencedContainer = "container:Rebound.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "293A87B227C32555005A2BDE"
             BuildableName = "ReboundV2.app"
             BlueprintName = "ReboundV2"
-            ReferencedContainer = "container:ReboundV2.xcodeproj">
+            ReferencedContainer = "container:Rebound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -94,7 +94,7 @@
             BlueprintIdentifier = "293A87B227C32555005A2BDE"
             BuildableName = "ReboundV2.app"
             BlueprintName = "ReboundV2"
-            ReferencedContainer = "container:ReboundV2.xcodeproj">
+            ReferencedContainer = "container:Rebound.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
