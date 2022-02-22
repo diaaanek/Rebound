@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import ReboundV2
+import Rebound
 extension RBUserStoreSpec where Self: XCTestCase {
     
     func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: CoreDataStore, file: StaticString = #file, line: UInt = #line) {

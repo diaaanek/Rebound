@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import ReboundV2
+import Rebound
 
 extension RBUrlStoreSpec where Self: XCTestCase {
     

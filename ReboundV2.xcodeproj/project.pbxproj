@@ -7,40 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		293A87B727C32555005A2BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87B627C32555005A2BDE /* AppDelegate.swift */; };
-		293A87B927C32555005A2BDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87B827C32555005A2BDE /* SceneDelegate.swift */; };
-		293A87C127C32555005A2BDE /* ReboundV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 293A87BF27C32555005A2BDE /* ReboundV2.xcdatamodeld */; };
-		293A87C327C32556005A2BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293A87C227C32556005A2BDE /* Assets.xcassets */; };
-		293A87CF27C32662005A2BDE /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87CE27C32662005A2BDE /* CoreDataStore.swift */; };
-		293A87D127C32723005A2BDE /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D027C32723005A2BDE /* CoreDataHelpers.swift */; };
-		293A87D327C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */; };
-		293A87D627C327FC005A2BDE /* RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D527C327FC005A2BDE /* RBUrlStore.swift */; };
-		293A87D827C32841005A2BDE /* LocalRBUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D727C32841005A2BDE /* LocalRBUrl.swift */; };
-		293A87DA27C32A02005A2BDE /* LocalRBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D927C32A02005A2BDE /* LocalRBUser.swift */; };
-		293A87DC27C32AC8005A2BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A87DB27C32AC8005A2BDE /* Main.storyboard */; };
-		293A87DE27C32C32005A2BDE /* RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DD27C32C32005A2BDE /* RBUserStore.swift */; };
-		293A87E027C32D82005A2BDE /* CoreDataStore+RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DF27C32D82005A2BDE /* CoreDataStore+RBUserStore.swift */; };
-		293A87EF27C33D8E005A2BDE /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */; };
-		293A87F527C33DB5005A2BDE /* RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */; };
-		293A87F627C33DB9005A2BDE /* RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */; };
-		293A87F727C33DBC005A2BDE /* XCTest+RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */; };
-		293A87FA27C33E6C005A2BDE /* CoreDataRBUserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */; };
-		29751BCA27C4688700E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */; };
-		29751BCD27C46A6A00E97E16 /* CoreDataRBUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */; };
+		29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 29751BDA27C5683A00E97E16 /* ReboundiOS.docc */; };
+		29751BE127C5683B00E97E16 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BD727C5683A00E97E16 /* ReboundiOS.framework */; };
+		29751BE827C5683B00E97E16 /* ReboundiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */; };
+		29751BE927C5683B00E97E16 /* ReboundiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 29751BD927C5683A00E97E16 /* ReboundiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29751BFE27C568B500E97E16 /* Rebound.docc in Sources */ = {isa = PBXBuildFile; fileRef = 29751BFD27C568B500E97E16 /* Rebound.docc */; };
+		29751C0427C568B500E97E16 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BFA27C568B500E97E16 /* Rebound.framework */; };
+		29751C0C27C568B500E97E16 /* Rebound.h in Headers */ = {isa = PBXBuildFile; fileRef = 29751BFC27C568B500E97E16 /* Rebound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29751C1827C568E700E97E16 /* RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D527C327FC005A2BDE /* RBUrlStore.swift */; };
+		29751C1927C568ED00E97E16 /* RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DD27C32C32005A2BDE /* RBUserStore.swift */; };
+		29751C1A27C568ED00E97E16 /* LocalRBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D927C32A02005A2BDE /* LocalRBUser.swift */; };
+		29751C1B27C568ED00E97E16 /* LocalRBUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D727C32841005A2BDE /* LocalRBUrl.swift */; };
+		29751C1C27C5690800E97E16 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D027C32723005A2BDE /* CoreDataHelpers.swift */; };
+		29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87CE27C32662005A2BDE /* CoreDataStore.swift */; };
+		29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */; };
+		29751C1F27C5690800E97E16 /* CoreDataStore+RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DF27C32D82005A2BDE /* CoreDataStore+RBUserStore.swift */; };
+		29751C2027C569A500E97E16 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BD027C567C100E97E16 /* MainViewController.swift */; };
+		29751C2127C569B200E97E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A87DB27C32AC8005A2BDE /* Main.storyboard */; };
+		29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 293A87BF27C32555005A2BDE /* ReboundV2.xcdatamodeld */; };
+		29751C2327C56A9B00E97E16 /* CoreDataRBUserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */; };
+		29751C2427C56A9B00E97E16 /* RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */; };
+		29751C2527C56A9B00E97E16 /* CoreDataRBUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */; };
+		29751C2627C56A9B00E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */; };
+		29751C2727C56A9B00E97E16 /* XCTest+RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */; };
+		29751C2827C56A9C00E97E16 /* RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		293A87F027C33D8E005A2BDE /* PBXContainerItemProxy */ = {
+		29751BE227C5683B00E97E16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 293A87B227C32555005A2BDE;
-			remoteInfo = ReboundV2;
+			remoteGlobalIDString = 29751BD627C5683A00E97E16;
+			remoteInfo = ReboundiOS;
+		};
+		29751C0527C568B500E97E16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29751BF927C568B500E97E16;
+			remoteInfo = Rebound;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		293A87B327C32555005A2BDE /* ReboundV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReboundV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293A87B627C32555005A2BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293A87B827C32555005A2BDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
@@ -58,25 +68,49 @@
 		293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlStoreSpec.swift; sourceTree = "<group>"; };
 		293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserStoreSpec.swift; sourceTree = "<group>"; };
 		293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUserStoreSpec.swift"; sourceTree = "<group>"; };
-		293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUserTest.swift; sourceTree = "<group>"; };
 		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
 		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
+		29751BD027C567C100E97E16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		29751BD727C5683A00E97E16 /* ReboundiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReboundiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29751BD927C5683A00E97E16 /* ReboundiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReboundiOS.h; sourceTree = "<group>"; };
+		29751BDA27C5683A00E97E16 /* ReboundiOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ReboundiOS.docc; sourceTree = "<group>"; };
+		29751BE027C5683B00E97E16 /* ReboundiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReboundiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReboundiOSTests.swift; sourceTree = "<group>"; };
+		29751BFA27C568B500E97E16 /* Rebound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rebound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29751BFC27C568B500E97E16 /* Rebound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rebound.h; sourceTree = "<group>"; };
+		29751BFD27C568B500E97E16 /* Rebound.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Rebound.docc; sourceTree = "<group>"; };
+		29751C0327C568B500E97E16 /* ReboundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReboundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		293A87B027C32555005A2BDE /* Frameworks */ = {
+		29751BD427C5683A00E97E16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		293A87E927C33D8E005A2BDE /* Frameworks */ = {
+		29751BDD27C5683B00E97E16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29751BE127C5683B00E97E16 /* ReboundiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751BF727C568B500E97E16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751C0027C568B500E97E16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29751C0427C568B500E97E16 /* Rebound.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				293A87B527C32555005A2BDE /* ReboundV2 */,
-				293A87ED27C33D8E005A2BDE /* CoreDataTests */,
+				29751BD827C5683A00E97E16 /* ReboundiOS */,
+				29751BE627C5683B00E97E16 /* ReboundiOSTests */,
+				29751BFB27C568B500E97E16 /* Rebound */,
+				29751C0927C568B500E97E16 /* ReboundTests */,
 				293A87B427C32555005A2BDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,8 +132,10 @@
 		293A87B427C32555005A2BDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				293A87B327C32555005A2BDE /* ReboundV2.app */,
-				293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */,
+				29751BD727C5683A00E97E16 /* ReboundiOS.framework */,
+				29751BE027C5683B00E97E16 /* ReboundiOSTests.xctest */,
+				29751BFA27C568B500E97E16 /* Rebound.framework */,
+				29751C0327C568B500E97E16 /* ReboundTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,27 +143,24 @@
 		293A87B527C32555005A2BDE /* ReboundV2 */ = {
 			isa = PBXGroup;
 			children = (
-				293A87E127C33B45005A2BDE /* CoreDataTest */,
-				293A87CD27C32648005A2BDE /* LocalRBUrlCache */,
 				293A87B627C32555005A2BDE /* AppDelegate.swift */,
 				293A87B827C32555005A2BDE /* SceneDelegate.swift */,
 				293A87C227C32556005A2BDE /* Assets.xcassets */,
 				293A87C727C32556005A2BDE /* Info.plist */,
-				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
 			);
 			path = ReboundV2;
 			sourceTree = "<group>";
 		};
-		293A87CD27C32648005A2BDE /* LocalRBUrlCache */ = {
+		293A87CD27C32648005A2BDE /* LocalRBCache */ = {
 			isa = PBXGroup;
 			children = (
-				293A87D427C327DB005A2BDE /* CoreData */,
+				29751BCE27C5659700E97E16 /* Infranstructure */,
 				293A87D527C327FC005A2BDE /* RBUrlStore.swift */,
 				293A87DD27C32C32005A2BDE /* RBUserStore.swift */,
 				293A87D727C32841005A2BDE /* LocalRBUrl.swift */,
 				293A87D927C32A02005A2BDE /* LocalRBUser.swift */,
 			);
-			path = LocalRBUrlCache;
+			path = LocalRBCache;
 			sourceTree = "<group>";
 		};
 		293A87D427C327DB005A2BDE /* CoreData */ = {
@@ -152,50 +188,143 @@
 			path = CoreDataTest;
 			sourceTree = "<group>";
 		};
-		293A87ED27C33D8E005A2BDE /* CoreDataTests */ = {
+		29751BCE27C5659700E97E16 /* Infranstructure */ = {
 			isa = PBXGroup;
 			children = (
-				293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */,
+				293A87D427C327DB005A2BDE /* CoreData */,
 			);
-			path = CoreDataTests;
+			path = Infranstructure;
+			sourceTree = "<group>";
+		};
+		29751BD827C5683A00E97E16 /* ReboundiOS */ = {
+			isa = PBXGroup;
+			children = (
+				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
+				29751BD027C567C100E97E16 /* MainViewController.swift */,
+				29751BD927C5683A00E97E16 /* ReboundiOS.h */,
+				29751BDA27C5683A00E97E16 /* ReboundiOS.docc */,
+			);
+			path = ReboundiOS;
+			sourceTree = "<group>";
+		};
+		29751BE627C5683B00E97E16 /* ReboundiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */,
+			);
+			path = ReboundiOSTests;
+			sourceTree = "<group>";
+		};
+		29751BFB27C568B500E97E16 /* Rebound */ = {
+			isa = PBXGroup;
+			children = (
+				293A87CD27C32648005A2BDE /* LocalRBCache */,
+				29751BFC27C568B500E97E16 /* Rebound.h */,
+				29751BFD27C568B500E97E16 /* Rebound.docc */,
+			);
+			path = Rebound;
+			sourceTree = "<group>";
+		};
+		29751C0927C568B500E97E16 /* ReboundTests */ = {
+			isa = PBXGroup;
+			children = (
+				293A87E127C33B45005A2BDE /* CoreDataTest */,
+			);
+			path = ReboundTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		293A87B227C32555005A2BDE /* ReboundV2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 293A87CA27C32556005A2BDE /* Build configuration list for PBXNativeTarget "ReboundV2" */;
-			buildPhases = (
-				293A87AF27C32555005A2BDE /* Sources */,
-				293A87B027C32555005A2BDE /* Frameworks */,
-				293A87B127C32555005A2BDE /* Resources */,
+/* Begin PBXHeadersBuildPhase section */
+		29751BD227C5683A00E97E16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29751BE927C5683B00E97E16 /* ReboundiOS.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ReboundV2;
-			productName = ReboundV2;
-			productReference = 293A87B327C32555005A2BDE /* ReboundV2.app */;
-			productType = "com.apple.product-type.application";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		293A87EB27C33D8E005A2BDE /* CoreDataTests */ = {
+		29751BF527C568B500E97E16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29751C0C27C568B500E97E16 /* Rebound.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		29751BD627C5683A00E97E16 /* ReboundiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 293A87F227C33D8E005A2BDE /* Build configuration list for PBXNativeTarget "CoreDataTests" */;
+			buildConfigurationList = 29751BEE27C5683B00E97E16 /* Build configuration list for PBXNativeTarget "ReboundiOS" */;
 			buildPhases = (
-				293A87E827C33D8E005A2BDE /* Sources */,
-				293A87E927C33D8E005A2BDE /* Frameworks */,
-				293A87EA27C33D8E005A2BDE /* Resources */,
+				29751BD227C5683A00E97E16 /* Headers */,
+				29751BD327C5683A00E97E16 /* Sources */,
+				29751BD427C5683A00E97E16 /* Frameworks */,
+				29751BD527C5683A00E97E16 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				293A87F127C33D8E005A2BDE /* PBXTargetDependency */,
 			);
-			name = CoreDataTests;
-			productName = CoreDataTests;
-			productReference = 293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */;
+			name = ReboundiOS;
+			productName = ReboundiOS;
+			productReference = 29751BD727C5683A00E97E16 /* ReboundiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29751BDF27C5683B00E97E16 /* ReboundiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29751BF227C5683B00E97E16 /* Build configuration list for PBXNativeTarget "ReboundiOSTests" */;
+			buildPhases = (
+				29751BDC27C5683B00E97E16 /* Sources */,
+				29751BDD27C5683B00E97E16 /* Frameworks */,
+				29751BDE27C5683B00E97E16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29751BE327C5683B00E97E16 /* PBXTargetDependency */,
+			);
+			name = ReboundiOSTests;
+			productName = ReboundiOSTests;
+			productReference = 29751BE027C5683B00E97E16 /* ReboundiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		29751BF927C568B500E97E16 /* Rebound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29751C1127C568B500E97E16 /* Build configuration list for PBXNativeTarget "Rebound" */;
+			buildPhases = (
+				29751BF527C568B500E97E16 /* Headers */,
+				29751BF627C568B500E97E16 /* Sources */,
+				29751BF727C568B500E97E16 /* Frameworks */,
+				29751BF827C568B500E97E16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rebound;
+			productName = Rebound;
+			productReference = 29751BFA27C568B500E97E16 /* Rebound.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29751C0227C568B500E97E16 /* ReboundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29751C1427C568B500E97E16 /* Build configuration list for PBXNativeTarget "ReboundTests" */;
+			buildPhases = (
+				29751BFF27C568B500E97E16 /* Sources */,
+				29751C0027C568B500E97E16 /* Frameworks */,
+				29751C0127C568B500E97E16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29751C0627C568B500E97E16 /* PBXTargetDependency */,
+			);
+			name = ReboundTests;
+			productName = ReboundTests;
+			productReference = 29751C0327C568B500E97E16 /* ReboundTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -208,12 +337,17 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					293A87B227C32555005A2BDE = {
+					29751BD627C5683A00E97E16 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					293A87EB27C33D8E005A2BDE = {
+					29751BDF27C5683B00E97E16 = {
 						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 293A87B227C32555005A2BDE;
+					};
+					29751BF927C568B500E97E16 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					29751C0227C568B500E97E16 = {
+						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
@@ -230,23 +364,38 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				293A87B227C32555005A2BDE /* ReboundV2 */,
-				293A87EB27C33D8E005A2BDE /* CoreDataTests */,
+				29751BD627C5683A00E97E16 /* ReboundiOS */,
+				29751BDF27C5683B00E97E16 /* ReboundiOSTests */,
+				29751BF927C568B500E97E16 /* Rebound */,
+				29751C0227C568B500E97E16 /* ReboundTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		293A87B127C32555005A2BDE /* Resources */ = {
+		29751BD527C5683A00E97E16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A87C327C32556005A2BDE /* Assets.xcassets in Resources */,
-				293A87DC27C32AC8005A2BDE /* Main.storyboard in Resources */,
+				29751C2127C569B200E97E16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		293A87EA27C33D8E005A2BDE /* Resources */ = {
+		29751BDE27C5683B00E97E16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751BF827C568B500E97E16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751C0127C568B500E97E16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,45 +405,65 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		293A87AF27C32555005A2BDE /* Sources */ = {
+		29751BD327C5683A00E97E16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A87D127C32723005A2BDE /* CoreDataHelpers.swift in Sources */,
-				293A87D827C32841005A2BDE /* LocalRBUrl.swift in Sources */,
-				293A87C127C32555005A2BDE /* ReboundV2.xcdatamodeld in Sources */,
-				293A87D327C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift in Sources */,
-				293A87B727C32555005A2BDE /* AppDelegate.swift in Sources */,
-				293A87B927C32555005A2BDE /* SceneDelegate.swift in Sources */,
-				293A87CF27C32662005A2BDE /* CoreDataStore.swift in Sources */,
-				293A87DA27C32A02005A2BDE /* LocalRBUser.swift in Sources */,
-				293A87E027C32D82005A2BDE /* CoreDataStore+RBUserStore.swift in Sources */,
-				293A87DE27C32C32005A2BDE /* RBUserStore.swift in Sources */,
-				293A87D627C327FC005A2BDE /* RBUrlStore.swift in Sources */,
+				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
+				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		293A87E827C33D8E005A2BDE /* Sources */ = {
+		29751BDC27C5683B00E97E16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A87FA27C33E6C005A2BDE /* CoreDataRBUserTest.swift in Sources */,
-				29751BCD27C46A6A00E97E16 /* CoreDataRBUrlTest.swift in Sources */,
-				29751BCA27C4688700E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */,
-				293A87F727C33DBC005A2BDE /* XCTest+RBUserStoreSpec.swift in Sources */,
-				293A87F527C33DB5005A2BDE /* RBUrlStoreSpec.swift in Sources */,
-				293A87EF27C33D8E005A2BDE /* CoreDataTests.swift in Sources */,
-				293A87F627C33DB9005A2BDE /* RBUserStoreSpec.swift in Sources */,
+				29751BE827C5683B00E97E16 /* ReboundiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751BF627C568B500E97E16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */,
+				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
+				29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */,
+				29751C1C27C5690800E97E16 /* CoreDataHelpers.swift in Sources */,
+				29751C1927C568ED00E97E16 /* RBUserStore.swift in Sources */,
+				29751BFE27C568B500E97E16 /* Rebound.docc in Sources */,
+				29751C1A27C568ED00E97E16 /* LocalRBUser.swift in Sources */,
+				29751C1F27C5690800E97E16 /* CoreDataStore+RBUserStore.swift in Sources */,
+				29751C1B27C568ED00E97E16 /* LocalRBUrl.swift in Sources */,
+				29751C1827C568E700E97E16 /* RBUrlStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29751BFF27C568B500E97E16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29751C2427C56A9B00E97E16 /* RBUrlStoreSpec.swift in Sources */,
+				29751C2727C56A9B00E97E16 /* XCTest+RBUserStoreSpec.swift in Sources */,
+				29751C2327C56A9B00E97E16 /* CoreDataRBUserTest.swift in Sources */,
+				29751C2527C56A9B00E97E16 /* CoreDataRBUrlTest.swift in Sources */,
+				29751C2627C56A9B00E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */,
+				29751C2827C56A9C00E97E16 /* RBUserStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		293A87F127C33D8E005A2BDE /* PBXTargetDependency */ = {
+		29751BE327C5683B00E97E16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 293A87B227C32555005A2BDE /* ReboundV2 */;
-			targetProxy = 293A87F027C33D8E005A2BDE /* PBXContainerItemProxy */;
+			target = 29751BD627C5683A00E97E16 /* ReboundiOS */;
+			targetProxy = 29751BE227C5683B00E97E16 /* PBXContainerItemProxy */;
+		};
+		29751C0627C568B500E97E16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29751BF927C568B500E97E16 /* Rebound */;
+			targetProxy = 29751C0527C568B500E97E16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,95 +584,191 @@
 			};
 			name = Release;
 		};
-		293A87CB27C32556005A2BDE /* Debug */ = {
+		29751BEF27C5683B00E97E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReboundV2/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundV2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		293A87CC27C32556005A2BDE /* Release */ = {
+		29751BF027C5683B00E97E16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReboundV2/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundV2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		293A87F327C33D8E005A2BDE /* Debug */ = {
+		29751BF327C5683B00E97E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VASSKNJ7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.CoreDataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReboundV2.app/ReboundV2";
 			};
 			name = Debug;
 		};
-		293A87F427C33D8E005A2BDE /* Release */ = {
+		29751BF427C5683B00E97E16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VASSKNJ7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.CoreDataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReboundV2.app/ReboundV2";
+			};
+			name = Release;
+		};
+		29751C1227C568B500E97E16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.Rebound;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		29751C1327C568B500E97E16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.Rebound;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		29751C1527C568B500E97E16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29751C1627C568B500E97E16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.ReboundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -519,20 +784,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		293A87CA27C32556005A2BDE /* Build configuration list for PBXNativeTarget "ReboundV2" */ = {
+		29751BEE27C5683B00E97E16 /* Build configuration list for PBXNativeTarget "ReboundiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				293A87CB27C32556005A2BDE /* Debug */,
-				293A87CC27C32556005A2BDE /* Release */,
+				29751BEF27C5683B00E97E16 /* Debug */,
+				29751BF027C5683B00E97E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		293A87F227C33D8E005A2BDE /* Build configuration list for PBXNativeTarget "CoreDataTests" */ = {
+		29751BF227C5683B00E97E16 /* Build configuration list for PBXNativeTarget "ReboundiOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				293A87F327C33D8E005A2BDE /* Debug */,
-				293A87F427C33D8E005A2BDE /* Release */,
+				29751BF327C5683B00E97E16 /* Debug */,
+				29751BF427C5683B00E97E16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29751C1127C568B500E97E16 /* Build configuration list for PBXNativeTarget "Rebound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29751C1227C568B500E97E16 /* Debug */,
+				29751C1327C568B500E97E16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29751C1427C568B500E97E16 /* Build configuration list for PBXNativeTarget "ReboundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29751C1527C568B500E97E16 /* Debug */,
+				29751C1627C568B500E97E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -38,6 +38,26 @@
                ReferencedContainer = "container:ReboundV2.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29751BDF27C5683B00E97E16"
+               BuildableName = "ReboundiOSTests.xctest"
+               BlueprintName = "ReboundiOSTests"
+               ReferencedContainer = "container:ReboundV2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "29751C0227C568B500E97E16"
+               BuildableName = "ReboundTests.xctest"
+               BlueprintName = "ReboundTests"
+               ReferencedContainer = "container:ReboundV2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

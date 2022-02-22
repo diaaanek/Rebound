@@ -11,5 +11,6 @@ public protocol RBUserStore {
     typealias RetrieveCompletion = (Result<[LocalRBUser]?,Error>) -> ()
     // typealias DeleteCompletion = (Result<Void,Error>) -> ()
     
+    // returns all users 
     func retrieve(completion:@escaping RetrieveCompletion)
 }

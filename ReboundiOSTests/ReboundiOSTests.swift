@@ -1,13 +1,14 @@
 //
-//  CoreDataTests.swift
-//  CoreDataTests
+//  ReboundiOSTests.swift
+//  ReboundiOSTests
 //
-//  Created by Ethan Keiser on 2/20/22.
+//  Created by Ethan Keiser on 2/22/22.
 //
 
 import XCTest
+@testable import ReboundiOS
 
-class CoreDataTests: XCTestCase {
+class ReboundiOSTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,7 +28,7 @@ class CoreDataTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

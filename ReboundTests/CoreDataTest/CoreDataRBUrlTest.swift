@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import ReboundV2
+import Rebound
 
 class CoreDataRBUrlTest: XCTestCase, RBUrlStoreSpec {
     func test_delete_success() {

@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import ReboundV2
+import Rebound
 class CoreDataRBUserTest : XCTestCase, RBUserStoreSpec {
     func test_retrieve_deliversOneItem() {
         let sut = makeSUT()
