@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct MainModelView {
+public struct MainModelView {
     
     public let recentUpdates : [RBUser] // users whose first url is created after last opened dated
     public let noUpdates: [RBUser] // all users whose first url is last opened date
     
-    init(users : [RBUser], lastOpened:Date) {
+   public init(users : [RBUser], lastOpened:Date) {
         recentUpdates = [RBUser]()
         noUpdates = [RBUser]()
         for user in users {

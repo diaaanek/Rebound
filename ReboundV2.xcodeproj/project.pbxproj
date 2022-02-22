@@ -42,6 +42,7 @@
 		29751C3F27C57F1700E97E16 /* RBUrlModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */; };
 		29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4027C5883400E97E16 /* WebKitCellController.swift */; };
 		29751C4627C588B500E97E16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751C4527C588B500E97E16 /* Assets.xcassets */; };
+		29751C4927C58AAE00E97E16 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BFA27C568B500E97E16 /* Rebound.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,13 @@
 			remoteInfo = ReboundiOS;
 		};
 		29751C0527C568B500E97E16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29751BF927C568B500E97E16;
+			remoteInfo = Rebound;
+		};
+		29751C4B27C58AAE00E97E16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
 			proxyType = 1;
@@ -106,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29751C4927C58AAE00E97E16 /* Rebound.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +152,7 @@
 				29751BFB27C568B500E97E16 /* Rebound */,
 				29751C0927C568B500E97E16 /* ReboundTests */,
 				293A87B427C32555005A2BDE /* Products */,
+				29751C4827C58AAE00E97E16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +308,13 @@
 			path = FeedUI;
 			sourceTree = "<group>";
 		};
+		29751C4827C58AAE00E97E16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -332,6 +349,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				29751C4C27C58AAE00E97E16 /* PBXTargetDependency */,
 			);
 			name = ReboundiOS;
 			productName = ReboundiOS;
@@ -540,6 +558,11 @@
 			isa = PBXTargetDependency;
 			target = 29751BF927C568B500E97E16 /* Rebound */;
 			targetProxy = 29751C0527C568B500E97E16 /* PBXContainerItemProxy */;
+		};
+		29751C4C27C58AAE00E97E16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29751BF927C568B500E97E16 /* Rebound */;
+			targetProxy = 29751C4B27C58AAE00E97E16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
