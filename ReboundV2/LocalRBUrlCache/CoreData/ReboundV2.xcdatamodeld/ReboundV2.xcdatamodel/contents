@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ManagedRBUrl" representedClassName="ManagedRBUrl" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isprimary" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uri" optional="YES" attributeType="URI"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedRBUser" inverseName="urls" inverseEntity="ManagedRBUser"/>
+    </entity>
+    <entity name="ManagedRBUser" representedClassName="ManagedRBUser" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="urls" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedRBUrl" inverseName="user" inverseEntity="ManagedRBUrl"/>
+    </entity>
+    <elements>
+        <element name="ManagedRBUrl" positionX="-54" positionY="9" width="128" height="104"/>
+        <element name="ManagedRBUser" positionX="-63" positionY="-18" width="128" height="74"/>
+    </elements>
+</model>

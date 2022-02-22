@@ -9,27 +9,71 @@
 /* Begin PBXBuildFile section */
 		293A87B727C32555005A2BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87B627C32555005A2BDE /* AppDelegate.swift */; };
 		293A87B927C32555005A2BDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87B827C32555005A2BDE /* SceneDelegate.swift */; };
-		293A87BB27C32555005A2BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87BA27C32555005A2BDE /* ViewController.swift */; };
-		293A87BE27C32555005A2BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A87BC27C32555005A2BDE /* Main.storyboard */; };
 		293A87C127C32555005A2BDE /* ReboundV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 293A87BF27C32555005A2BDE /* ReboundV2.xcdatamodeld */; };
 		293A87C327C32556005A2BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293A87C227C32556005A2BDE /* Assets.xcassets */; };
-		293A87C627C32556005A2BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A87C427C32556005A2BDE /* LaunchScreen.storyboard */; };
+		293A87CF27C32662005A2BDE /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87CE27C32662005A2BDE /* CoreDataStore.swift */; };
+		293A87D127C32723005A2BDE /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D027C32723005A2BDE /* CoreDataHelpers.swift */; };
+		293A87D327C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */; };
+		293A87D627C327FC005A2BDE /* RBUrlStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D527C327FC005A2BDE /* RBUrlStore.swift */; };
+		293A87D827C32841005A2BDE /* LocalRBUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D727C32841005A2BDE /* LocalRBUrl.swift */; };
+		293A87DA27C32A02005A2BDE /* LocalRBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87D927C32A02005A2BDE /* LocalRBUser.swift */; };
+		293A87DC27C32AC8005A2BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293A87DB27C32AC8005A2BDE /* Main.storyboard */; };
+		293A87DE27C32C32005A2BDE /* RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DD27C32C32005A2BDE /* RBUserStore.swift */; };
+		293A87E027C32D82005A2BDE /* CoreDataStore+RBUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87DF27C32D82005A2BDE /* CoreDataStore+RBUserStore.swift */; };
+		293A87EF27C33D8E005A2BDE /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */; };
+		293A87F527C33DB5005A2BDE /* RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */; };
+		293A87F627C33DB9005A2BDE /* RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */; };
+		293A87F727C33DBC005A2BDE /* XCTest+RBUserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */; };
+		293A87FA27C33E6C005A2BDE /* CoreDataRBUserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */; };
+		29751BCA27C4688700E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */; };
+		29751BCD27C46A6A00E97E16 /* CoreDataRBUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		293A87F027C33D8E005A2BDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 293A87B227C32555005A2BDE;
+			remoteInfo = ReboundV2;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		293A87B327C32555005A2BDE /* ReboundV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReboundV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293A87B627C32555005A2BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293A87B827C32555005A2BDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		293A87BA27C32555005A2BDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		293A87BD27C32555005A2BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
 		293A87C227C32556005A2BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		293A87C527C32556005A2BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293A87C727C32556005A2BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		293A87CE27C32662005A2BDE /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		293A87D027C32723005A2BDE /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+RBUrlStore.swift"; sourceTree = "<group>"; };
+		293A87D527C327FC005A2BDE /* RBUrlStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlStore.swift; sourceTree = "<group>"; };
+		293A87D727C32841005A2BDE /* LocalRBUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRBUrl.swift; sourceTree = "<group>"; };
+		293A87D927C32A02005A2BDE /* LocalRBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRBUser.swift; sourceTree = "<group>"; };
+		293A87DB27C32AC8005A2BDE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		293A87DD27C32C32005A2BDE /* RBUserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserStore.swift; sourceTree = "<group>"; };
+		293A87DF27C32D82005A2BDE /* CoreDataStore+RBUserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+RBUserStore.swift"; sourceTree = "<group>"; };
+		293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlStoreSpec.swift; sourceTree = "<group>"; };
+		293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserStoreSpec.swift; sourceTree = "<group>"; };
+		293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUserStoreSpec.swift"; sourceTree = "<group>"; };
+		293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUserTest.swift; sourceTree = "<group>"; };
+		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
+		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		293A87B027C32555005A2BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293A87E927C33D8E005A2BDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				293A87B527C32555005A2BDE /* ReboundV2 */,
+				293A87ED27C33D8E005A2BDE /* CoreDataTests */,
 				293A87B427C32555005A2BDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				293A87B327C32555005A2BDE /* ReboundV2.app */,
+				293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,16 +104,60 @@
 		293A87B527C32555005A2BDE /* ReboundV2 */ = {
 			isa = PBXGroup;
 			children = (
+				293A87E127C33B45005A2BDE /* CoreDataTest */,
+				293A87CD27C32648005A2BDE /* LocalRBUrlCache */,
 				293A87B627C32555005A2BDE /* AppDelegate.swift */,
 				293A87B827C32555005A2BDE /* SceneDelegate.swift */,
-				293A87BA27C32555005A2BDE /* ViewController.swift */,
-				293A87BC27C32555005A2BDE /* Main.storyboard */,
 				293A87C227C32556005A2BDE /* Assets.xcassets */,
-				293A87C427C32556005A2BDE /* LaunchScreen.storyboard */,
 				293A87C727C32556005A2BDE /* Info.plist */,
-				293A87BF27C32555005A2BDE /* ReboundV2.xcdatamodeld */,
+				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
 			);
 			path = ReboundV2;
+			sourceTree = "<group>";
+		};
+		293A87CD27C32648005A2BDE /* LocalRBUrlCache */ = {
+			isa = PBXGroup;
+			children = (
+				293A87D427C327DB005A2BDE /* CoreData */,
+				293A87D527C327FC005A2BDE /* RBUrlStore.swift */,
+				293A87DD27C32C32005A2BDE /* RBUserStore.swift */,
+				293A87D727C32841005A2BDE /* LocalRBUrl.swift */,
+				293A87D927C32A02005A2BDE /* LocalRBUser.swift */,
+			);
+			path = LocalRBUrlCache;
+			sourceTree = "<group>";
+		};
+		293A87D427C327DB005A2BDE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				293A87CE27C32662005A2BDE /* CoreDataStore.swift */,
+				293A87D027C32723005A2BDE /* CoreDataHelpers.swift */,
+				293A87D227C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift */,
+				293A87DF27C32D82005A2BDE /* CoreDataStore+RBUserStore.swift */,
+				293A87BF27C32555005A2BDE /* ReboundV2.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		293A87E127C33B45005A2BDE /* CoreDataTest */ = {
+			isa = PBXGroup;
+			children = (
+				293A87E227C33CA8005A2BDE /* RBUrlStoreSpec.swift */,
+				293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */,
+				293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */,
+				29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */,
+				293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */,
+				29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */,
+			);
+			path = CoreDataTest;
+			sourceTree = "<group>";
+		};
+		293A87ED27C33D8E005A2BDE /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				293A87EE27C33D8E005A2BDE /* CoreDataTests.swift */,
+			);
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +180,24 @@
 			productReference = 293A87B327C32555005A2BDE /* ReboundV2.app */;
 			productType = "com.apple.product-type.application";
 		};
+		293A87EB27C33D8E005A2BDE /* CoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 293A87F227C33D8E005A2BDE /* Build configuration list for PBXNativeTarget "CoreDataTests" */;
+			buildPhases = (
+				293A87E827C33D8E005A2BDE /* Sources */,
+				293A87E927C33D8E005A2BDE /* Frameworks */,
+				293A87EA27C33D8E005A2BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				293A87F127C33D8E005A2BDE /* PBXTargetDependency */,
+			);
+			name = CoreDataTests;
+			productName = CoreDataTests;
+			productReference = 293A87EC27C33D8E005A2BDE /* CoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +210,10 @@
 				TargetAttributes = {
 					293A87B227C32555005A2BDE = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					293A87EB27C33D8E005A2BDE = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 293A87B227C32555005A2BDE;
 					};
 				};
 			};
@@ -119,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				293A87B227C32555005A2BDE /* ReboundV2 */,
+				293A87EB27C33D8E005A2BDE /* CoreDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,9 +241,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A87C627C32556005A2BDE /* LaunchScreen.storyboard in Resources */,
 				293A87C327C32556005A2BDE /* Assets.xcassets in Resources */,
-				293A87BE27C32555005A2BDE /* Main.storyboard in Resources */,
+				293A87DC27C32AC8005A2BDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293A87EA27C33D8E005A2BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,33 +260,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A87BB27C32555005A2BDE /* ViewController.swift in Sources */,
+				293A87D127C32723005A2BDE /* CoreDataHelpers.swift in Sources */,
+				293A87D827C32841005A2BDE /* LocalRBUrl.swift in Sources */,
 				293A87C127C32555005A2BDE /* ReboundV2.xcdatamodeld in Sources */,
+				293A87D327C327A6005A2BDE /* CoreDataStore+RBUrlStore.swift in Sources */,
 				293A87B727C32555005A2BDE /* AppDelegate.swift in Sources */,
 				293A87B927C32555005A2BDE /* SceneDelegate.swift in Sources */,
+				293A87CF27C32662005A2BDE /* CoreDataStore.swift in Sources */,
+				293A87DA27C32A02005A2BDE /* LocalRBUser.swift in Sources */,
+				293A87E027C32D82005A2BDE /* CoreDataStore+RBUserStore.swift in Sources */,
+				293A87DE27C32C32005A2BDE /* RBUserStore.swift in Sources */,
+				293A87D627C327FC005A2BDE /* RBUrlStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		293A87E827C33D8E005A2BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293A87FA27C33E6C005A2BDE /* CoreDataRBUserTest.swift in Sources */,
+				29751BCD27C46A6A00E97E16 /* CoreDataRBUrlTest.swift in Sources */,
+				29751BCA27C4688700E97E16 /* XCTest+RBUrlStoreSpec.swift in Sources */,
+				293A87F727C33DBC005A2BDE /* XCTest+RBUserStoreSpec.swift in Sources */,
+				293A87F527C33DB5005A2BDE /* RBUrlStoreSpec.swift in Sources */,
+				293A87EF27C33D8E005A2BDE /* CoreDataTests.swift in Sources */,
+				293A87F627C33DB9005A2BDE /* RBUserStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		293A87BC27C32555005A2BDE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				293A87BD27C32555005A2BDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		293A87F127C33D8E005A2BDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 293A87B227C32555005A2BDE /* ReboundV2 */;
+			targetProxy = 293A87F027C33D8E005A2BDE /* PBXContainerItemProxy */;
 		};
-		293A87C427C32556005A2BDE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				293A87C527C32556005A2BDE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		293A87C827C32556005A2BDE /* Debug */ = {
@@ -310,7 +439,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -338,7 +467,43 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		293A87F327C33D8E005A2BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.CoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReboundV2.app/ReboundV2";
+			};
+			name = Debug;
+		};
+		293A87F427C33D8E005A2BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VASSKNJ7GB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbrains.CoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReboundV2.app/ReboundV2";
 			};
 			name = Release;
 		};
@@ -359,6 +524,15 @@
 			buildConfigurations = (
 				293A87CB27C32556005A2BDE /* Debug */,
 				293A87CC27C32556005A2BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		293A87F227C33D8E005A2BDE /* Build configuration list for PBXNativeTarget "CoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				293A87F327C33D8E005A2BDE /* Debug */,
+				293A87F427C33D8E005A2BDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
