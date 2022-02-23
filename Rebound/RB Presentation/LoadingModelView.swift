@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct LoadingModelView {
+public struct LoadingModelView {
     public let isLoading : Bool
 }

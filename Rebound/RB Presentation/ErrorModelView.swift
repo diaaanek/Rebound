@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorModelView {
+public struct ErrorModelView {
     public let message: String?
     public static var noError: ErrorModelView {
         return ErrorModelView(message: nil)

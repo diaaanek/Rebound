@@ -48,9 +48,18 @@
 		29751C4627C588B500E97E16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751C4527C588B500E97E16 /* Assets.xcassets */; };
 		29751C4927C58AAE00E97E16 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BFA27C568B500E97E16 /* Rebound.framework */; };
 		29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4E27C598DD00E97E16 /* SectionHeader.swift */; };
+		29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC527C6942900AB92A2 /* MainItemController.swift */; };
+		29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		295007AD27C604E50002FF39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295007A927C604E50002FF39 /* ReboundApp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2950079227C6032A0002FF39;
+			remoteInfo = ReboundApp;
+		};
 		29751BE227C5683B00E97E16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 293A87AB27C32555005A2BDE /* Project object */;
@@ -93,6 +102,7 @@
 		2950076227C5A1E10002FF39 /* RBUrlCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlCollectionView.swift; sourceTree = "<group>"; };
 		2950076427C5A6E20002FF39 /* MainFeedCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedCellController.swift; sourceTree = "<group>"; };
 		2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeueing.swift"; sourceTree = "<group>"; };
+		295007A927C604E50002FF39 /* ReboundApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReboundApp.xcodeproj; path = ReboundApp/ReboundApp.xcodeproj; sourceTree = "<group>"; };
 		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
 		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
 		29751BD027C567C100E97E16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +127,8 @@
 		29751C4027C5883400E97E16 /* WebKitCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitCellController.swift; sourceTree = "<group>"; };
 		29751C4527C588B500E97E16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29751C4E27C598DD00E97E16 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		29ECBDC527C6942900AB92A2 /* MainItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemController.swift; sourceTree = "<group>"; };
+		29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +234,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		295007AA27C604E50002FF39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				295007AE27C604E50002FF39 /* ReboundApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		29751BCE27C5659700E97E16 /* Infranstructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +296,7 @@
 				29751C3527C575EF00E97E16 /* MainModelView.swift */,
 				29751C3E27C57F1700E97E16 /* RBUrlModelView.swift */,
 				29751C3C27C57E7800E97E16 /* RBUrlPresenter.swift */,
+				29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */,
 				29751C3B27C5774300E97E16 /* Rebound.strings */,
 			);
 			path = "RB Presentation";
@@ -296,6 +317,7 @@
 				29751BD027C567C100E97E16 /* MainViewController.swift */,
 				29751C4027C5883400E97E16 /* WebKitCellController.swift */,
 				2950076427C5A6E20002FF39 /* MainFeedCellController.swift */,
+				29ECBDC527C6942900AB92A2 /* MainItemController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -334,6 +356,7 @@
 		29751C4827C58AAE00E97E16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				295007A927C604E50002FF39 /* ReboundApp.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -468,6 +491,12 @@
 			mainGroup = 293A87AA27C32555005A2BDE;
 			productRefGroup = 293A87B427C32555005A2BDE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 295007AA27C604E50002FF39 /* Products */;
+					ProjectRef = 295007A927C604E50002FF39 /* ReboundApp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				29751BD627C5683A00E97E16 /* ReboundiOS */,
@@ -477,6 +506,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		295007AE27C604E50002FF39 /* ReboundApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ReboundApp.app;
+			remoteRef = 295007AD27C604E50002FF39 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		29751BD527C5683A00E97E16 /* Resources */ = {
@@ -519,6 +558,7 @@
 			files = (
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
+				29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
 				2950076327C5A1E10002FF39 /* RBUrlCollectionView.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
@@ -541,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */,
+				29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */,
 				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
 				29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */,
 				29751C3D27C57E7800E97E16 /* RBUrlPresenter.swift in Sources */,

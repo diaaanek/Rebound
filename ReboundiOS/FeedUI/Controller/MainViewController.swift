@@ -13,8 +13,11 @@ protocol MainViewDelegate {
     func didRefreshData()
 }
 
-class MainViewController : UICollectionViewController {
-    var mainModelView : MainModelView?
+class MainViewController : UICollectionViewController, LoadingView {
+    
+    var recentUpdates = [MainItemController]()
+    var noUpdates = [MainItemController]()
+
     var sectionHeader1 : String!
     var sectionHeader2 : String!
     var cellSelected : ((RBUser) -> ())?
@@ -29,28 +32,20 @@ class MainViewController : UICollectionViewController {
         2
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let mainModelView = mainModelView else {
-            return 0
-        }
         if section == 0 {
-            return mainModelView.recentUpdates.count
+            return recentUpdates.count
         } else {
-            return mainModelView.noUpdates.count
+            return noUpdates.count
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainCollectionCell.self)", for: indexPath) as! MainCollectionCell
-        guard let mainModelView = mainModelView else {
-            fatalError("Didnnt set mainmodelview")
-        }
         if indexPath.section == 0 {
-            let modelView = mainModelView.recentUpdates[indexPath.row]
-            cell.topLeftLabel.text = modelView.userName
-            cell.topRightButton
+            return recentUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
+        } else {
+            return noUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
+
         }
-        
-        return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -64,5 +59,9 @@ class MainViewController : UICollectionViewController {
             return sectionHeader
         }
         fatalError("Reached unexpected path in MainViewController - viewForSupplementaryElementOfKind")
+    }
+    
+    func displayLoading(loadingModelView: LoadingModelView) {
+        print("Show loading")
     }
 }

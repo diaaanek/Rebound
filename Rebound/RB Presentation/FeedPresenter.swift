@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol LoadingView {
+public protocol LoadingView {
     func displayLoading(loadingModelView: LoadingModelView)
 }
-protocol ErrorView {
+public protocol ErrorView {
     func displayError(errorModelView: ErrorModelView)
 }
-protocol MainView {
+public protocol MainView {
     func display(mainModelView: MainModelView)
 }
 
@@ -62,8 +62,8 @@ public class FeedPresenter {
         loadingView.displayLoading(loadingModelView: LoadingModelView(isLoading: false))
         errorView.displayError(errorModelView: .error(message: error.localizedDescription))
     }
-    public func didDisplay(items: [RBUser], lastOpened: Date) {
+    public func didDisplay(rbUser: RBUser, rbUrls: [RBUrl]) {
         loadingView.displayLoading(loadingModelView: LoadingModelView(isLoading: false))
-        mainView.display(mainModelView: MainModelView(users: items, lastOpened: lastOpened))
+        mainView.display(mainModelView: MainModelView(rbUser: rbUser, items: rbUrls))
     }
 }

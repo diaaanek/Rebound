@@ -13,7 +13,8 @@ protocol RBUrlWebViewDelegate {
 
 
 class RBUrlPresenter {
-   private let view: RBUrlWebViewDelegate
+    private let view: RBUrlWebViewDelegate
+    
     public init(view: RBUrlWebViewDelegate) {
         self.view = view
     }
