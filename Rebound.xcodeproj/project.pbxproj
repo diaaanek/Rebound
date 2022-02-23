@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076027C59F450002FF39 /* MainCollectionViewCell.swift */; };
+		2950076327C5A1E10002FF39 /* RBUrlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076227C5A1E10002FF39 /* RBUrlCollectionView.swift */; };
+		2950076527C5A6E20002FF39 /* MainFeedCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076427C5A6E20002FF39 /* MainFeedCellController.swift */; };
+		2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */; };
 		29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 29751BDA27C5683A00E97E16 /* ReboundiOS.docc */; };
 		29751BE127C5683B00E97E16 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BD727C5683A00E97E16 /* ReboundiOS.framework */; };
 		29751BE827C5683B00E97E16 /* ReboundiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */; };
@@ -85,6 +89,10 @@
 		293A87E427C33CCA005A2BDE /* RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserStoreSpec.swift; sourceTree = "<group>"; };
 		293A87E627C33D23005A2BDE /* XCTest+RBUserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUserStoreSpec.swift"; sourceTree = "<group>"; };
 		293A87F827C33E4A005A2BDE /* CoreDataRBUserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUserTest.swift; sourceTree = "<group>"; };
+		2950076027C59F450002FF39 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		2950076227C5A1E10002FF39 /* RBUrlCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUrlCollectionView.swift; sourceTree = "<group>"; };
+		2950076427C5A6E20002FF39 /* MainFeedCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedCellController.swift; sourceTree = "<group>"; };
+		2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeueing.swift"; sourceTree = "<group>"; };
 		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
 		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
 		29751BD027C567C100E97E16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +214,14 @@
 			path = RBStoreTest;
 			sourceTree = "<group>";
 		};
+		2950076627C5A7290002FF39 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		29751BCE27C5659700E97E16 /* Infranstructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +295,7 @@
 			children = (
 				29751BD027C567C100E97E16 /* MainViewController.swift */,
 				29751C4027C5883400E97E16 /* WebKitCellController.swift */,
+				2950076427C5A6E20002FF39 /* MainFeedCellController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,9 +303,12 @@
 		29751C4327C5888C00E97E16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2950076627C5A7290002FF39 /* Helper */,
 				29751C4527C588B500E97E16 /* Assets.xcassets */,
 				293A87DB27C32AC8005A2BDE /* Main.storyboard */,
 				29751C4E27C598DD00E97E16 /* SectionHeader.swift */,
+				2950076027C59F450002FF39 /* MainCollectionViewCell.swift */,
+				2950076227C5A1E10002FF39 /* RBUrlCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,9 +517,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
+				2950076327C5A1E10002FF39 /* RBUrlCollectionView.swift in Sources */,
+				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
 				29751C4127C5883400E97E16 /* WebKitCellController.swift in Sources */,
+				2950076527C5A6E20002FF39 /* MainFeedCellController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

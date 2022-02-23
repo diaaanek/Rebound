@@ -9,8 +9,21 @@ import Foundation
 import UIKit
 import Rebound
 
+protocol MainViewDelegate {
+    func didRefreshData()
+}
+
 class MainViewController : UICollectionViewController {
     var mainModelView : MainModelView?
+    var sectionHeader1 : String!
+    var sectionHeader2 : String!
+    var cellSelected : ((RBUser) -> ())?
+    var delegate : MainViewDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate?.didRefreshData()
+    }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
@@ -27,12 +40,29 @@ class MainViewController : UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainCollectionCell.self)", for: indexPath) as! MainCollectionCell
+        guard let mainModelView = mainModelView else {
+            fatalError("Didnnt set mainmodelview")
+        }
+        if indexPath.section == 0 {
+            let modelView = mainModelView.recentUpdates[indexPath.row]
+            cell.topLeftLabel.text = modelView.userName
+            cell.topRightButton
+        }
         
-        
-        
-        return UICollectionViewCell()
+        return cell
     }
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        fatalError()
+        if kind == "SectionHeader" {
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: "SectionHeader", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+            if indexPath.row == 0 {
+                sectionHeader.leftLabel.text = sectionHeader1
+            } else {
+                sectionHeader.leftLabel.text = sectionHeader2
+            }
+            return sectionHeader
+        }
+        fatalError("Reached unexpected path in MainViewController - viewForSupplementaryElementOfKind")
     }
 }

@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dbi-r1-r0Q">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCollectionCell" id="dbi-r1-r0Q" customClass="MainCollectionCell" customModule="ReboundiOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3V-Hz-mcJ">
@@ -42,6 +42,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="258" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-XP-G6i">
                                                     <rect key="frame" x="294.5" y="0.0" width="103.5" height="31"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="View Details" titleAlignment="center"/>
+                                                    <connections>
+                                                        <action selector="topRightButtonSelected:" destination="dbi-r1-r0Q" eventType="touchUpInside" id="b38-l6-0b2"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -105,6 +108,11 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="414" height="242"/>
+                                <connections>
+                                    <outlet property="topLeftLabel" destination="hYx-nO-83q" id="Fsf-As-BhU"/>
+                                    <outlet property="topRightButton" destination="gbZ-XP-G6i" id="TPm-KM-IfY"/>
+                                    <outlet property="urlCollectionView" destination="y4i-am-M5C" id="85g-Tz-DkR"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="hu5-bk-T5Y" customClass="SectionHeader" customModule="ReboundiOS" customModuleProvider="target">
@@ -119,6 +127,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <connections>
+                                <outlet property="leftLabel" destination="oJ2-QK-O0f" id="loM-7V-nUW"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="pUg-Y4-nvb" id="kAL-5j-0D9"/>

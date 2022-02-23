@@ -40,6 +40,20 @@ public class FeedPresenter {
             comment: "Title for the feed view")
     }
     
+    public static var updatesSectionTitle: String {
+        return NSLocalizedString("MAIN_VIEW_SECTIONHEADER1",
+            tableName: "Rebound",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Section Title for the feed view")
+    }
+    public static var noSectionTitle: String {
+        return NSLocalizedString("MAIN_VIEW_SECTIONHEADER2",
+            tableName: "Rebound",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Section Title for the feed view")
+    }
+    
+    
     public func didStartLoading() {
         loadingView.displayLoading(loadingModelView: LoadingModelView(isLoading: true))
         errorView.displayError(errorModelView: ErrorModelView(message: nil))
