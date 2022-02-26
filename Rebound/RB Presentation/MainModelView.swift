@@ -8,11 +8,8 @@
 import Foundation
 
 public struct MainModelView {
-    public let rbUser : RBUser
-    public var username: String {
-        return rbUser.userName
-    } // users whose first url is created after last opened dated
-    public let items: [RBUrl] // all users whose first url is last opened date
+    public let rbUser : [RBUser]
+ // users whose first url is created after last opened dated
 
     
 //    public init(users : [RBUser], lastOpened:Date) {

@@ -12,10 +12,17 @@
 		2950079A27C6032A0002FF39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079927C6032A0002FF39 /* ViewController.swift */; };
 		2950079F27C6032B0002FF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2950079E27C6032B0002FF39 /* Assets.xcassets */; };
 		295007A227C6032B0002FF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295007A027C6032B0002FF39 /* LaunchScreen.storyboard */; };
+		29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */; };
+		29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */; };
+		29DBCAE927C83498008BF65C /* DetailedFeedComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */; };
+		29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */; };
 		29ECBDC027C6060600AB92A2 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBE27C6060600AB92A2 /* Rebound.framework */; };
 		29ECBDC127C6060600AB92A2 /* Rebound.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBE27C6060600AB92A2 /* Rebound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29ECBDC227C6060600AB92A2 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */; };
 		29ECBDC327C6060600AB92A2 /* ReboundiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */; };
+		29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */; };
+		29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,8 +48,15 @@
 		2950079E27C6032B0002FF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295007A127C6032B0002FF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		295007A327C6032B0002FF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewPresenterDataLoaderAdapter.swift; sourceTree = "<group>"; };
+		29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFlow.swift; sourceTree = "<group>"; };
+		29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFeedComposer.swift; sourceTree = "<group>"; };
+		29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVirtualProxy.swift; sourceTree = "<group>"; };
 		29ECBDBE27C6060600AB92A2 /* Rebound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rebound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReboundiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedComposer.swift; sourceTree = "<group>"; };
+		29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +94,17 @@
 			children = (
 				2950079527C6032A0002FF39 /* AppDelegate.swift */,
 				2950079727C6032A0002FF39 /* SceneDelegate.swift */,
+				29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */,
 				2950079927C6032A0002FF39 /* ViewController.swift */,
 				2950079E27C6032B0002FF39 /* Assets.xcassets */,
 				295007A027C6032B0002FF39 /* LaunchScreen.storyboard */,
 				295007A327C6032B0002FF39 /* Info.plist */,
+				29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */,
+				29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */,
+				29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */,
+				29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */,
+				29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */,
+				29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */,
 			);
 			path = ReboundApp;
 			sourceTree = "<group>";
@@ -168,9 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
+				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,
 				2950079A27C6032A0002FF39 /* ViewController.swift in Sources */,
 				2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */,
+				29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */,
+				29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */,
+				29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */,
+				29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */,
 				2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */,
+				29DBCAE927C83498008BF65C /* DetailedFeedComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +344,6 @@
 				INFOPLIST_FILE = ReboundApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,7 +371,6 @@
 				INFOPLIST_FILE = ReboundApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

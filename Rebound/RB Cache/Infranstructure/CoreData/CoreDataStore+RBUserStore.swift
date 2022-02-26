@@ -13,10 +13,18 @@ extension CoreDataStore: RBUserStore {
     public func retrieve(completion: @escaping RBUserStore.RetrieveCompletion) {
         perform { context in
             completion(Result {
-                let result = try context.fetch(NSFetchRequest<ManagedRBUser>(entityName: "ManagedRBUser"))
+                let request = NSFetchRequest<ManagedRBUser>(entityName: "ManagedRBUser")
+                request.predicate = NSPredicate(format:"self IN urls")
+                //request.returnsObjectsAsFaults = false
+                let result = try context.fetch(request)
                 
                 return result.map { managedRBUser in
-                    return LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
+                    var user = LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
+                    user.urls = managedRBUser.urls!.map { item in
+                       let item = item as! ManagedRBUrl
+                       return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: Int(item.state))
+                    }
+                    return user
                 }
             })
         }

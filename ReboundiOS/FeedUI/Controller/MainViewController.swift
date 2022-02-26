@@ -9,59 +9,111 @@ import Foundation
 import UIKit
 import Rebound
 
-protocol MainViewDelegate {
+public protocol MainViewDelegate {
     func didRefreshData()
 }
 
-class MainViewController : UICollectionViewController, LoadingView {
+public class MainViewController : UIViewController, LoadingView, ErrorView {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     var recentUpdates = [MainItemController]()
     var noUpdates = [MainItemController]()
-
-    var sectionHeader1 : String!
-    var sectionHeader2 : String!
+    public var sectionHeader1 : String!
+    public var sectionHeader2 : String!
     var cellSelected : ((RBUser) -> ())?
-    var delegate : MainViewDelegate?
+    public var delegate : MainViewDelegate?
+    enum Section {
+        case recent
+        case noUpdates
+    }
+    var dataSource: UICollectionViewDiffableDataSource<Section,MainItemController>!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        delegate?.didRefreshData()
-    }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return recentUpdates.count
-        } else {
-            return noUpdates.count
-        }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            return recentUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
-        } else {
-            return noUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
+        let bundle = Bundle(for: MainViewController.self)
+        collectionView.register(UINib(nibName: "SectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader")
+        configureDataSource()
+        collectionView.dataSource = dataSource
+       // collectionView.register(UINib(nibName: "TitleView", bundle: nil),
+        //                    forSupplementaryViewOfKind:"")
+        
+        //collectionView.register(UINib(nibName: "SectionHeader.xib", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader")
+        collectionView.collectionViewLayout = setupLayout()
 
-        }
+       // configureDataSource()
+      //  collectionView.dataSource = dataSource
+        delegate?.didRefreshData()
+
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == "SectionHeader" {
-            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: "SectionHeader", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
-            if indexPath.row == 0 {
-                sectionHeader.leftLabel.text = sectionHeader1
+    private func setupLayout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
+
+        let itemSizeHorizontal = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(1.0))
+        let itemHorizontal = NSCollectionLayoutItem(layoutSize: itemSizeHorizontal)
+        let groupSizeHoritzontal = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
+        let groupHorizontal = NSCollectionLayoutGroup.horizontal(layoutSize: groupSizeHoritzontal, subitems: [itemHorizontal])
+
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "UICollectionElementKindSectionHeader", alignment: .top)
+        section.boundarySupplementaryItems = [headerElement]
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    private func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, MainItemController>(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
+            if indexPath.section == 0 {
+                return self.recentUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
             } else {
-                sectionHeader.leftLabel.text = sectionHeader2
+                return self.noUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
+
             }
-            return sectionHeader
+        })
+        configureHeader()
+    }
+    func configureHeader() {
+            dataSource.supplementaryViewProvider = { (
+                collectionView: UICollectionView,
+                kind: String,
+                indexPath: IndexPath) -> UICollectionReusableView? in
+                if kind == "UICollectionElementKindSectionHeader" {
+                    let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+                    if indexPath.section == 0 {
+                        sectionHeader.leftLabel.text = self.sectionHeader1
+                    } else {
+                        sectionHeader.leftLabel.text = self.sectionHeader2
+                    }
+                    return sectionHeader
+                }
+                fatalError()
+            }
         }
-        fatalError("Reached unexpected path in MainViewController - viewForSupplementaryElementOfKind")
+    
+    public func display(recentUpdates: [MainItemController], noUpdates: [MainItemController]) {
+        self.recentUpdates = recentUpdates
+        self.noUpdates = noUpdates
+        //self.collectionView.reloadData()
+        var snapShot = NSDiffableDataSourceSnapshot<Section, MainItemController>()
+        snapShot.appendSections([.recent])
+        snapShot.appendItems(self.recentUpdates, toSection: .recent)
+        snapShot.appendSections([.noUpdates])
+        snapShot.appendItems(self.noUpdates, toSection: .noUpdates)
+
+        dataSource.apply(snapShot,animatingDifferences: false)
+        
+    }
+
+    
+    public func displayLoading(loadingModelView: LoadingModelView) {
+        print("Show loading")
     }
     
-    func displayLoading(loadingModelView: LoadingModelView) {
-        print("Show loading")
+    public func displayError(errorModelView: ErrorModelView) {
+        print("No Error")
     }
 }
