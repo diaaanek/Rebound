@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftyInsta
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -15,7 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = UINavigationController(rootViewController: MainFeedComposer().makeMainFeedController())
+      
+        let login = LoginWebViewController { controller, result in
+            controller.dismiss(animated: true, completion: nil)
+            // deal with authentication response.
+            guard let (response, _) = try? result.get() else { return print("Login failed.") }
+            print("Login successful.")
+            // persist cache safely in the keychain for logging in again in the future.
+            guard let key = response.persist() else { return print("`Authentication.Response` could not be persisted.") }
+            // store the `key` wherever you want, so you can access the `Authentication.Response` later.
+            // `UserDefaults` is just an example.
+            UserDefaults.standard.set(key, forKey: "current.account")
+            UserDefaults.standard.synchronize()
+        }
+        window?.rootViewController = UINavigationController(rootViewController: login)
         window?.makeKeyAndVisible()
     }
 

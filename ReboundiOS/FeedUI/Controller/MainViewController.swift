@@ -34,28 +34,15 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         collectionView.register(UINib(nibName: "SectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader")
         configureDataSource()
         collectionView.dataSource = dataSource
-       // collectionView.register(UINib(nibName: "TitleView", bundle: nil),
-        //                    forSupplementaryViewOfKind:"")
-        
-        //collectionView.register(UINib(nibName: "SectionHeader.xib", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader")
         collectionView.collectionViewLayout = setupLayout()
 
-       // configureDataSource()
-      //  collectionView.dataSource = dataSource
         delegate?.didRefreshData()
-
     }
     
     private func setupLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
-
-        let itemSizeHorizontal = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(1.0))
-        let itemHorizontal = NSCollectionLayoutItem(layoutSize: itemSizeHorizontal)
-        let groupSizeHoritzontal = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
-        let groupHorizontal = NSCollectionLayoutGroup.horizontal(layoutSize: groupSizeHoritzontal, subitems: [itemHorizontal])
-
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         
@@ -68,10 +55,9 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MainItemController>(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
             if indexPath.section == 0 {
-                return self.recentUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
+                return self.recentUpdates[indexPath.row%recentUpdates.count].dequeue(collectionView: collectionView, indexPath: indexPath)
             } else {
-                return self.noUpdates[indexPath.row].dequeue(collectionView: collectionView, indexPath: indexPath)
-
+                return self.noUpdates[indexPath.row%noUpdates.count].dequeue(collectionView: collectionView, indexPath: indexPath)
             }
         })
         configureHeader()
@@ -97,7 +83,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     public func display(recentUpdates: [MainItemController], noUpdates: [MainItemController]) {
         self.recentUpdates = recentUpdates
         self.noUpdates = noUpdates
-        //self.collectionView.reloadData()
         var snapShot = NSDiffableDataSourceSnapshot<Section, MainItemController>()
         snapShot.appendSections([.recent])
         snapShot.appendItems(self.recentUpdates, toSection: .recent)
@@ -105,7 +90,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         snapShot.appendItems(self.noUpdates, toSection: .noUpdates)
 
         dataSource.apply(snapShot,animatingDifferences: false)
-        
     }
 
     

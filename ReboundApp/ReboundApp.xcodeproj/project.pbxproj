@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079527C6032A0002FF39 /* AppDelegate.swift */; };
 		2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079727C6032A0002FF39 /* SceneDelegate.swift */; };
-		2950079A27C6032A0002FF39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079927C6032A0002FF39 /* ViewController.swift */; };
 		2950079F27C6032B0002FF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2950079E27C6032B0002FF39 /* Assets.xcassets */; };
 		295007A227C6032B0002FF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295007A027C6032B0002FF39 /* LaunchScreen.storyboard */; };
 		29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */; };
@@ -23,6 +22,7 @@
 		29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */; };
 		29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */; };
 		29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */; };
+		EBB85CEF6B4C001E3DA22725 /* Pods_ReboundApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F2325F6C30EC5F366441F /* Pods_ReboundApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,10 +41,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20C03A8D3C34EB1AE4F6E8DB /* Pods-ReboundApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReboundApp.release.xcconfig"; path = "Target Support Files/Pods-ReboundApp/Pods-ReboundApp.release.xcconfig"; sourceTree = "<group>"; };
 		2950079227C6032A0002FF39 /* ReboundApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReboundApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2950079527C6032A0002FF39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2950079727C6032A0002FF39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2950079927C6032A0002FF39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2950079E27C6032B0002FF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295007A127C6032B0002FF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		295007A327C6032B0002FF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedComposer.swift; sourceTree = "<group>"; };
 		29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresentationAdapter.swift; sourceTree = "<group>"; };
+		A7432EDAA01281527299BCEB /* Pods-ReboundApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReboundApp.debug.xcconfig"; path = "Target Support Files/Pods-ReboundApp/Pods-ReboundApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D96F2325F6C30EC5F366441F /* Pods_ReboundApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReboundApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			files = (
 				29ECBDC227C6060600AB92A2 /* ReboundiOS.framework in Frameworks */,
 				29ECBDC027C6060600AB92A2 /* Rebound.framework in Frameworks */,
+				EBB85CEF6B4C001E3DA22725 /* Pods_ReboundApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 				2950079427C6032A0002FF39 /* ReboundApp */,
 				2950079327C6032A0002FF39 /* Products */,
 				29ECBDBD27C6060600AB92A2 /* Frameworks */,
+				5B631A261C9B872F635B5D67 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +99,6 @@
 				2950079527C6032A0002FF39 /* AppDelegate.swift */,
 				2950079727C6032A0002FF39 /* SceneDelegate.swift */,
 				29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */,
-				2950079927C6032A0002FF39 /* ViewController.swift */,
 				2950079E27C6032B0002FF39 /* Assets.xcassets */,
 				295007A027C6032B0002FF39 /* LaunchScreen.storyboard */,
 				295007A327C6032B0002FF39 /* Info.plist */,
@@ -114,8 +117,19 @@
 			children = (
 				29ECBDBE27C6060600AB92A2 /* Rebound.framework */,
 				29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */,
+				D96F2325F6C30EC5F366441F /* Pods_ReboundApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B631A261C9B872F635B5D67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7432EDAA01281527299BCEB /* Pods-ReboundApp.debug.xcconfig */,
+				20C03A8D3C34EB1AE4F6E8DB /* Pods-ReboundApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,10 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 295007A627C6032B0002FF39 /* Build configuration list for PBXNativeTarget "ReboundApp" */;
 			buildPhases = (
+				4AF74D1057B67DCD1980092E /* [CP] Check Pods Manifest.lock */,
 				2950078E27C6032A0002FF39 /* Sources */,
 				2950078F27C6032A0002FF39 /* Frameworks */,
 				2950079027C6032A0002FF39 /* Resources */,
 				29ECBDC427C6060600AB92A2 /* Embed Frameworks */,
+				D0064F3C37C99D82C7733C1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +200,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AF74D1057B67DCD1980092E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReboundApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0064F3C37C99D82C7733C1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReboundApp/Pods-ReboundApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReboundApp/Pods-ReboundApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReboundApp/Pods-ReboundApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2950078E27C6032A0002FF39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,7 +249,6 @@
 			files = (
 				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
 				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,
-				2950079A27C6032A0002FF39 /* ViewController.swift in Sources */,
 				2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */,
 				29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */,
 				29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */,
@@ -334,6 +391,7 @@
 		};
 		295007A727C6032B0002FF39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7432EDAA01281527299BCEB /* Pods-ReboundApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -361,6 +419,7 @@
 		};
 		295007A827C6032B0002FF39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C03A8D3C34EB1AE4F6E8DB /* Pods-ReboundApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

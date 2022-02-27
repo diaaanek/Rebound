@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RBUrl {
+public struct RBUrl: Hashable {
     public let urlId : String
     public let isPrimary: Bool
     public  let createdDate: Date

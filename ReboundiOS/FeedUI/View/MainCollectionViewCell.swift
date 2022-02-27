@@ -20,21 +20,3 @@ class MainCollectionCell : UICollectionViewCell {
     }
 }
 
-extension MainCollectionCell : UICollectionViewDelegate {
-    
-}
-
-extension MainCollectionCell : UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
-}

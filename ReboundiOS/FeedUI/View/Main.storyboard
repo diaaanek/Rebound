@@ -65,7 +65,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gyo-7q-2Xm">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UrlCollectionViewCell" id="gyo-7q-2Xm" customClass="UrlCollectionViewCell" customModule="ReboundiOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="6.5" width="196" height="184"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fzJ-oP-zaT">
@@ -75,15 +75,18 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="G6i-dW-hXz">
                                                                         <rect key="frame" x="8" y="8" width="180" height="168"/>
                                                                         <subviews>
-                                                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXN-cz-T1S">
-                                                                                <rect key="frame" x="2" y="0.0" width="176" height="152.5"/>
-                                                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <wkWebView contentMode="scaleAspectFit" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="lXN-cz-T1S">
+                                                                                <rect key="frame" x="1.5" y="0.0" width="177" height="152.5"/>
+                                                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="lXN-cz-T1S" secondAttribute="height" multiplier="22:19" id="nM2-Ef-gxq"/>
+                                                                                </constraints>
                                                                                 <wkWebViewConfiguration key="configuration">
                                                                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                                                     <wkPreferences key="preferences"/>
                                                                                 </wkWebViewConfiguration>
                                                                             </wkWebView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shown on profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ham-Bl-UgT">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Shown on profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ham-Bl-UgT">
                                                                                 <rect key="frame" x="46" y="154.5" width="88" height="13.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                                 <nil key="textColor"/>
@@ -100,6 +103,10 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="196" height="184"/>
+                                                            <connections>
+                                                                <outlet property="bottomCenterLabel" destination="ham-Bl-UgT" id="axT-WY-O1R"/>
+                                                                <outlet property="webView" destination="lXN-cz-T1S" id="6RL-nz-0mZ"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -145,6 +152,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
