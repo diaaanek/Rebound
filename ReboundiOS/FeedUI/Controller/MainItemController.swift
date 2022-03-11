@@ -15,8 +15,45 @@ public protocol MainItemDelegate {
 public protocol MainNavigationItemDelegate {
     func didSelectItem(rbUser: RBUser)
 }
+public protocol CellController: Hashable {
+    func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
+}
 
-public class MainItemController: Hashable  {
+public class CreateCellController: CellController {
+    var buttonSelection : (()->())?
+    init(_ buttonSelection:@escaping ()->()) {
+        self.buttonSelection = buttonSelection
+    }
+    public func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let buttonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreateCell", for: indexPath) as! CreateCell
+        buttonCell.createbutton = buttonSelection
+        return buttonCell
+    }
+    
+    public static func == (lhs: CreateCellController, rhs: CreateCellController) -> Bool {
+        return true
+    }
+    public func hash(into hasher: inout Hasher) {
+     
+    }
+}
+public class EmptyCellController : CellController {
+    public func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCell", for: indexPath) as! EmptyCell
+        cell.middleLabel.text = "You are all caught up!"
+        return cell
+    }
+    
+    public static func == (lhs: EmptyCellController, rhs: EmptyCellController) -> Bool {
+        return true
+    }
+    public func hash(into hasher: inout Hasher) {
+     
+    }
+}
+
+
+public class MainItemController: CellController  {
     public static func == (lhs: MainItemController, rhs: MainItemController) -> Bool {
         return lhs.user.userName == rhs.user.userName
     }
@@ -64,7 +101,7 @@ public class MainItemController: Hashable  {
     private func configureLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(1.0))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7), heightDimension: .fractionalHeight(1.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
@@ -77,9 +114,7 @@ public class MainItemController: Hashable  {
             }
             let urlCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UrlCollectionViewCell", for: indexPath) as! UrlCollectionViewCell
             let url = strongSelf.user.urls[indexPath.row]
-               urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
-               urlCell.backgroundColor = .brown
-               urlCell.webView.backgroundColor = .blue
+            urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
             urlCell.bottomCenterLabel.text = "This is a test"
             return urlCell
         }

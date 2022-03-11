@@ -14,8 +14,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-Is-Gak">
-                    <rect key="frame" x="8" y="44" width="398" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-Is-Gak">
+                    <rect key="frame" x="8" y="44" width="398" height="808"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -26,7 +26,11 @@
             <constraints>
                 <constraint firstItem="8pk-Is-Gak" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="0EA-Mr-Qn1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8pk-Is-Gak" secondAttribute="trailing" constant="8" id="6PJ-B1-ubg"/>
+                <constraint firstItem="8pk-Is-Gak" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="GAc-jf-iFG"/>
+                <constraint firstItem="8pk-Is-Gak" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JwL-aw-BLz"/>
+                <constraint firstItem="8pk-Is-Gak" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MEa-06-aor"/>
                 <constraint firstItem="8pk-Is-Gak" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ofg-XN-Vx1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8pk-Is-Gak" secondAttribute="trailing" constant="8" id="z78-OY-gw3"/>
             </constraints>
             <connections>
                 <outlet property="leftLabel" destination="8pk-Is-Gak" id="ITA-js-Zep"/>

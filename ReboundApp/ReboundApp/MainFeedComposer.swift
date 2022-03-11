@@ -25,9 +25,15 @@ class MainFeedComposer {
         let list = [LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/itsEthanKeiser/", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0)]
         var user = LocalRBUser(userId:"2", userName: "diannnek", createdDate: Date())
         user.urls = list
-        cache.insert(rbUrl: list, user: user, timestamp: Date()) { result in
-
-        }
+//        cache.insert(rbUrl: list, user: user, timestamp: Date()) { result in
+//
+//        }
+        let searchDisplayController = SearchResultController()
+        let searchBarController = SearchController(searchDisplayController, resultUpdate: searchDisplayController)
+        searchBarController.searchBar.placeholder = "Username"
+       // mainViewController.navigationItem.searchController = searchBarController
+        mainViewController.navigationItem.hidesSearchBarWhenScrolling = true
+    
         let loaderAdapter =  MainLoaderPresentationAdapter(cache:cache)
         mainViewController.delegate = loaderAdapter
         
@@ -37,7 +43,8 @@ class MainFeedComposer {
         loaderAdapter.presenter = mainFeedPresenter
         mainViewController.sectionHeader1 = MainFeedPresenter.updatesSectionTitle
         mainViewController.sectionHeader2 = MainFeedPresenter.noSectionTitle
-        
+    
         return mainViewController
     }
+
 }

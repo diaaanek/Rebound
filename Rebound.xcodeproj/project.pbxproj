@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076027C59F450002FF39 /* MainCollectionViewCell.swift */; };
 		2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */; };
+		2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957690F27D7F8900080A5A5 /* WkWebViewController.swift */; };
 		29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 29751BDA27C5683A00E97E16 /* ReboundiOS.docc */; };
 		29751BE127C5683B00E97E16 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BD727C5683A00E97E16 /* ReboundiOS.framework */; };
 		29751BE827C5683B00E97E16 /* ReboundiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */; };
@@ -47,6 +48,12 @@
 		29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4E27C598DD00E97E16 /* SectionHeader.swift */; };
 		29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */; };
 		29BEF5ED27C8A05D0002614C /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BEF5EC27C8A05D0002614C /* SectionHeader.xib */; };
+		29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBCF27DAC17600138DC0 /* CreateCell.swift */; };
+		29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD127DAECB900138DC0 /* EmptyCell.swift */; };
+		29CDCBD427DAF55A00138DC0 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD327DAF55A00138DC0 /* SearchController.swift */; };
+		29CDCBD627DAF91800138DC0 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD527DAF91800138DC0 /* SearchResultController.swift */; };
+		29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */; };
+		29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */; };
 		29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC527C6942900AB92A2 /* MainItemController.swift */; };
 		29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +107,7 @@
 		2950076027C59F450002FF39 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeueing.swift"; sourceTree = "<group>"; };
 		295007A927C604E50002FF39 /* ReboundApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReboundApp.xcodeproj; path = ReboundApp/ReboundApp.xcodeproj; sourceTree = "<group>"; };
+		2957690F27D7F8900080A5A5 /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewController.swift; sourceTree = "<group>"; };
 		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
 		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
 		29751BD027C567C100E97E16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +133,12 @@
 		29751C4E27C598DD00E97E16 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCollectionViewCell.swift; sourceTree = "<group>"; };
 		29BEF5EC27C8A05D0002614C /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		29CDCBCF27DAC17600138DC0 /* CreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCell.swift; sourceTree = "<group>"; };
+		29CDCBD127DAECB900138DC0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		29CDCBD327DAF55A00138DC0 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		29CDCBD527DAF91800138DC0 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRBUserController.swift; sourceTree = "<group>"; };
+		29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserEditCell.swift; sourceTree = "<group>"; };
 		29ECBDC527C6942900AB92A2 /* MainItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemController.swift; sourceTree = "<group>"; };
 		29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,7 +327,11 @@
 			isa = PBXGroup;
 			children = (
 				29751BD027C567C100E97E16 /* MainViewController.swift */,
+				2957690F27D7F8900080A5A5 /* WkWebViewController.swift */,
 				29ECBDC527C6942900AB92A2 /* MainItemController.swift */,
+				29CDCBD327DAF55A00138DC0 /* SearchController.swift */,
+				29CDCBD527DAF91800138DC0 /* SearchResultController.swift */,
+				29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,6 +346,9 @@
 				29751C4E27C598DD00E97E16 /* SectionHeader.swift */,
 				2950076027C59F450002FF39 /* MainCollectionViewCell.swift */,
 				29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */,
+				29CDCBCF27DAC17600138DC0 /* CreateCell.swift */,
+				29CDCBD127DAECB900138DC0 /* EmptyCell.swift */,
+				29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -554,11 +575,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CDCBD627DAF91800138DC0 /* SearchResultController.swift in Sources */,
 				29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */,
+				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
+				2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */,
 				29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */,
+				29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */,
+				29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
+				29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */,
+				29CDCBD427DAF55A00138DC0 /* SearchController.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);

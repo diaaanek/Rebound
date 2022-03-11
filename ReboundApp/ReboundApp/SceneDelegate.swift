@@ -4,62 +4,69 @@
 //
 //  Created by Ethan Keiser on 2/23/22.
 //
-
+import Swiftagram
 import UIKit
-import SwiftyInsta
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-
+    var bin: Set<AnyCancellable> = []
+    @Published private(set) var current: User?
+    var navigationController = UINavigationController()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-      
-        let login = LoginWebViewController { controller, result in
-            controller.dismiss(animated: true, completion: nil)
-            // deal with authentication response.
-            guard let (response, _) = try? result.get() else { return print("Login failed.") }
-            print("Login successful.")
-            // persist cache safely in the keychain for logging in again in the future.
-            guard let key = response.persist() else { return print("`Authentication.Response` could not be persisted.") }
-            // store the `key` wherever you want, so you can access the `Authentication.Response` later.
-            // `UserDefaults` is just an example.
-            UserDefaults.standard.set(key, forKey: "current.account")
-            UserDefaults.standard.synchronize()
+        let rv = MainFeedComposer().makeMainFeedController()
+
+        if UserDefaults.standard.data(forKey: "secret") == nil {
+            rv.shouldShowLogin = {
+                let controller = LoginViewController2()
+                controller.completion = { secret in
+                    // Fetch the user.
+                    let data =  try! Secret.encoding(secret)
+                    let userDefaults = UserDefaults()
+                    userDefaults.set(data, forKey: "secret")
+                    userDefaults.synchronize()
+                }
+                rv.present(controller, animated: true, completion: nil)
+            }
         }
-        window?.rootViewController = UINavigationController(rootViewController: login)
+        navigationController = UINavigationController(rootViewController: rv)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-
+    func navigateToCreate() {
+        
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
-
+    
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
-
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    
 }
 

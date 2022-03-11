@@ -46,8 +46,8 @@
             filePath = "ReboundApp/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "ReboundApp/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "ReboundApp/MainFeedComposer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "makeMainFeedController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "ReboundApp/MainFeedComposer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "makeMainFeedController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -326,54 +326,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A87ACCB9-94F2-4A46-8398-F513D376B285"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "configureDataSource()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A87ACCB9-94F2-4A46-8398-F513D376B285 - 11d3468d64a928d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, ReboundiOS.MainItemController) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in ReboundiOS.MainViewController.configureDataSource() -&gt; ()"
-                  moduleName = "ReboundiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "231">
-               </Location>
-               <Location
-                  uuid = "A87ACCB9-94F2-4A46-8398-F513D376B285 - 11d3468d64a928d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, ReboundiOS.MainItemController) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in ReboundiOS.MainViewController.configureDataSource() -&gt; ()"
-                  moduleName = "ReboundiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "148">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CBD0A5DA-3D25-4AF7-8771-ADE065CB31DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -429,8 +381,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -445,8 +397,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -461,8 +413,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -477,8 +429,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "configureDataSource()"
             landmarkType = "7">
          </BreakpointContent>
@@ -493,8 +445,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -509,8 +461,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "configureDataSource()"
             landmarkType = "7">
             <Locations>
@@ -557,8 +509,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "configureDataSource(collectionView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -573,8 +525,8 @@
             filePath = "../ReboundiOS/FeedUI/View/UrlCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "webView(_:didCommit:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -589,8 +541,8 @@
             filePath = "../ReboundiOS/FeedUI/View/UrlCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "webView(_:didFail:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -605,8 +557,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/MainItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "configureDataSource(collectionView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -615,16 +567,192 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "17750DE4-3906-4E8B-B0CA-B90F983E7C03"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ReboundiOS/FeedUI/Controller/MainItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "configureDataSource(collectionView:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41D135B8-8913-42F9-A280-8D667FC2BC2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReboundApp/WkWebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "webView(_:didFinish:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85E953CC-ECAD-45BE-A230-16D79A29D1AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/WkWebViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "webView(_:didFinish:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "85E953CC-ECAD-45BE-A230-16D79A29D1AC - d88b04c572e7b692"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundApp.WkWebViewController.webView(_: __C.WKWebView, didFinish: __C.WKNavigation) -&gt; ()"
+                  moduleName = "ReboundApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/WkWebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "85E953CC-ECAD-45BE-A230-16D79A29D1AC - bf95970b2b53a6f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundiOS.WkWebViewController.webView(_: __C.WKWebView, didFinish: __C.WKNavigation) -&gt; ()"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/WkWebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5CC4A8A-8034-47FA-A68B-BCF4DCF79686"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/View/UrlCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "webView(_:didFinish:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60E9970E-1CBA-4FF6-9038-13C28E0C3673"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/View/UrlCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "webView(_:didFinish:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED0C2CE9-1D4F-4FDC-90C2-700D1A4F5691"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReboundApp/MainFeedComposer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "MainFeedComposer"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "889A634E-39EB-452D-98DB-25345B02288A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A70572BD-8CD6-4E77-AE3B-E3480DB49D94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "navigateToAccount()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A70572BD-8CD6-4E77-AE3B-E3480DB49D94 - ff6ebab106ef2cb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundiOS.MainViewController.navigateToAccount() -&gt; ()"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "A70572BD-8CD6-4E77-AE3B-E3480DB49D94 - ff6ebab106ef2cb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundiOS.MainViewController.navigateToAccount() -&gt; ()"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

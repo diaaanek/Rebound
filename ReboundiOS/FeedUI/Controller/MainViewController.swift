@@ -21,12 +21,16 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     public var sectionHeader1 : String!
     public var sectionHeader2 : String!
     var cellSelected : ((RBUser) -> ())?
+    var navigateAccount : (()->())?
+    var navigateCreate : (()->())?
+    public var shouldShowLogin : (() -> ())? // delete later
     public var delegate : MainViewDelegate?
     enum Section {
+        case create
         case recent
         case noUpdates
     }
-    var dataSource: UICollectionViewDiffableDataSource<Section,MainItemController>!
+    var dataSource: UICollectionViewDiffableDataSource<Section,AnyHashable>!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,30 +39,63 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         configureDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = setupLayout()
-
+        self.title = "Rebound"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
         delegate?.didRefreshData()
     }
-    
+    @objc func navigateToAccount() {
+        navigateAccount?()
+    }
+    public override func viewDidAppear(_ animated: Bool) {
+        shouldShowLogin?()
+    }
     private func setupLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
         
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
-        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "UICollectionElementKindSectionHeader", alignment: .top)
-        section.boundarySupplementaryItems = [headerElement]
         
-        return UICollectionViewCompositionalLayout(section: section)
+        return UICollectionViewCompositionalLayout { sectionId, layout in
+            if sectionId == 0 || (sectionId == 1 && self.recentUpdates.count == 0) {
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                  heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: .absolute(65))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                             subitems: [item])
+            let sectionLayout = NSCollectionLayoutSection(group: group)
+                if sectionId == 1 {
+                    let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+                    let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "UICollectionElementKindSectionHeader", alignment: .top)
+                    sectionLayout.boundarySupplementaryItems = [headerElement]
+                }
+            return sectionLayout
+            }
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(400))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+            let section = NSCollectionLayoutSection(group: group)
+            
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+            let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "UICollectionElementKindSectionHeader", alignment: .top)
+            section.boundarySupplementaryItems = [headerElement]
+            return section
+        }
     }
     private func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, MainItemController>(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
+        dataSource = UICollectionViewDiffableDataSource<Section, AnyHashable>(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
             if indexPath.section == 0 {
+                return CreateCellController(navigateCreate!).dequeue(collectionView: collectionView, indexPath: indexPath)
+            } else if indexPath.section == 1 {
+                if self.recentUpdates.count == 0 {
+                    return EmptyCellController().dequeue(collectionView: collectionView, indexPath: indexPath)
+
+                }
                 return self.recentUpdates[indexPath.row%recentUpdates.count].dequeue(collectionView: collectionView, indexPath: indexPath)
-            } else {
+            } else if indexPath.section == 2 {
                 return self.noUpdates[indexPath.row%noUpdates.count].dequeue(collectionView: collectionView, indexPath: indexPath)
             }
+            fatalError("unexpected section reached")
         })
         configureHeader()
     }
@@ -69,9 +106,9 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
                 indexPath: IndexPath) -> UICollectionReusableView? in
                 if kind == "UICollectionElementKindSectionHeader" {
                     let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
-                    if indexPath.section == 0 {
+                    if indexPath.section == 1 {
                         sectionHeader.leftLabel.text = self.sectionHeader1
-                    } else {
+                    } else if indexPath.section == 2 {
                         sectionHeader.leftLabel.text = self.sectionHeader2
                     }
                     return sectionHeader
@@ -83,10 +120,16 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     public func display(recentUpdates: [MainItemController], noUpdates: [MainItemController]) {
         self.recentUpdates = recentUpdates
         self.noUpdates = noUpdates
-        var snapShot = NSDiffableDataSourceSnapshot<Section, MainItemController>()
-        snapShot.appendSections([.recent])
-        snapShot.appendItems(self.recentUpdates, toSection: .recent)
-        snapShot.appendSections([.noUpdates])
+        
+        var snapShot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
+        
+        snapShot.appendSections([.create,.recent,.noUpdates])
+        snapShot.appendItems([CreateCellController(navigateCreate!)], toSection: .create)
+        if self.recentUpdates.count == 0 {
+            snapShot.appendItems([EmptyCell()], toSection: .recent)
+        } else {
+            snapShot.appendItems(self.recentUpdates, toSection: .recent)
+        }
         snapShot.appendItems(self.noUpdates, toSection: .noUpdates)
 
         dataSource.apply(snapShot,animatingDifferences: false)

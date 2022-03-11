@@ -6,5 +6,4 @@ target 'ReboundApp' do
   use_frameworks!
 
   # Pods for ReboundApp
-pod 'SwiftyInsta'
 end
