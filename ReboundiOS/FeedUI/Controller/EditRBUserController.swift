@@ -6,84 +6,120 @@
 //
 
 import UIKit
+import Rebound
 
-class EditRBUserController: UITableViewController {
+public protocol EditRBUserDelegate {
+    func save(user: RBUser)
+    func deleteUser(user: RBUser)
 
-    override func viewDidLoad() {
+}
+
+public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    private struct EditUser {
+        var name = ""
+        var urls = [String]()
+    }
+    @IBOutlet weak var tableView: UITableView!
+    var rbUser : RBUser?
+    private var editUserModel = EditUser()
+    public override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //EditUser
+        if let rb = rbUser {
+            editUserModel.name = rb.userName
+            editUserModel.urls = rb.urls.map({ url in
+                return url.url
+            })
+        }
+        while editUserModel.urls.count < 4 {
+            editUserModel.urls.append("")
+        }
+    }
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        tableView.contentInset = .zero
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        if section == 0 {
+            return 1
+        }
+        return editUserModel.urls.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RBUserEditCell", for: indexPath) as! RBUserEditCell
+        cell.wkwebView.isHidden = true
+        cell.textField.delegate = self
+        cell.textField.returnKeyType = .done
+        if indexPath.section == 0 {
+            cell.textField.placeholder = "Username"
+            cell.textField.text = editUserModel.name
+            cell.textField.tag = 0
+            cell.topLabel.text = "Required Instagram Username"
+        }
+        else if indexPath.section == 1 {
+            cell.textField.placeholder = "Copy Instagram Url"
+            cell.textField.tag = indexPath.row+1
+            if indexPath.row == 0 {
+                cell.topLabel.text = "Required Photo #\(indexPath.row+1) Url"
+            } else {
+                cell.topLabel.text = "Optional Photo #\(indexPath.row+1) Url"
 
-        
-
+            }
+            let urlString = editUserModel.urls[indexPath.row]
+            cell.textField.text = urlString
+            if let url = URL(string:urlString) {
+                cell.wkwebView.isHidden = false
+                cell.wkwebView.load(URLRequest(url: url))
+            }
+        }
+        cell.wkwebView.isUserInteractionEnabled = false
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 0 {
+            editUserModel.name = textField.text ?? ""
+        }
+        if textField.tag > 0 {
+        let urlString = textField.text ?? ""
+        if let url = URL(string:urlString) {
+            editUserModel.urls[textField.tag-1] = urlString
+        } else {
+            editUserModel.urls[textField.tag-1] = ""
+        }
+            
+        }
+        tableView.reloadData()
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    @IBAction func deletedButtonSelected(_ sender: Any) {
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    @IBAction func saveButtonSelected(_ sender: Any) {
+        
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

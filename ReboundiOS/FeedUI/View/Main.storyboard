@@ -222,29 +222,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-zW-XNV">
-                                                    <rect key="frame" x="157" y="11" width="100" height="192"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="192"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ios-tA-qf6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <wkWebView contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
-                                                            <rect key="frame" x="0.0" y="27.5" width="100" height="100"/>
+                                                        <wkWebView contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
+                                                            <rect key="frame" x="0.0" y="7" width="374" height="178"/>
                                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="8ep-hS-vOw"/>
-                                                                <constraint firstAttribute="width" constant="100" id="Hj4-hc-ocN"/>
-                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="NiV-Tx-gf4"/>
+                                                                <constraint firstAttribute="width" secondItem="gat-py-34u" secondAttribute="height" multiplier="1:2" id="1H7-lm-peB"/>
+                                                                <constraint firstAttribute="height" constant="350" id="KWF-ia-Xba"/>
                                                             </constraints>
                                                             <wkWebViewConfiguration key="configuration">
                                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                                 <wkPreferences key="preferences"/>
                                                             </wkWebViewConfiguration>
                                                         </wkWebView>
-                                                        <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo #1 Url" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
-                                                            <rect key="frame" x="0.0" y="134.5" width="100" height="57.5"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo #1 Url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
+                                                            <rect key="frame" x="0.0" y="192" width="374" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -254,6 +253,8 @@
                                             <constraints>
                                                 <constraint firstItem="AJY-zW-XNV" firstAttribute="centerX" secondItem="fjf-RC-sYT" secondAttribute="centerX" id="HfC-ya-DpR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="AJY-zW-XNV" secondAttribute="bottom" id="cCI-iQ-0l2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AJY-zW-XNV" secondAttribute="trailing" id="jyG-rd-WPa"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="leading" secondItem="fjf-RC-sYT" secondAttribute="leadingMargin" id="ofn-1Q-cqi"/>
                                                 <constraint firstItem="AJY-zW-XNV" firstAttribute="top" secondItem="fjf-RC-sYT" secondAttribute="topMargin" id="uxt-fR-iRW"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -272,11 +273,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonSelected:" destination="XoM-UT-ogK" eventType="touchUpInside" id="XUC-0M-jx7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E50-17-XV9">
                                         <rect key="frame" x="0.0" y="39" width="398" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                        <connections>
+                                            <action selector="deletedButtonSelected:" destination="XoM-UT-ogK" eventType="touchUpInside" id="3uM-9r-JXo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -293,6 +300,9 @@
                             <constraint firstItem="hPx-Zc-Lf2" firstAttribute="trailing" secondItem="cXb-AJ-v5U" secondAttribute="trailing" id="xlj-kR-PTh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cXb-AJ-v5U" id="HbW-NJ-uGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQm-Mt-vPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

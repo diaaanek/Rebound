@@ -21,8 +21,8 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     public var sectionHeader1 : String!
     public var sectionHeader2 : String!
     var cellSelected : ((RBUser) -> ())?
-    var navigateAccount : (()->())?
-    var navigateCreate : (()->())?
+    public var navigateAccount : (()->())?
+    public var navigateCreate : (()->())?
     public var shouldShowLogin : (() -> ())? // delete later
     public var delegate : MainViewDelegate?
     enum Section {

@@ -31,12 +31,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 rv.present(controller, animated: true, completion: nil)
             }
         }
+        rv.navigateCreate = navigateToCreate
         navigationController = UINavigationController(rootViewController: rv)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     func navigateToCreate() {
-        
+        let createController = CreateComposer().composeCreateViewController()
+        self.navigationController.pushViewController(createController, animated: true)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

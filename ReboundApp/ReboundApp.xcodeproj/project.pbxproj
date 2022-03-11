@@ -16,6 +16,7 @@
 		29AEA89827CB56C70076FAEC /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 29AEA89727CB56C70076FAEC /* Swiftagram */; };
 		29AEA89A27CB56C70076FAEC /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 29AEA89927CB56C70076FAEC /* SwiftagramCrypto */; };
 		29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */; };
+		29CDCBDC27DB1A1700138DC0 /* CreateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */; };
 		29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */; };
 		29DBCAE927C83498008BF65C /* DetailedFeedComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */; };
 		29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */; };
@@ -55,6 +56,7 @@
 		2957690D27D7E6210080A5A5 /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WkWebViewController.swift; path = ../../ReboundiOS/FeedUI/Controller/WkWebViewController.swift; sourceTree = "<group>"; };
 		29AEA89427CB54ED0076FAEC /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
 		29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewPresenterDataLoaderAdapter.swift; sourceTree = "<group>"; };
+		29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateComposer.swift; sourceTree = "<group>"; };
 		29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFlow.swift; sourceTree = "<group>"; };
 		29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFeedComposer.swift; sourceTree = "<group>"; };
 		29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVirtualProxy.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */,
 				29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */,
 				2957690D27D7E6210080A5A5 /* WkWebViewController.swift */,
+				29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */,
 			);
 			path = ReboundApp;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
 				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,
 				2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */,
+				29CDCBDC27DB1A1700138DC0 /* CreateComposer.swift in Sources */,
 				2957690E27D7E6210080A5A5 /* WkWebViewController.swift in Sources */,
 				29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */,
 				29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */,

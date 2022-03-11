@@ -16,7 +16,10 @@ class RBUserEditCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
+        if textField.text?.count == 0 {
+            wkwebView.isHidden = true
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

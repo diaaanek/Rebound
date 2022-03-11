@@ -10,6 +10,7 @@ import UIKit
 class CreateCell: UICollectionViewCell {
     var createbutton : (()->())?
     
+    
     @IBAction func button_touchUpInside(_ sender: Any) {
         createbutton?()
     }
