@@ -11,10 +11,8 @@
 		2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079727C6032A0002FF39 /* SceneDelegate.swift */; };
 		2950079F27C6032B0002FF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2950079E27C6032B0002FF39 /* Assets.xcassets */; };
 		295007A227C6032B0002FF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295007A027C6032B0002FF39 /* LaunchScreen.storyboard */; };
-		2957690E27D7E6210080A5A5 /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957690D27D7E6210080A5A5 /* WkWebViewController.swift */; };
-		29AEA89527CB54ED0076FAEC /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA89427CB54ED0076FAEC /* LoginViewController2.swift */; };
-		29AEA89827CB56C70076FAEC /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 29AEA89727CB56C70076FAEC /* Swiftagram */; };
-		29AEA89A27CB56C70076FAEC /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 29AEA89927CB56C70076FAEC /* SwiftagramCrypto */; };
+		298FA1F127DD509900642857 /* EditUserDataStoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FA1F027DD509900642857 /* EditUserDataStoreAdapter.swift */; };
+		298FA1F327DD605C00642857 /* EditControllerNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FA1F227DD605C00642857 /* EditControllerNavigation.swift */; };
 		29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */; };
 		29CDCBDC27DB1A1700138DC0 /* CreateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */; };
 		29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */; };
@@ -53,8 +51,8 @@
 		2950079E27C6032B0002FF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295007A127C6032B0002FF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		295007A327C6032B0002FF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2957690D27D7E6210080A5A5 /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WkWebViewController.swift; path = ../../ReboundiOS/FeedUI/Controller/WkWebViewController.swift; sourceTree = "<group>"; };
-		29AEA89427CB54ED0076FAEC /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
+		298FA1F027DD509900642857 /* EditUserDataStoreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserDataStoreAdapter.swift; sourceTree = "<group>"; };
+		298FA1F227DD605C00642857 /* EditControllerNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditControllerNavigation.swift; sourceTree = "<group>"; };
 		29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewPresenterDataLoaderAdapter.swift; sourceTree = "<group>"; };
 		29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateComposer.swift; sourceTree = "<group>"; };
 		29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFlow.swift; sourceTree = "<group>"; };
@@ -74,11 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29AEA89A27CB56C70076FAEC /* SwiftagramCrypto in Frameworks */,
 				29ECBDC227C6060600AB92A2 /* ReboundiOS.framework in Frameworks */,
 				29ECBDC027C6060600AB92A2 /* Rebound.framework in Frameworks */,
 				EBB85CEF6B4C001E3DA22725 /* Pods_ReboundApp.framework in Frameworks */,
-				29AEA89827CB56C70076FAEC /* Swiftagram in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,23 +102,47 @@
 		2950079427C6032A0002FF39 /* ReboundApp */ = {
 			isa = PBXGroup;
 			children = (
+				298FA1F527DD613B00642857 /* Composer */,
+				298FA1F427DD612E00642857 /* Navigation */,
+				298FA1EF27DD500C00642857 /* Adapter */,
 				2950079527C6032A0002FF39 /* AppDelegate.swift */,
 				2950079727C6032A0002FF39 /* SceneDelegate.swift */,
-				29AEA89427CB54ED0076FAEC /* LoginViewController2.swift */,
-				29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */,
 				2950079E27C6032B0002FF39 /* Assets.xcassets */,
 				295007A027C6032B0002FF39 /* LaunchScreen.storyboard */,
 				295007A327C6032B0002FF39 /* Info.plist */,
-				29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */,
-				29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */,
-				29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */,
 				29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */,
-				29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */,
 				29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */,
-				2957690D27D7E6210080A5A5 /* WkWebViewController.swift */,
-				29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */,
 			);
 			path = ReboundApp;
+			sourceTree = "<group>";
+		};
+		298FA1EF27DD500C00642857 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */,
+				29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */,
+				29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */,
+				298FA1F027DD509900642857 /* EditUserDataStoreAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		298FA1F427DD612E00642857 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				298FA1F227DD605C00642857 /* EditControllerNavigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		298FA1F527DD613B00642857 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */,
+				29DBCAE827C83498008BF65C /* DetailedFeedComposer.swift */,
+				29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */,
+			);
+			path = Composer;
 			sourceTree = "<group>";
 		};
 		29ECBDBD27C6060600AB92A2 /* Frameworks */ = {
@@ -163,8 +183,6 @@
 			);
 			name = ReboundApp;
 			packageProductDependencies = (
-				29AEA89727CB56C70076FAEC /* Swiftagram */,
-				29AEA89927CB56C70076FAEC /* SwiftagramCrypto */,
 			);
 			productName = ReboundApp;
 			productReference = 2950079227C6032A0002FF39 /* ReboundApp.app */;
@@ -195,7 +213,6 @@
 			);
 			mainGroup = 2950078927C6032A0002FF39;
 			packageReferences = (
-				29AEA89627CB56C70076FAEC /* XCRemoteSwiftPackageReference "Swiftagram" */,
 			);
 			productRefGroup = 2950079327C6032A0002FF39 /* Products */;
 			projectDirPath = "";
@@ -252,12 +269,12 @@
 				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,
 				2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */,
 				29CDCBDC27DB1A1700138DC0 /* CreateComposer.swift in Sources */,
-				2957690E27D7E6210080A5A5 /* WkWebViewController.swift in Sources */,
+				298FA1F127DD509900642857 /* EditUserDataStoreAdapter.swift in Sources */,
 				29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */,
 				29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */,
 				29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */,
 				29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */,
-				29AEA89527CB54ED0076FAEC /* LoginViewController2.swift in Sources */,
+				298FA1F327DD605C00642857 /* EditControllerNavigation.swift in Sources */,
 				2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */,
 				29DBCAE927C83498008BF65C /* DetailedFeedComposer.swift in Sources */,
 			);
@@ -471,30 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		29AEA89627CB56C70076FAEC /* XCRemoteSwiftPackageReference "Swiftagram" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sbertix/Swiftagram.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		29AEA89727CB56C70076FAEC /* Swiftagram */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29AEA89627CB56C70076FAEC /* XCRemoteSwiftPackageReference "Swiftagram" */;
-			productName = Swiftagram;
-		};
-		29AEA89927CB56C70076FAEC /* SwiftagramCrypto */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29AEA89627CB56C70076FAEC /* XCRemoteSwiftPackageReference "Swiftagram" */;
-			productName = SwiftagramCrypto;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2950078A27C6032A0002FF39 /* Project object */;
 }

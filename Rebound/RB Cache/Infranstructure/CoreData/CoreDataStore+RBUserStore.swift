@@ -9,7 +9,10 @@ import Foundation
 import CoreData
 
 extension CoreDataStore: RBUserStore {
-    
+    public func deleteRBUser(rbUserId: String, completion: @escaping DeleteCompletion) {
+        deleteItem(objectId: rbUserId, completion: completion)
+    }
+
     public func retrieve(completion: @escaping RBUserStore.RetrieveCompletion) {
         perform { context in
             completion(Result {

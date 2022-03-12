@@ -19,7 +19,7 @@ public protocol RBUrlStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    // func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion)
+    func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion)
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.

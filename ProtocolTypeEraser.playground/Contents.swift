@@ -82,7 +82,7 @@ class E2 : Equatable {
 
 //var list : [Equatable]  = [E1, E2] compiler error
 
-print(l)
+
 
 
 

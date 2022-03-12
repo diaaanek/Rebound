@@ -20,15 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if UserDefaults.standard.data(forKey: "secret") == nil {
             rv.shouldShowLogin = {
-                let controller = LoginViewController2()
-                controller.completion = { secret in
-                    // Fetch the user.
-                    let data =  try! Secret.encoding(secret)
-                    let userDefaults = UserDefaults()
-                    userDefaults.set(data, forKey: "secret")
-                    userDefaults.synchronize()
-                }
-                rv.present(controller, animated: true, completion: nil)
+//                let controller = InstagramLoginController()
+//                controller.completion = { secret in
+//                    // Fetch the user.
+//                    let data =  try! Secret.encoding(secret)
+//                    let userDefaults = UserDefaults()
+//                    userDefaults.set(data, forKey: "secret")
+//                    userDefaults.synchronize()
+//                }
+//                rv.present(controller, animated: true, completion: nil)
             }
         }
         rv.navigateCreate = navigateToCreate
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     func navigateToCreate() {
-        let createController = CreateComposer().composeCreateViewController()
+        let createController = CreateComposer().composeCreateViewController(rbUser: nil)
         self.navigationController.pushViewController(createController, animated: true)
     }
     

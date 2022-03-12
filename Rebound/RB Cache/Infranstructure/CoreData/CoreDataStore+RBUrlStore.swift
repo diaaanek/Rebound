@@ -13,6 +13,10 @@ extension CoreDataStore: RBUrlStore {
     var entityName: String {
         return "ManagedRBUrl"
     }
+    public func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion) {
+        deleteItem(objectId: urlId, completion: completion)
+    }
+
     public func insert(rbUrl local: LocalRBUrl, userId: String, completion: @escaping (Result<LocalRBUrl, Error>) -> () ) {
         perform { [weak self] context in
             completion( Result {

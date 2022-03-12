@@ -9,8 +9,9 @@ import Foundation
 
 public protocol RBUserStore {
     typealias RetrieveCompletion = (Result<[LocalRBUser]?,Error>) -> ()
-    // typealias DeleteCompletion = (Result<Void,Error>) -> ()
-    
+    typealias DeleteCompletion = (Result<Void,Error>) -> ()
+    func deleteRBUser(rbUserId: String, completion: @escaping DeleteCompletion)
+
     // returns all users 
     func retrieve(completion:@escaping RetrieveCompletion)
 }

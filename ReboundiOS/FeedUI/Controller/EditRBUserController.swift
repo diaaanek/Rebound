@@ -9,9 +9,9 @@ import UIKit
 import Rebound
 
 public protocol EditRBUserDelegate {
-    func save(user: RBUser)
-    func deleteUser(user: RBUser)
-
+    func createdNewUser(name: String, urls: [String])
+    func editExistingUser(userId: String, name: String, urls:[String])
+    func deleteUser(userId: String?)
 }
 
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -20,8 +20,10 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         var urls = [String]()
     }
     @IBOutlet weak var tableView: UITableView!
-    var rbUser : RBUser?
     private var editUserModel = EditUser()
+    public var rbUser : RBUser?
+    public var delegate : EditRBUserDelegate?
+    public var validateUrl : ((String) -> Bool)?
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -39,24 +41,25 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         while editUserModel.urls.count < 4 {
             editUserModel.urls.append("")
         }
+        assert(validateUrl != nil)
     }
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         }
     }
-
+    
     @objc private func keyboardWillHide(notification: NSNotification) {
         tableView.contentInset = .zero
     }
-
+    
     // MARK: - Table view data source
-
+    
     public func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
-
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
@@ -64,13 +67,14 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         }
         return editUserModel.urls.count
     }
-
+    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RBUserEditCell", for: indexPath) as! RBUserEditCell
         cell.wkwebView.isHidden = true
         cell.textField.delegate = self
         cell.textField.returnKeyType = .done
+        
         if indexPath.section == 0 {
             cell.textField.placeholder = "Username"
             cell.textField.text = editUserModel.name
@@ -84,16 +88,18 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
                 cell.topLabel.text = "Required Photo #\(indexPath.row+1) Url"
             } else {
                 cell.topLabel.text = "Optional Photo #\(indexPath.row+1) Url"
-
+                
             }
             let urlString = editUserModel.urls[indexPath.row]
             cell.textField.text = urlString
-            if let url = URL(string:urlString) {
+            if let url = URL(string:urlString), urlString.validURL {
                 cell.wkwebView.isHidden = false
                 cell.wkwebView.load(URLRequest(url: url))
+            } else if (cell.textField.text ?? "").count > 0 {
+                cell.errorLabel.isHidden = false
             }
         }
-        cell.wkwebView.isUserInteractionEnabled = false
+        cell.wkwebView.isUserInteractionEnabled = true
         return cell
     }
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -105,21 +111,34 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
             editUserModel.name = textField.text ?? ""
         }
         if textField.tag > 0 {
-        let urlString = textField.text ?? ""
-        if let url = URL(string:urlString) {
-            editUserModel.urls[textField.tag-1] = urlString
-        } else {
-            editUserModel.urls[textField.tag-1] = ""
-        }
-            
+            let urlString = textField.text ?? ""
+            let cell = tableView.cellForRow(at: IndexPath(row: textField.tag-1, section: 1)) as! RBUserEditCell
+            if let url = URL(string:urlString), let stringValidation = validateUrl, stringValidation(urlString) {
+                cell.wkwebView.isHidden = false
+                cell.wkwebView.load(URLRequest(url: url))
+                editUserModel.urls[textField.tag-1] = urlString
+            } else if (cell.textField.text ?? "").count > 0 {
+                editUserModel.urls[textField.tag-1] = ""
+                cell.errorLabel.isHidden = false
+            }
         }
         tableView.reloadData()
     }
-
+    
     @IBAction func deletedButtonSelected(_ sender: Any) {
-        
+        if let rbUser = rbUser {
+            delegate?.deleteUser(userId: rbUser.userId)
+        } else {
+            delegate?.deleteUser(userId: nil)
+        }
     }
+    
     @IBAction func saveButtonSelected(_ sender: Any) {
+        if let rbUser = rbUser {
+            delegate?.editExistingUser(userId: rbUser.userId, name: editUserModel.name, urls: editUserModel.urls)
+        } else {
+            delegate?.createdNewUser(name: editUserModel.name, urls: editUserModel.urls)
+        }
         
     }
 }

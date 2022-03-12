@@ -13,6 +13,7 @@ class RBUserEditCell: UITableViewCell {
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var wkwebView: WKWebView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
