@@ -15,7 +15,8 @@ public protocol EditItemControllerDelegate: NSObject {
 public class EditItemController:NSObject, EditView {
     weak var delegate : EditItemControllerDelegate?
     var cell : RBUserEditCell?
-    var displayText : String?
+    var displayText : String = ""
+    var errorMessage : String = ""
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
@@ -30,16 +31,21 @@ public class EditItemController:NSObject, EditView {
     
     public func display(modelView: EditItemModelView) {
         if let cell = cell {
-            if modelView.isError {
+            if let errorMessage = modelView.errorMessage, modelView.isError {
                 cell.errorLabel.isHidden = false
                 cell.wkwebView.isHidden = true
-                cell.errorLabel.text = modelView.errorMessage
+                self.errorMessage = errorMessage
+                cell.errorLabel.text = errorMessage
+                displayText = ""
+                webUrl = nil
             } else if let url = modelView.url {
-                cell.textField.text = modelView.displayText
+                displayText = modelView.displayText
+                webUrl = url
                 cell.errorLabel.isHidden = true
                 cell.wkwebView.isHidden = false
                 cell.wkwebView.load(URLRequest(url: url))
             }
+            cell.textField.text = modelView.displayText
         }
     }
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
