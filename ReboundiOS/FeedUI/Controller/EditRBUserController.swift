@@ -13,12 +13,12 @@ public protocol EditRBUserDelegate {
     func editExistingUser(userId: String, name: String, urls:[String])
     func deleteUser(userId: String?)
 }
-
+struct EditUser {
+   var name = ""
+   var urls = [String]()
+}
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    private struct EditUser {
-        var name = ""
-        var urls = [String]()
-    }
+    public var modelViews = [EditItemController]()
     @IBOutlet weak var tableView: UITableView!
     private var editUserModel = EditUser()
     public var rbUser : RBUser?
@@ -57,15 +57,13 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 0 {
-            return 1
-        }
-        return editUserModel.urls.count
+  
+        return modelViews.count
     }
     
     

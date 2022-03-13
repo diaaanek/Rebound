@@ -13,6 +13,8 @@
 		2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958258627DD668B00AC65BF /* InstagramLoginController.swift */; };
 		2958258A27DD66D800AC65BF /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 2958258927DD66D800AC65BF /* Swiftagram */; };
 		2958258C27DD66D800AC65BF /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 2958258B27DD66D800AC65BF /* SwiftagramCrypto */; };
+		2958259127DDA3FB00AC65BF /* EditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958259027DDA3FB00AC65BF /* EditPresenter.swift */; };
+		2958259327DDA45A00AC65BF /* EditItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958259227DDA45A00AC65BF /* EditItemController.swift */; };
 		29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 29751BDA27C5683A00E97E16 /* ReboundiOS.docc */; };
 		29751BE127C5683B00E97E16 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29751BD727C5683A00E97E16 /* ReboundiOS.framework */; };
 		29751BE827C5683B00E97E16 /* ReboundiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751BE727C5683B00E97E16 /* ReboundiOSTests.swift */; };
@@ -113,6 +115,8 @@
 		295007A927C604E50002FF39 /* ReboundApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReboundApp.xcodeproj; path = ReboundApp/ReboundApp.xcodeproj; sourceTree = "<group>"; };
 		2957690F27D7F8900080A5A5 /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewController.swift; sourceTree = "<group>"; };
 		2958258627DD668B00AC65BF /* InstagramLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLoginController.swift; sourceTree = "<group>"; };
+		2958259027DDA3FB00AC65BF /* EditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresenter.swift; sourceTree = "<group>"; };
+		2958259227DDA45A00AC65BF /* EditItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemController.swift; sourceTree = "<group>"; };
 		29751BC827C4680B00E97E16 /* XCTest+RBUrlStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+RBUrlStoreSpec.swift"; sourceTree = "<group>"; };
 		29751BCB27C46A4100E97E16 /* CoreDataRBUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRBUrlTest.swift; sourceTree = "<group>"; };
 		29751BD027C567C100E97E16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				29751C3C27C57E7800E97E16 /* RBUrlPresenter.swift */,
 				29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */,
 				29751C3B27C5774300E97E16 /* Rebound.strings */,
+				2958259027DDA3FB00AC65BF /* EditPresenter.swift */,
 			);
 			path = "RB Presentation";
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				29CDCBD327DAF55A00138DC0 /* SearchController.swift */,
 				29CDCBD527DAF91800138DC0 /* SearchResultController.swift */,
 				29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */,
+				2958259227DDA45A00AC65BF /* EditItemController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */,
 				29CDCBD427DAF55A00138DC0 /* SearchController.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
+				2958259327DDA45A00AC65BF /* EditItemController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2958259127DDA3FB00AC65BF /* EditPresenter.swift in Sources */,
 				29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */,
 				29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */,
 				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
