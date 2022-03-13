@@ -14,8 +14,8 @@ public protocol EditRBUserDelegate {
     func deleteUser(userId: String?)
 }
 struct EditUser {
-   var name = ""
-   var urls = [String]()
+    var name = ""
+    var urls = [String]()
 }
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     public var modelViews = [EditItemController]()
@@ -31,13 +31,13 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //EditUser
-//        if let rb = rbUser {
-//            editUserModel.name = rb.userName
-//            editUserModel.urls = rb.urls.map({ url in
-//                return url.url
-//            })
-//        }
-       
+        //        if let rb = rbUser {
+        //            editUserModel.name = rb.userName
+        //            editUserModel.urls = rb.urls.map({ url in
+        //                return url.url
+        //            })
+        //        }
+        
         assert(validateUrl != nil)
     }
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -58,28 +58,26 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-  
         return modelViews.count
     }
-    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let modelView = modelViews[indexPath.row]
         return modelView.dequeue(tableView: tableView, indexPath: indexPath)
-        }
+    }
     
     @IBAction func deletedButtonSelected(_ sender: Any) {
         delegate?.deleteUser(userId: rbUser?.userId)
     }
     
     @IBAction func saveButtonSelected(_ sender: Any) {
-        if let firstItem = modelViews.first, let name = firstItem.displayText {
+        if let firstItem = modelViews.first {
+            let name = firstItem.displayText
             let urlStrings : [String] = modelViews.compactMap({ item in
-                guard let displyText = item.displayText else {
+                if item.displayText.count == 0 {
                     return nil
                 }
-                return displyText
+                return item.displayText
             })
             if let rbUser = rbUser {
                 delegate?.editExistingUser(userId: rbUser.userId, name: name, urls: urlStrings)
