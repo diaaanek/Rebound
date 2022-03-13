@@ -14,10 +14,14 @@ class EditControllerNavigation {
         self.navigationController = navigationController
     }
     func navigateToSuccessSave() {
-        self.navigationController.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.navigationController.dismiss(animated: true, completion: nil)
+        }
     }
     func navigateToSuccessDelete() {
+        DispatchQueue.main.async {
         self.navigationController.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

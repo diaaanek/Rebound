@@ -12,7 +12,7 @@ import UIKit
 import CoreData
 class MainFeedComposer {
     
-    func makeMainFeedController() -> MainViewController {
+    func makeMainFeedController(mainNavigationFlow: MainNavigationFlow) -> MainViewController {
         let bundle = Bundle(for: MainViewController.self)
         
         let storyBoard = UIStoryboard(name: "Main", bundle: bundle)
@@ -28,6 +28,12 @@ class MainFeedComposer {
 //        cache.insert(rbUrl: list, user: user, timestamp: Date()) { result in
 //
 //        }
+        mainViewController.cellSelected = { user in
+            mainNavigationFlow.navigateToCreate(rbUser: user)
+        }
+        mainViewController.navigateCreate = {
+            mainNavigationFlow.navigateToCreate(rbUser: nil)
+        }
         let searchDisplayController = SearchResultController()
         let searchBarController = SearchController(searchDisplayController, resultUpdate: searchDisplayController)
         searchBarController.searchBar.placeholder = "Username"

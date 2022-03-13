@@ -11,17 +11,22 @@ import Rebound
 class EditUserDataStoreAdapter : EditRBUserDelegate {
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
-    
-    init(rbUserStore: RBUserStore, rbUrlStore: RBUrlStore) {
+    let editNavigation : EditControllerNavigation
+    init(rbUserStore: RBUserStore, rbUrlStore: RBUrlStore, editNav: EditControllerNavigation) {
         self.rbUserStore = rbUserStore
         self.rbUrlStore = rbUrlStore
+        self.editNavigation = editNav
     }
     
     func createdNewUser(name: String, urls: [String]) {
         self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
             LocalRBUrl(urlId: "", isPrimary: true, createdDate: Date(), url: urlString, state: 0)
-        }), user: LocalRBUser(userId: "", userName: name, createdDate: Date()), timestamp: Date()) { result in
-            
+        }), user: LocalRBUser(userId: "", userName: name, createdDate: Date()), timestamp: Date()) { [weak self] result in
+            switch result {
+            case .failure(_): break
+            case .success(_):
+                self?.editNavigation.navigateToSuccessSave()
+            }
         }
     }
     
@@ -31,9 +36,11 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     
     func deleteUser(userId: String?) {
         if let userId = userId {
-            self.rbUserStore.deleteRBUser(rbUserId: userId) { result in
-                
+            self.rbUserStore.deleteRBUser(rbUserId: userId) {[weak self] result in
+                self?.editNavigation.navigateToSuccessDelete()
             }
+        } else {
+            self.editNavigation.navigateToSuccessDelete()
         }
     }
     

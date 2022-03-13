@@ -33,18 +33,19 @@
                                                     <rect key="frame" x="8" y="8" width="398" height="21.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="username username username username username username username username username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYx-nO-83q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="323" height="21.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="258" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-XP-G6i">
-                                                            <rect key="frame" x="323" y="0.0" width="75" height="21.5"/>
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="258" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-XP-G6i">
+                                                            <rect key="frame" x="360.5" y="0.0" width="37.5" height="21.5"/>
                                                             <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                                 <attributedString key="attributedTitle">
-                                                                    <fragment content="View Details">
+                                                                    <fragment content="Edit">
                                                                         <attributes>
                                                                             <font key="NSFont" size="10" name="Helvetica"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>

@@ -92,12 +92,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
             }
             let urlString = editUserModel.urls[indexPath.row]
             cell.textField.text = urlString
-            if let url = URL(string:urlString), urlString.validURL {
-                cell.wkwebView.isHidden = false
-                cell.wkwebView.load(URLRequest(url: url))
-            } else if (cell.textField.text ?? "").count > 0 {
-                cell.errorLabel.isHidden = false
-            }
+           
         }
         cell.wkwebView.isUserInteractionEnabled = true
         return cell
@@ -137,7 +132,9 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         if let rbUser = rbUser {
             delegate?.editExistingUser(userId: rbUser.userId, name: editUserModel.name, urls: editUserModel.urls)
         } else {
-            delegate?.createdNewUser(name: editUserModel.name, urls: editUserModel.urls)
+            delegate?.createdNewUser(name: editUserModel.name, urls: editUserModel.urls.filter({ url in
+                url.count>0
+            }))
         }
         
     }

@@ -20,7 +20,7 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     var noUpdates = [MainItemController]()
     public var sectionHeader1 : String!
     public var sectionHeader2 : String!
-    var cellSelected : ((RBUser) -> ())?
+    public var cellSelected : ((RBUser) -> ())?
     public var navigateAccount : (()->())?
     public var navigateCreate : (()->())?
     public var shouldShowLogin : (() -> ())? // delete later
@@ -39,6 +39,7 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         configureDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = setupLayout()
+        collectionView.delegate = self
         self.title = "Rebound"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
@@ -142,5 +143,14 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     
     public func displayError(errorModelView: ErrorModelView) {
         print("No Error")
+    }
+}
+extension MainViewController : UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row < recentUpdates.count {
+            cellSelected?(recentUpdates[indexPath.row].user)
+        } else if indexPath.section == 2 {
+            cellSelected?(noUpdates[indexPath.row].user)
+        }
     }
 }

@@ -11,9 +11,9 @@ import Swiftagram
 import ComposableStorageCrypto
 
 /// A `class` defining a view controller capable of displaying the authentication web view.
-class InstagramLoginController: UIViewController {
+public class InstagramLoginController: UIViewController {
     /// The completion handler.
-    var completion: ((Secret) -> Void)? {
+    public var completion: ((Secret) -> Void)? {
         didSet {
             guard oldValue == nil, let completion = completion else { return }
             // Authenticate.

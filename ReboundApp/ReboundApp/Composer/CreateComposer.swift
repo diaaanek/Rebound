@@ -12,12 +12,13 @@ import Rebound
 
 class CreateComposer {
     
-    func composeCreateViewController(rbUser: RBUser?)  -> EditRBUserController {
+    func composeCreateViewController(rbUser: RBUser?, coreDataStore: CoreDataStore, navigationController: UINavigationController)  -> EditRBUserController {
         let bundle = Bundle(for: MainViewController.self)
         let storyBoard = UIStoryboard(name: "Main", bundle: bundle)
 
         let editRBUserController = storyBoard.instantiateViewController(withIdentifier: "EditRBUserController") as! EditRBUserController
         editRBUserController.rbUser = rbUser
+        editRBUserController.delegate = EditUserDataStoreAdapter(rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
         editRBUserController.validateUrl = { stringUrl in
             return true
         }
