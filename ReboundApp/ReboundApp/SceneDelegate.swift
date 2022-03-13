@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     lazy var path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
     lazy var cache = try! CoreDataStore(storeURL: path.appendingPathComponent("test.sqlite"))
 
-
     var window: UIWindow?
     var bin: Set<AnyCancellable> = []
     @Published private(set) var current: User?
@@ -22,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        var mainNavigationFlow = MainNavigationFlow(detailFeedComposer: DetailedFeedComposer(), coreDateCache: cache)
-        let rv = MainFeedComposer().makeMainFeedController(mainNavigationFlow: mainNavigationFlow)
+        let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
+        let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
 
         if UserDefaults.standard.data(forKey: "secret") == nil {
             rv.shouldShowLogin = {
@@ -42,10 +41,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-    }
-    func navigateToCreate() {
-        let createController = CreateComposer().composeCreateViewController(rbUser: nil, coreDataStore: cache, navigationController: self.navigationController)
-        self.navigationController.pushViewController(createController, animated: true)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

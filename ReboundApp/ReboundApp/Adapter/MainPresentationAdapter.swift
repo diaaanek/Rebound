@@ -13,8 +13,10 @@ class MainPresenationAdapter:  MainView {
     
     public weak var controller : MainViewController?
     let lastOpenedDate: Date
-    init(lastOpenedDate: Date) {
+    let mainNavigationFlow : MainNavigationFlow
+    init(lastOpenedDate: Date, mainNavigation: MainNavigationFlow) {
         self.lastOpenedDate = lastOpenedDate
+        self.mainNavigationFlow = mainNavigation
     }
     
     func display(mainModelView: MainModelView) {
@@ -26,6 +28,7 @@ class MainPresenationAdapter:  MainView {
         return users.map { user in
             let wkLoaderAdapter = WKViewPresenterDataLoaderAdapter()
             let mainItemController = MainItemController(delegate: wkLoaderAdapter, model: user)
+            mainItemController.navigationDelegate = mainNavigationFlow
             return mainItemController
         }
     }

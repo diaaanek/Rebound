@@ -12,22 +12,12 @@ import UIKit
 import CoreData
 class MainFeedComposer {
     
-    func makeMainFeedController(mainNavigationFlow: MainNavigationFlow) -> MainViewController {
+    func makeMainFeedController(cache: CoreDataStore, mainNavigationFlow: MainNavigationFlow) -> MainViewController {
         let bundle = Bundle(for: MainViewController.self)
         
         let storyBoard = UIStoryboard(name: "Main", bundle: bundle)
         let mainViewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         
-        var path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        path = path.appendingPathComponent("test.sqlite")
-        let cache = try! CoreDataStore(storeURL: path)
-        
-        let list = [LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/itsEthanKeiser/", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0),LocalRBUrl(urlId:"2", isPrimary: true, createdDate: Date(), url: "https://www.instagram.com/p/CaFbcwbl0Oz/?utm_source=ig_web_copy_link", state: 0)]
-        var user = LocalRBUser(userId:"2", userName: "diannnek", createdDate: Date())
-        user.urls = list
-//        cache.insert(rbUrl: list, user: user, timestamp: Date()) { result in
-//
-//        }
         mainViewController.cellSelected = { user in
             mainNavigationFlow.navigateToCreate(rbUser: user)
         }
@@ -43,7 +33,7 @@ class MainFeedComposer {
         let loaderAdapter =  MainLoaderPresentationAdapter(cache:cache)
         mainViewController.delegate = loaderAdapter
         
-        let adapter = MainPresenationAdapter(lastOpenedDate: Date())
+        let adapter = MainPresenationAdapter(lastOpenedDate: Date(), mainNavigation: mainNavigationFlow)
         let mainFeedPresenter = MainFeedPresenter(loadingView: WeakVirtualProxy(mainViewController), errorView: WeakVirtualProxy(mainViewController), mainView: adapter)
         adapter.controller = mainViewController
         loaderAdapter.presenter = mainFeedPresenter

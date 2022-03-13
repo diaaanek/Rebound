@@ -13,7 +13,7 @@ public protocol MainItemDelegate {
     func loadItems() // load cell items
 }
 public protocol MainNavigationItemDelegate {
-    func didSelectItem(rbUser: RBUser)
+    func navigateToCreate(rbUser: RBUser?)
 }
 public protocol CellController: Hashable {
     func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
@@ -86,7 +86,7 @@ public class MainItemController: CellController  {
     private func display() {
         mainCell?.topLeftLabel.text = user.userName
         mainCell?.topRightButtonSelected = { [weak self] in
-            self?.navigationDelegate?.didSelectItem(rbUser: self!.user)
+            self?.navigationDelegate?.navigateToCreate(rbUser: self!.user)
         }
         mainCell?.urlCollectionView.collectionViewLayout = configureLayout()
         configureDataSource(collectionView: mainCell!.urlCollectionView)

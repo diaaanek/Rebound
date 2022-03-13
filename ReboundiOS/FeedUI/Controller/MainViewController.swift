@@ -39,10 +39,13 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         configureDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = setupLayout()
-        collectionView.delegate = self
+        //collectionView.delegate = self
         self.title = "Rebound"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
+        refreshData()
+    }
+    public func refreshData() {
         delegate?.didRefreshData()
     }
     @objc func navigateToAccount() {
@@ -90,7 +93,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
             } else if indexPath.section == 1 {
                 if self.recentUpdates.count == 0 {
                     return EmptyCellController().dequeue(collectionView: collectionView, indexPath: indexPath)
-
                 }
                 return self.recentUpdates[indexPath.row%recentUpdates.count].dequeue(collectionView: collectionView, indexPath: indexPath)
             } else if indexPath.section == 2 {
@@ -145,12 +147,12 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         print("No Error")
     }
 }
-extension MainViewController : UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row < recentUpdates.count {
-            cellSelected?(recentUpdates[indexPath.row].user)
-        } else if indexPath.section == 2 {
-            cellSelected?(noUpdates[indexPath.row].user)
-        }
-    }
-}
+//extension MainViewController : UICollectionViewDelegate {
+//    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.section == 1 && indexPath.row < recentUpdates.count {
+//            cellSelected?(recentUpdates[indexPath.row].user)
+//        } else if indexPath.section == 2 {
+//            cellSelected?(noUpdates[indexPath.row].user)
+//        }
+//    }
+//}
