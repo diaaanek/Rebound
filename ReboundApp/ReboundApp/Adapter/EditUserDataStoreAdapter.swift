@@ -12,6 +12,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
     let editNavigation : EditControllerNavigation
+    var refreshData : (()->())?
     init(rbUserStore: RBUserStore, rbUrlStore: RBUrlStore, editNav: EditControllerNavigation) {
         self.rbUserStore = rbUserStore
         self.rbUrlStore = rbUrlStore
@@ -25,6 +26,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
             switch result {
             case .failure(_): break
             case .success(_):
+                self?.refreshData?()
                 self?.editNavigation.navigateToSuccessSave()
             }
         }
@@ -37,6 +39,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     func deleteUser(userId: String?) {
         if let userId = userId {
             self.rbUserStore.deleteRBUser(rbUserId: userId) {[weak self] result in
+                self?.refreshData?()
                 self?.editNavigation.navigateToSuccessDelete()
             }
         } else {
