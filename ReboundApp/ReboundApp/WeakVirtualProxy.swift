@@ -29,6 +29,12 @@ extension WeakVirtualProxy: ErrorView where T: ErrorView {
         object?.displayError(errorModelView: errorModelView)
     }
 }
+extension WeakVirtualProxy: EditView where T: EditView {
+    func display(modelView: EditItemModelView) {
+        object?.display(modelView: modelView)
+    }
+    
+}
 
 
 

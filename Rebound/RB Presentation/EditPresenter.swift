@@ -12,6 +12,7 @@ public struct EditItemModelView {
     public  let url: URL?
     public let isError: Bool
     public let errorMessage: String?
+    public let wkWebViewHidden : Bool
 }
 
 public protocol EditView {
@@ -19,14 +20,12 @@ public protocol EditView {
 }
 public class EditPresenter {
     
-    let editView : EditView
-    public init(editView: EditView) {
-        self.editView = editView
-    }
+   public var editView : EditView? = nil
+    public init(){}
     public func showValidInput(displayText: String, url: URL) {
-        self.editView.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: nil))
+        self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: nil, wkWebViewHidden: false))
     }
     public func showError(errorMessage: String) {
-        self.editView.display(modelView: EditItemModelView(displayText: "", url: nil, isError: true, errorMessage: errorMessage))
+        self.editView?.display(modelView: EditItemModelView(displayText: "", url: nil, isError: true, errorMessage: errorMessage, wkWebViewHidden: true))
     }
 }

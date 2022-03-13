@@ -13,48 +13,51 @@ public protocol EditItemControllerDelegate: NSObject {
     func validate(string: String)
 }
 public class EditItemController:NSObject, EditView {
-    weak var delegate : EditItemControllerDelegate?
+    var delegate : EditItemControllerDelegate?
     var cell : RBUserEditCell?
     var displayText : String = ""
     var errorMessage : String = ""
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
-    var validateUrl : Bool
-    init(validateUrl: Bool, topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "") {
+    var hideErrorMessage : Bool = true
+    public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
         self.topLabelText = topLabelText
         self.placeHolder = placeHolder
-        self.validateUrl = validateUrl
+        self.delegate = delegate
     }
     
     public func display(modelView: EditItemModelView) {
         if let cell = cell {
             if let errorMessage = modelView.errorMessage, modelView.isError {
-                cell.errorLabel.isHidden = false
-                cell.wkwebView.isHidden = true
+                hideErrorMessage = false
                 self.errorMessage = errorMessage
-                cell.errorLabel.text = errorMessage
                 displayText = ""
                 webUrl = nil
             } else if let url = modelView.url {
                 displayText = modelView.displayText
                 webUrl = url
-                cell.errorLabel.isHidden = true
-                cell.wkwebView.isHidden = false
+                hideErrorMessage = true
                 cell.wkwebView.load(URLRequest(url: url))
             }
+            cell.errorLabel.text = errorMessage
+            cell.wkwebView.isHidden = modelView.wkWebViewHidden
+            cell.errorLabel.isHidden = hideErrorMessage
             cell.textField.text = modelView.displayText
         }
     }
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RBUserEditCell", for: indexPath) as! RBUserEditCell
+        self.cell = cell
         cell.textField.delegate = self
         cell.textField.returnKeyType = .done
         cell.textField.placeholder = self.placeHolder
         cell.textField.text = self.displayText
         cell.topLabel.text = self.topLabelText
+        cell.wkwebView.isHidden = true
+        cell.errorLabel.isHidden = !(errorMessage.count > 0)
         if let webUrl = webUrl {
             cell.wkwebView.isHidden = false
             cell.wkwebView.load(URLRequest(url: webUrl))

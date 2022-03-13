@@ -31,12 +31,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //EditUser
-        //        if let rb = rbUser {
-        //            editUserModel.name = rb.userName
-        //            editUserModel.urls = rb.urls.map({ url in
-        //                return url.url
-        //            })
-        //        }
+     
         
         assert(validateUrl != nil)
     }
