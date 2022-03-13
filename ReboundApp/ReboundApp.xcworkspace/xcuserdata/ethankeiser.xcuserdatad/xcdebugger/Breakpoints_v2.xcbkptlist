@@ -733,9 +733,9 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditRBUserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "keyboardWillShow(notification:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "keyboardWillHide(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -749,9 +749,9 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditRBUserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "keyboardWillShow(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -813,8 +813,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -855,7 +855,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B8488ADD-EC64-4017-A204-332C8099787A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/RB Presentation/EditPresenter.swift"
@@ -883,7 +883,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3A3E9ADD-8695-49EE-B506-C61CE3D3A0B1 - dea034529ed4597"
+                  uuid = "3A3E9ADD-8695-49EE-B506-C61CE3D3A0B1 - dea034529ed45b6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -893,12 +893,12 @@
                   urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/EditItemController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "281">
                </Location>
                <Location
-                  uuid = "3A3E9ADD-8695-49EE-B506-C61CE3D3A0B1 - dea034529ed4597"
+                  uuid = "3A3E9ADD-8695-49EE-B506-C61CE3D3A0B1 - dea034529ed45b6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -908,8 +908,8 @@
                   urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/EditItemController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "317">
                </Location>
             </Locations>
@@ -919,7 +919,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5DF2676B-665F-4B1D-A603-A0C81BD4312B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
@@ -928,6 +928,70 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "display(modelView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BDA63F8-FBC2-471A-834E-EA9C7ED04BE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "display(modelView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63275A37-6F1D-4063-AAC9-B9A56523E372"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "display(modelView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "626526E5-7E5D-46E4-B78B-881C1394F07D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "dequeue(tableView:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12D45FDE-0E80-4B7F-9010-65E80A6A6959"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "dequeue(tableView:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

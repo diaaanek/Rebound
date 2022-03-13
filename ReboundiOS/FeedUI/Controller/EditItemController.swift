@@ -36,6 +36,7 @@ public class EditItemController:NSObject, EditView {
                 self.errorMessage = errorMessage
                 displayText = ""
                 webUrl = nil
+
             } else if let url = modelView.url {
                 displayText = modelView.displayText
                 webUrl = url
@@ -46,6 +47,7 @@ public class EditItemController:NSObject, EditView {
             cell.wkwebView.isHidden = modelView.wkWebViewHidden
             cell.errorLabel.isHidden = hideErrorMessage
             cell.textField.text = modelView.displayText
+
         }
     }
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {

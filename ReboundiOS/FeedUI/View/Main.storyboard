@@ -211,45 +211,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-AJ-v5U">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="335" estimatedRowHeight="498" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-AJ-v5U">
                                 <rect key="frame" x="0.0" y="44" width="414" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RBUserEditCell" rowHeight="535" id="r0x-4A-Tyo" customClass="RBUserEditCell" customModule="ReboundiOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="535"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RBUserEditCell" rowHeight="335" id="r0x-4A-Tyo" customClass="RBUserEditCell" customModule="ReboundiOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="335"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r0x-4A-Tyo" id="fjf-RC-sYT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="535"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-zW-XNV">
-                                                    <rect key="frame" x="20" y="11" width="374" height="513"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-zW-XNV">
+                                                    <rect key="frame" x="20" y="11" width="374" height="313"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ios-tA-qf6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <wkWebView contentMode="scaleAspectFit" horizontalHuggingPriority="999" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
-                                                            <rect key="frame" x="0.0" y="24" width="374" height="431"/>
+                                                        <wkWebView contentMode="scaleAspectFit" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="248"/>
                                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="374" id="Ef5-8M-6H9"/>
-                                                                <constraint firstAttribute="height" constant="431" id="dWl-5d-BJB"/>
-                                                            </constraints>
                                                             <wkWebViewConfiguration key="configuration">
                                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                                 <wkPreferences key="preferences"/>
                                                             </wkWebViewConfiguration>
                                                         </wkWebView>
-                                                        <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo #1 Url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
-                                                            <rect key="frame" x="0.0" y="462" width="374" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ios-tA-qf6">
+                                                            <rect key="frame" x="0.0" y="255" width="374" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo #1 Url" minimumFontSize="14" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
+                                                            <rect key="frame" x="0.0" y="279" width="374" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Must be a valid link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-FX-KKB">
-                                                            <rect key="frame" x="0.0" y="503" width="374" height="10"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="1000" text="Must be a valid link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-FX-KKB">
+                                                            <rect key="frame" x="0.0" y="313" width="374" height="10"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                             <nil key="highlightedColor"/>
@@ -258,11 +254,10 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="centerX" secondItem="fjf-RC-sYT" secondAttribute="centerX" id="HfC-ya-DpR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="AJY-zW-XNV" secondAttribute="bottom" id="cCI-iQ-0l2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="AJY-zW-XNV" secondAttribute="trailing" id="jyG-rd-WPa"/>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="leading" secondItem="fjf-RC-sYT" secondAttribute="leadingMargin" id="ofn-1Q-cqi"/>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="top" secondItem="fjf-RC-sYT" secondAttribute="topMargin" id="uxt-fR-iRW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AJY-zW-XNV" secondAttribute="bottom" id="088-uO-MbM"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="trailing" secondItem="fjf-RC-sYT" secondAttribute="trailingMargin" id="ABy-y5-RKX"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="top" secondItem="fjf-RC-sYT" secondAttribute="topMargin" id="Em6-E1-hi5"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="leading" secondItem="fjf-RC-sYT" secondAttribute="leadingMargin" id="JIG-07-15y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
