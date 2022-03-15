@@ -17,7 +17,7 @@ extension CoreDataStore: RBUserStore {
         perform { context in
             completion(Result {
                 let request = NSFetchRequest<ManagedRBUser>(entityName: "ManagedRBUser")
-                request.predicate = NSPredicate(format:"self IN urls")
+               // request.predicate = NSPredicate(format:"self IN urls")
                 //request.returnsObjectsAsFaults = false
                 let result = try context.fetch(request)
                 

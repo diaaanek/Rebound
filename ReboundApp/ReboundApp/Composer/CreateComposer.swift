@@ -33,9 +33,14 @@ class CreateComposer {
             itemControllers.append(EditItemController(topLabelText: "Name", url: nil, placeHolder: "username", delegate: nil))
             for _ in 0..<4 {
                 let presenter = EditPresenter()
-                let editItem = EditItemController(topLabelText: "Photo Url", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditValidationPresenterAdapter(presenter: presenter))
+                let controller = EditItemController(topLabelText: "Photo Url", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditValidationPresenterAdapter(presenter: presenter))
+                let editItem = controller
                   presenter.editView = WeakVirtualProxy(editItem)
+                editItem.refresh = {
+                    editRBUserController.tableView.reloadData()
+                }
                 itemControllers.append(editItem)
+                
             }
         }
         editRBUserController.modelViews = itemControllers

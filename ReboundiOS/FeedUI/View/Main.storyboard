@@ -211,53 +211,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="335" estimatedRowHeight="498" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-AJ-v5U">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="406" estimatedRowHeight="498" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-AJ-v5U">
                                 <rect key="frame" x="0.0" y="44" width="414" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RBUserEditCell" rowHeight="335" id="r0x-4A-Tyo" customClass="RBUserEditCell" customModule="ReboundiOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="335"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RBUserEditCell" rowHeight="406" id="r0x-4A-Tyo" customClass="RBUserEditCell" customModule="ReboundiOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="406"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r0x-4A-Tyo" id="fjf-RC-sYT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="406"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-zW-XNV">
-                                                    <rect key="frame" x="20" y="11" width="374" height="313"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-zW-XNV">
+                                                    <rect key="frame" x="20" y="11" width="374" height="384"/>
                                                     <subviews>
-                                                        <wkWebView contentMode="scaleAspectFit" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="248"/>
+                                                        <wkWebView contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gat-py-34u">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="319"/>
                                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="gat-py-34u" secondAttribute="height" multiplier="34:29" id="6De-rP-cR1"/>
+                                                            </constraints>
                                                             <wkWebViewConfiguration key="configuration">
                                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                                 <wkPreferences key="preferences"/>
                                                             </wkWebViewConfiguration>
                                                         </wkWebView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ios-tA-qf6">
-                                                            <rect key="frame" x="0.0" y="255" width="374" height="17"/>
+                                                            <rect key="frame" x="0.0" y="326" width="374" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo #1 Url" minimumFontSize="14" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
-                                                            <rect key="frame" x="0.0" y="279" width="374" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ij" borderStyle="roundedRect" placeholder="Photo #1 Url" minimumFontSize="14" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8C9-2B-3mP">
+                                                            <rect key="frame" x="0.0" y="350" width="374" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="1000" text="Must be a valid link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-FX-KKB">
-                                                            <rect key="frame" x="0.0" y="313" width="374" height="10"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Must be a valid link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-FX-KKB">
+                                                            <rect key="frame" x="0.0" y="384" width="374" height="10"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="8C9-2B-3mP" firstAttribute="height" secondItem="ios-tA-qf6" secondAttribute="height" constant="17" id="WGr-gN-bv0"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="AJY-zW-XNV" secondAttribute="bottom" id="088-uO-MbM"/>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="trailing" secondItem="fjf-RC-sYT" secondAttribute="trailingMargin" id="ABy-y5-RKX"/>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="top" secondItem="fjf-RC-sYT" secondAttribute="topMargin" id="Em6-E1-hi5"/>
-                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="leading" secondItem="fjf-RC-sYT" secondAttribute="leadingMargin" id="JIG-07-15y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AJY-zW-XNV" secondAttribute="trailing" id="1aL-a9-3PJ"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="leading" secondItem="fjf-RC-sYT" secondAttribute="leadingMargin" id="Ae7-Re-Shz"/>
+                                                <constraint firstItem="AJY-zW-XNV" firstAttribute="top" secondItem="fjf-RC-sYT" secondAttribute="topMargin" id="FGN-CG-e1A"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AJY-zW-XNV" secondAttribute="bottom" id="bdO-Dx-F9W"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -294,13 +300,13 @@
                         <viewLayoutGuide key="safeArea" id="hPx-Zc-Lf2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cXb-AJ-v5U" firstAttribute="top" secondItem="kSf-50-kLI" secondAttribute="topMargin" id="9ke-jT-cWE"/>
-                            <constraint firstItem="cXb-AJ-v5U" firstAttribute="leading" secondItem="hPx-Zc-Lf2" secondAttribute="leading" id="F4X-YW-gPW"/>
-                            <constraint firstItem="Xyp-Zi-NDj" firstAttribute="top" secondItem="cXb-AJ-v5U" secondAttribute="bottom" constant="8" id="Rj3-0d-a0d"/>
-                            <constraint firstItem="hPx-Zc-Lf2" firstAttribute="trailing" secondItem="Xyp-Zi-NDj" secondAttribute="trailing" constant="8" id="Wyz-3w-OsU"/>
-                            <constraint firstItem="hPx-Zc-Lf2" firstAttribute="bottom" secondItem="Xyp-Zi-NDj" secondAttribute="bottom" id="ehZ-UE-QCd"/>
-                            <constraint firstItem="Xyp-Zi-NDj" firstAttribute="leading" secondItem="hPx-Zc-Lf2" secondAttribute="leading" constant="8" id="iX4-VJ-5VH"/>
-                            <constraint firstItem="hPx-Zc-Lf2" firstAttribute="trailing" secondItem="cXb-AJ-v5U" secondAttribute="trailing" id="xlj-kR-PTh"/>
+                            <constraint firstItem="cXb-AJ-v5U" firstAttribute="trailing" secondItem="hPx-Zc-Lf2" secondAttribute="trailing" id="1em-nR-OTz"/>
+                            <constraint firstItem="Xyp-Zi-NDj" firstAttribute="bottom" secondItem="hPx-Zc-Lf2" secondAttribute="bottom" id="S9Z-rI-VMj"/>
+                            <constraint firstItem="hPx-Zc-Lf2" firstAttribute="trailing" secondItem="Xyp-Zi-NDj" secondAttribute="trailing" constant="8" id="Xuf-Wo-ImI"/>
+                            <constraint firstItem="Xyp-Zi-NDj" firstAttribute="top" secondItem="cXb-AJ-v5U" secondAttribute="bottom" constant="8" id="Zs2-dp-brf"/>
+                            <constraint firstItem="Xyp-Zi-NDj" firstAttribute="leading" secondItem="hPx-Zc-Lf2" secondAttribute="leading" constant="8" id="ewU-Bp-th5"/>
+                            <constraint firstItem="cXb-AJ-v5U" firstAttribute="leading" secondItem="hPx-Zc-Lf2" secondAttribute="leading" id="xRu-0E-fEe"/>
+                            <constraint firstItem="cXb-AJ-v5U" firstAttribute="top" secondItem="hPx-Zc-Lf2" secondAttribute="top" id="xgo-rh-JWm"/>
                         </constraints>
                     </view>
                     <connections>

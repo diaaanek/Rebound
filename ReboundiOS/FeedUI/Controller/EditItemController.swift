@@ -8,7 +8,7 @@
 import Foundation
 import Rebound
 import UIKit
-
+import WebKit
 public protocol EditItemControllerDelegate: NSObject {
     func validate(string: String)
 }
@@ -16,11 +16,13 @@ public class EditItemController:NSObject, EditView {
     var delegate : EditItemControllerDelegate?
     var cell : RBUserEditCell?
     var displayText : String = ""
+    public var refresh : (()->())?
     var errorMessage : String = ""
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
     var hideErrorMessage : Bool = true
+    var isShownOnProfile : Bool = true
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
@@ -47,7 +49,7 @@ public class EditItemController:NSObject, EditView {
             cell.wkwebView.isHidden = modelView.wkWebViewHidden
             cell.errorLabel.isHidden = hideErrorMessage
             cell.textField.text = modelView.displayText
-
+            refresh?()
         }
     }
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
@@ -63,32 +65,33 @@ public class EditItemController:NSObject, EditView {
         if let webUrl = webUrl {
             cell.wkwebView.isHidden = false
             cell.wkwebView.load(URLRequest(url: webUrl))
+            cell.wkwebView.navigationDelegate = self
         }
         return cell
     }
+}
+extension EditItemController: WKNavigationDelegate {
     
-    //    if indexPath.section == 0 {
-    //        cell.textField.placeholder = self.placeHolder
-    //        cell.textField.text = self.displayText
-    //        cell.topLabel.text = self.topLevelText
-    //    }
-    //    else if indexPath.section == 1 {
-    //        cell.textField.placeholder = "Copy Instagram Url"
-    //        cell.textField.tag = indexPath.row+1
-    //        if indexPath.row == 0 {
-    //            cell.topLabel.text = "Required Photo #\(indexPath.row+1) Url"
-    //        } else {
-    //            cell.topLabel.text = "Optional Photo #\(indexPath.row+1) Url"
-    //
-    //        }
-    //        let urlString = editUserModel.urls[indexPath.row]
-    //        cell.textField.text = urlString
-    //
-    //    }
-    //    cell.wkwebView.isUserInteractionEnabled = true
-    //    return cell
-    //}
-    
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.body.innerHTML", completionHandler: { [weak self] (value: Any!, error: Error!) -> Void in
+
+            if error != nil {
+                //Error logic
+                return
+            }
+            guard let self = self else {
+                return
+            }
+
+            if let result = value as? String {
+                if result.contains("Sorry") {
+                    self.isShownOnProfile = false
+                }
+            } else {
+                self.isShownOnProfile = true
+            }
+        })
+    }
 }
 
 extension EditItemController : UITextFieldDelegate {
@@ -99,7 +102,11 @@ extension EditItemController : UITextFieldDelegate {
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         if let userInputText = textField.text {
-            delegate?.validate(string: userInputText)
+            if let delegate = delegate {
+                delegate.validate(string: userInputText)
+            } else {
+                displayText = userInputText
+            }
         }
     }
 }

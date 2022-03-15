@@ -19,7 +19,7 @@ struct EditUser {
 }
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     public var modelViews = [EditItemController]()
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet public weak var tableView: UITableView!
     public var rbUser : RBUser?
     public var delegate : EditRBUserDelegate?
     public var validateUrl : ((String) -> Bool)?
@@ -29,7 +29,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.dataSource = self
         self.tableView.separatorStyle = .none
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 300
+        self.tableView.estimatedRowHeight = 600
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //EditUser
@@ -70,7 +70,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func saveButtonSelected(_ sender: Any) {
         if let firstItem = modelViews.first {
             let name = firstItem.displayText
-            let urlStrings : [String] = modelViews.compactMap({ item in
+            let urlStrings : [String] = modelViews[1...].compactMap({ item in
                 if item.displayText.count == 0 {
                     return nil
                 }

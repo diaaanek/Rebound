@@ -47,7 +47,7 @@ extension CoreDataStore: RBUrlStore {
                 rbUser.username = user.userName
                 try context.save()
                 let newUser = LocalRBUser(userId: rbUser.objectID.uriRepresentation().absoluteString, userName: user.userName, createdDate: timestamp)
-                _ = item.map { local in
+                for local in item {
                     let rbUrl = ManagedRBUrl(context: context)
                     rbUrl.createdDate = local.createdDate
                     rbUrl.isprimary = local.isPrimary
