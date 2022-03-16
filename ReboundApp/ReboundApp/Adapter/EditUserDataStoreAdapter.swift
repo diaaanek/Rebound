@@ -19,12 +19,14 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
         self.editNavigation = editNav
     }
     
-    func createdNewUser(name: String, urls: [String]) {
+    func createdNewUser(name: String, urls: [EditUrl], creationDate: Date) {
         self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: Date(), url: urlString, state: 0)
-        }), user: LocalRBUser(userId: "", userName: name, createdDate: Date()), timestamp: Date()) { [weak self] result in
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.urlString, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
+        }), user: LocalRBUser(userId: "", userName: name, createdDate: creationDate), timestamp: Date()) { [weak self] result in
             switch result {
-            case .failure(_): break
+            case .failure(let error):
+                print(error)
+                print("Failed to save")
             case .success(_):
                 self?.refreshData?()
                 self?.editNavigation.navigateToSuccessSave()
@@ -32,7 +34,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
         }
     }
     
-    func editExistingUser(userId: String, name: String, urls: [String]) {
+    func editExistingUser(userId: String, name: String, urls: [EditUrl]) {
         fatalError("Not implemented")
     }
     

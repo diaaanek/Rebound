@@ -26,7 +26,6 @@
 		29ECBDCB27C6A71E00AB92A2 /* MainFeedComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */; };
 		29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCC27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift */; };
 		29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDCE27C6B95400AB92A2 /* MainPresentationAdapter.swift */; };
-		EBB85CEF6B4C001E3DA22725 /* Pods_ReboundApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96F2325F6C30EC5F366441F /* Pods_ReboundApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +75,6 @@
 			files = (
 				29ECBDC227C6060600AB92A2 /* ReboundiOS.framework in Frameworks */,
 				29ECBDC027C6060600AB92A2 /* Rebound.framework in Frameworks */,
-				EBB85CEF6B4C001E3DA22725 /* Pods_ReboundApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

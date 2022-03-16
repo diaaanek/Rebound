@@ -9,13 +9,17 @@ import UIKit
 import Rebound
 
 public protocol EditRBUserDelegate {
-    func createdNewUser(name: String, urls: [String])
-    func editExistingUser(userId: String, name: String, urls:[String])
+    func createdNewUser(name: String, urls: [EditUrl], creationDate: Date)
+    func editExistingUser(userId: String, name: String, urls:[EditUrl])
     func deleteUser(userId: String?)
 }
-struct EditUser {
+public struct EditUser {
     var name = ""
     var urls = [String]()
+}
+public struct EditUrl {
+   public var urlString: String
+   public var isShownOnProfile : Bool
 }
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     public var modelViews = [EditItemController]()
@@ -70,16 +74,16 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func saveButtonSelected(_ sender: Any) {
         if let firstItem = modelViews.first {
             let name = firstItem.displayText
-            let urlStrings : [String] = modelViews[1...].compactMap({ item in
+            let urlStrings : [EditUrl] = modelViews[1...].compactMap({ item in
                 if item.displayText.count == 0 {
                     return nil
                 }
-                return item.displayText
+                return EditUrl(urlString: item.displayText, isShownOnProfile: item.isShownOnProfile)
             })
             if let rbUser = rbUser {
                 delegate?.editExistingUser(userId: rbUser.userId, name: name, urls: urlStrings)
             } else {
-                delegate?.createdNewUser(name: name, urls: urlStrings)
+                delegate?.createdNewUser(name: name, urls: urlStrings, creationDate: Date())
             }
         }
     }

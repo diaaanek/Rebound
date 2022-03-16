@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29261B8727E1609600CD2FF8 /* WkWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */; };
 		2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076027C59F450002FF39 /* MainCollectionViewCell.swift */; };
 		2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */; };
 		2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957690F27D7F8900080A5A5 /* WkWebViewController.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewDelegate.swift; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
 		293A87CE27C32662005A2BDE /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		293A87D027C32723005A2BDE /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				29CDCBD527DAF91800138DC0 /* SearchResultController.swift */,
 				29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */,
 				2958259227DDA45A00AC65BF /* EditItemController.swift */,
+				29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
 				29CDCBDF27DBBB4500138DC0 /* String+UrlValidation.swift in Sources */,
 				2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */,
+				29261B8727E1609600CD2FF8 /* WkWebViewDelegate.swift in Sources */,
 				29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */,
 				29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */,
 				29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */,

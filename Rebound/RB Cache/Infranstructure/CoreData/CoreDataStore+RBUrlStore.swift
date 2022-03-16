@@ -27,11 +27,11 @@ extension CoreDataStore: RBUrlStore {
                 let rbUrl = ManagedRBUrl(context: context)
                 rbUrl.createdDate = local.createdDate
                 rbUrl.isprimary = local.isPrimary
-                rbUrl.state = Int32(local.state)
+                rbUrl.state = local.state
                 rbUrl.uri = URL(string:local.url)
                 rbUrl.user = managedObject
                 try context.save()
-                let newItem = LocalRBUrl(urlId: rbUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.state)
+                let newItem = LocalRBUrl(urlId: rbUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.state, viewedLastModified: rbUrl.viewedlastmodified, lastModified: rbUrl.lastmodified!)
                 
                 return newItem
             })
@@ -50,8 +50,10 @@ extension CoreDataStore: RBUrlStore {
                 for local in item {
                     let rbUrl = ManagedRBUrl(context: context)
                     rbUrl.createdDate = local.createdDate
+                    rbUrl.lastmodified = local.lastModified
+                    rbUrl.viewedlastmodified = local.viewedLastModified
                     rbUrl.isprimary = local.isPrimary
-                    rbUrl.state = Int32(local.state)
+                    rbUrl.state = local.state
                     rbUrl.uri = URL(string:local.url)
                     rbUrl.user = rbUser
                 }
@@ -78,7 +80,7 @@ extension CoreDataStore: RBUrlStore {
                 request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
                 let result = try context.fetch(request)
                 return result.map { managed in
-                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: Int(managed.state))
+                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.state, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
                 }
             })
         }

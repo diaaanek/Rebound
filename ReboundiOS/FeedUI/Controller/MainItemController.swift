@@ -115,7 +115,11 @@ public class MainItemController: CellController  {
             let urlCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UrlCollectionViewCell", for: indexPath) as! UrlCollectionViewCell
             let url = strongSelf.user.urls[indexPath.row]
             urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
-            urlCell.bottomCenterLabel.text = "This is a test"
+               if url.state {
+                   urlCell.bottomCenterLabel.text = "Shown on profile"
+               } else {
+                   urlCell.bottomCenterLabel.text = "Removed from profile"
+               }
             return urlCell
         }
     }

@@ -25,7 +25,7 @@ extension CoreDataStore: RBUserStore {
                     var user = LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
                     user.urls = managedRBUser.urls!.map { item in
                        let item = item as! ManagedRBUrl
-                       return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: Int(item.state))
+                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.state, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
                     }
                     return user
                 }

@@ -11,13 +11,18 @@ public struct LocalRBUrl {
     public let urlId : String
     public let isPrimary: Bool
     public  let createdDate: Date
+    public  let viewedLastModified: Date?
+    public  let lastModified: Date
+
     public  let url : String
-    public let state: Int
-    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Int){
+    public let state: Bool
+    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, viewedLastModified: Date?, lastModified: Date){
         self.urlId = urlId
         self.isPrimary = isPrimary
         self.createdDate = createdDate
         self.url = url
-        self.state = state        
+        self.state = state
+        self.viewedLastModified = viewedLastModified
+        self.lastModified = lastModified
     }
 }
