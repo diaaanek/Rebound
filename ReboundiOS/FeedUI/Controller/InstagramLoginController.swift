@@ -23,7 +23,10 @@ public class InstagramLoginController: UIViewController {
                 Authenticator.userDefaults
                     .visual(filling: self.view)
                     .authenticate()
-                    .sink(receiveCompletion: { _ in }, receiveValue: completion)
+                    .sink(receiveCompletion: { _ in }, receiveValue: { secret in
+                        self.dismiss(animated: true)
+                        completion(secret)
+                    })
                     .store(in: &self.bin)
             }
         }

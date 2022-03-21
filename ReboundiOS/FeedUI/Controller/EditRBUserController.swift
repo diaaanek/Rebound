@@ -18,6 +18,7 @@ public struct EditUser {
     var urls = [String]()
 }
 public struct EditUrl {
+   public var urlId : String?
    public var urlString: String
    public var isShownOnProfile : Bool
 }

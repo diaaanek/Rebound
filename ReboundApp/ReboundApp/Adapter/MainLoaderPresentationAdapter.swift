@@ -17,7 +17,9 @@ class MainLoaderPresentationAdapter: MainViewDelegate {
     }
     
     func didRefreshData() {
-        presenter!.didStartLoading()
+        DispatchQueue.main.async {
+            self.presenter!.didStartLoading()
+        }
         loader.retrieve {[weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -25,16 +27,19 @@ class MainLoaderPresentationAdapter: MainViewDelegate {
                     self?.presenter?.didDisplay(rbUser:  users.map { localUser in
                         var user = RBUser(userId: localUser.userId,
                                       userName: localUser.userName, createdDate: localUser.createdDate)
-                        
                         user.urls = localUser.urls.map { localUrl in
                             return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.state, lastModified: localUrl.lastModified, viewedLastModified: localUrl.createdDate)
                         }
                         return user
                     })
                 case .failure(let error):
+                    DispatchQueue.main.async {
                     self?.presenter?.didFinishLoading(error: error)
+                    }
                 case .success(.none):
+                    DispatchQueue.main.async {
                     self?.presenter?.didDisplay(rbUser:[RBUser]())
+                    }
                 }
             }
         }

@@ -28,6 +28,10 @@ public protocol RBUrlStore {
     // Creates a User and assocaites the LocalRBUrl.
     func insert(rbUrl item: [LocalRBUrl],user :LocalRBUser, timestamp: Date, completion: @escaping InsertionCompletion)
     
+    // Merge URl
+    func merge(rbUrl item: LocalRBUrl, completion: @escaping  (Result<LocalRBUrl, Error>) -> ())
+
+    
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
     func retrievePrimary(userId :String,completion: @escaping RetrievalCompletion)

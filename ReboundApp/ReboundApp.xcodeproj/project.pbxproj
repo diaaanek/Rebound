@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29261B9827E3F73500CD2FF8 /* IntroComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9727E3F73500CD2FF8 /* IntroComposer.swift */; };
 		2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079527C6032A0002FF39 /* AppDelegate.swift */; };
 		2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950079727C6032A0002FF39 /* SceneDelegate.swift */; };
 		2950079F27C6032B0002FF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2950079E27C6032B0002FF39 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		20C03A8D3C34EB1AE4F6E8DB /* Pods-ReboundApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReboundApp.release.xcconfig"; path = "Target Support Files/Pods-ReboundApp/Pods-ReboundApp.release.xcconfig"; sourceTree = "<group>"; };
+		29261B9727E3F73500CD2FF8 /* IntroComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroComposer.swift; sourceTree = "<group>"; };
 		2950079227C6032A0002FF39 /* ReboundApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReboundApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2950079527C6032A0002FF39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2950079727C6032A0002FF39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */,
 				29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */,
+				29261B9727E3F73500CD2FF8 /* IntroComposer.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29261B9827E3F73500CD2FF8 /* IntroComposer.swift in Sources */,
 				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
 				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,
 				2950079627C6032A0002FF39 /* AppDelegate.swift in Sources */,

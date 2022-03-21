@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		29261B8727E1609600CD2FF8 /* WkWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */; };
+		29261B8D27E256DE00CD2FF8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8C27E256DE00CD2FF8 /* HttpClient.swift */; };
+		29261B8F27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */; };
+		29261B9127E25C1500CD2FF8 /* WebUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */; };
+		29261B9427E25E9800CD2FF8 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9327E25E9800CD2FF8 /* Sync.swift */; };
+		29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9527E3F68400CD2FF8 /* IntroController.swift */; };
 		2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076027C59F450002FF39 /* MainCollectionViewCell.swift */; };
 		2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */; };
 		2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957690F27D7F8900080A5A5 /* WkWebViewController.swift */; };
@@ -98,6 +103,11 @@
 
 /* Begin PBXFileReference section */
 		29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewDelegate.swift; sourceTree = "<group>"; };
+		29261B8C27E256DE00CD2FF8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewUrlLoader.swift; sourceTree = "<group>"; };
+		29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUrlLoader.swift; sourceTree = "<group>"; };
+		29261B9327E25E9800CD2FF8 /* Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
+		29261B9527E3F68400CD2FF8 /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
 		293A87CE27C32662005A2BDE /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		293A87D027C32723005A2BDE /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
@@ -192,6 +202,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29261B8A27E253FF00CD2FF8 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				29261B8C27E256DE00CD2FF8 /* HttpClient.swift */,
+				29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */,
+				29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		29261B9227E25E8300CD2FF8 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				29261B9327E25E9800CD2FF8 /* Sync.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
 		293A87AA27C32555005A2BDE = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +324,8 @@
 		29751BFB27C568B500E97E16 /* Rebound */ = {
 			isa = PBXGroup;
 			children = (
+				29261B9227E25E8300CD2FF8 /* Sync */,
+				29261B8A27E253FF00CD2FF8 /* Remote */,
 				29751C2A27C56DA700E97E16 /* RB Feature */,
 				29751C2927C56CD300E97E16 /* RB Presentation */,
 				293A87CD27C32648005A2BDE /* RB Cache */,
@@ -351,6 +381,7 @@
 				29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */,
 				2958259227DDA45A00AC65BF /* EditItemController.swift */,
 				29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */,
+				29261B9527E3F68400CD2FF8 /* IntroController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,6 +642,7 @@
 			files = (
 				29CDCBD627DAF91800138DC0 /* SearchResultController.swift in Sources */,
 				29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */,
+				29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */,
 				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
@@ -645,11 +677,14 @@
 				2958259127DDA3FB00AC65BF /* EditPresenter.swift in Sources */,
 				29751C1E27C5690800E97E16 /* CoreDataStore+RBUrlStore.swift in Sources */,
 				29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */,
+				29261B9127E25C1500CD2FF8 /* WebUrlLoader.swift in Sources */,
 				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
+				29261B8D27E256DE00CD2FF8 /* HttpClient.swift in Sources */,
 				29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */,
 				29751C3D27C57E7800E97E16 /* RBUrlPresenter.swift in Sources */,
 				29751C1C27C5690800E97E16 /* CoreDataHelpers.swift in Sources */,
 				29751C1927C568ED00E97E16 /* RBUserStore.swift in Sources */,
+				29261B9427E25E9800CD2FF8 /* Sync.swift in Sources */,
 				29751C3427C573F500E97E16 /* ErrorModelView.swift in Sources */,
 				29751BFE27C568B500E97E16 /* Rebound.docc in Sources */,
 				29751C3027C572D900E97E16 /* MainFeedPresenter.swift in Sources */,
@@ -659,6 +694,7 @@
 				29751C1F27C5690800E97E16 /* CoreDataStore+RBUserStore.swift in Sources */,
 				29751C1B27C568ED00E97E16 /* LocalRBUrl.swift in Sources */,
 				29751C3F27C57F1700E97E16 /* RBUrlModelView.swift in Sources */,
+				29261B8F27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift in Sources */,
 				29751C2E27C56DCD00E97E16 /* RBUser.swift in Sources */,
 				29751C1827C568E700E97E16 /* RBUrlStore.swift in Sources */,
 				29751C3627C575EF00E97E16 /* MainModelView.swift in Sources */,

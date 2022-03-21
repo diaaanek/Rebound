@@ -39,7 +39,7 @@ class MainPresenationAdapter:  MainView {
         
         for user in users {
             if let firstUrl = user.urls.first {
-                if firstUrl.createdDate > lastOpened {
+                if firstUrl.viewedLastModified == nil || firstUrl.viewedLastModified!.addingTimeInterval(60*60*24) > lastOpened {
                     tempRecentUpdates.append(user)
                 } else {
                     tempNoUpdates.append(user)

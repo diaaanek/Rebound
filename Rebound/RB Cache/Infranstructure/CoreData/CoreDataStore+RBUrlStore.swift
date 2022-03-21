@@ -9,6 +9,24 @@ import Foundation
 import CoreData
 
 extension CoreDataStore: RBUrlStore {
+    public func merge(rbUrl item: LocalRBUrl, completion: @escaping (Result<LocalRBUrl, Error>) -> ()) {
+        perform { [weak self] context in
+            completion( Result {
+                guard let strongSelf = self else {
+                    fatalError()
+                }
+                let managedObject = context.object(with: strongSelf.objectId(stringId: item.urlId)!) as! ManagedRBUrl
+                managedObject.isprimary = item.isPrimary
+                managedObject.state = item.state
+                managedObject.uri = URL(string:item.url)
+                managedObject.lastmodified = item.lastModified
+                managedObject.viewedlastmodified = item.viewedLastModified
+                try context.save()
+                return item
+            })
+        }
+    }
+    
     
     var entityName: String {
         return "ManagedRBUrl"

@@ -14,4 +14,6 @@ public protocol RBUserStore {
 
     // returns all users 
     func retrieve(completion:@escaping RetrieveCompletion)
+    func retrieve(userId: String, completion:@escaping (Result<LocalRBUser?,Error>) -> ())
+
 }

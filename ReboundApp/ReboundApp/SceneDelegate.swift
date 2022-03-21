@@ -8,6 +8,7 @@ import Swiftagram
 import UIKit
 import ReboundiOS
 import Rebound
+import WebKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     lazy var path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -24,21 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
         
         let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
-        mainNavigationFlow.refreshData = {rv.refreshData()}
-        if UserDefaults.standard.data(forKey: "secret") == nil {
-            rv.shouldShowLogin = {
-                let controller = InstagramLoginController()
-                controller.completion = { secret in
-                    // Fetch the user.
-                    let data =  try! Secret.encoding(secret)
-                    let userDefaults = UserDefaults()
-                    userDefaults.set(data, forKey: "secret")
-                    userDefaults.synchronize()
-                }
-                rv.present(controller, animated: true, completion: nil)
-            }
+        mainNavigationFlow.refreshData = {rv.reloadCollectionView()}
+        let introController = IntroComposer().makeIntro {
+            self.navigationController.setViewControllers([rv], animated: true)
         }
-        navigationController = UINavigationController(rootViewController: rv)
+        if UserDefaults.standard.data(forKey: "secret") == nil {
+            self.navigationController = UINavigationController(rootViewController: introController)
+        } else {
+            navigationController = UINavigationController(rootViewController: rv)
+        }
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

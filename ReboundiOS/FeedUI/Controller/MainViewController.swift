@@ -15,7 +15,7 @@ public protocol MainViewDelegate {
 
 public class MainViewController : UIViewController, LoadingView, ErrorView {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet public weak var collectionView: UICollectionView!
     var recentUpdates = [MainItemController]()
     var noUpdates = [MainItemController]()
     public var sectionHeader1 : String!
@@ -23,7 +23,7 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     public var cellSelected : ((RBUser) -> ())?
     public var navigateAccount : (()->())?
     public var navigateCreate : (()->())?
-    public var shouldShowLogin : (() -> ())? // delete later
+    public var didRequestSync: (()->())?
     public var delegate : MainViewDelegate?
     enum Section {
         case create
@@ -31,7 +31,7 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         case noUpdates
     }
     var dataSource: UICollectionViewDiffableDataSource<Section,AnyHashable>!
-    
+    let refreshControl = UIRefreshControl()
     public override func viewDidLoad() {
         super.viewDidLoad()
         let bundle = Bundle(for: MainViewController.self)
@@ -43,17 +43,23 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         self.title = "Rebound"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
-        refreshData()
+        refreshControl.attributedTitle = NSAttributedString(string: "Syncing...")
+        refreshControl.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+         self.collectionView.addSubview(refreshControl) // not required when using UITableViewController
+        self.collectionView.refreshControl = refreshControl
+        didRequestSync?()
     }
-    public func refreshData() {
+
+    @objc func pullToRefresh(_ sender: AnyObject) {
+        didRequestSync?()
+    }
+    public func reloadCollectionView() {
         delegate?.didRefreshData()
     }
     @objc func navigateToAccount() {
         navigateAccount?()
     }
-    public override func viewDidAppear(_ animated: Bool) {
-        shouldShowLogin?()
-    }
+    
     private func setupLayout() -> UICollectionViewCompositionalLayout {
         
         
@@ -140,10 +146,17 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
 
     
     public func displayLoading(loadingModelView: LoadingModelView) {
-        print("Show loading")
+        if loadingModelView.isLoading && !refreshControl.isRefreshing {
+            self.refreshControl.beginRefreshing()
+        }
+       else if !loadingModelView.isLoading {
+            self.refreshControl.endRefreshing()
+        }
     }
     
     public func displayError(errorModelView: ErrorModelView) {
+        self.refreshControl.endRefreshing()
+
         print("No Error")
     }
 }
