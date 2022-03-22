@@ -20,7 +20,7 @@ public class RemoteWebUrlLoader : WebUrlLoader {
     public func loadWebUrl(urlString: String, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) -> URLSessionDataTask {
       return self.httpClient.getResult(urlString: urlString) { result in
             switch result {
-            case .success(let data, let urlResponse):
+            case .success((let data, let urlResponse)):
                 completion(.success((data, urlResponse)))
                
             case.failure(let error):

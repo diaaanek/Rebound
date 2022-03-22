@@ -81,7 +81,9 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
                 }
                 return EditUrl(urlString: item.displayText, isShownOnProfile: item.isShownOnProfile)
             })
-            if let rbUser = rbUser {
+            if urlStrings.count == 0 {
+                delegate?.deleteUser(userId: rbUser?.userId)
+            }else if let rbUser = rbUser {
                 delegate?.editExistingUser(userId: rbUser.userId, name: name, urls: urlStrings)
             } else {
                 delegate?.createdNewUser(name: name, urls: urlStrings, creationDate: Date())

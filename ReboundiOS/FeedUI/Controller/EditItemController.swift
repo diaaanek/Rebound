@@ -55,6 +55,7 @@ public class EditItemController:NSObject, EditView {
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RBUserEditCell", for: indexPath) as! RBUserEditCell
         self.cell = cell
+        cell.textField.autocorrectionType = .no
         cell.textField.delegate = self
         cell.textField.returnKeyType = .done
         cell.textField.placeholder = self.placeHolder

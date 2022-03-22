@@ -40,7 +40,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
             case .success():
                 self.createdNewUser(name: name, urls: urls, creationDate: Date())
             case .failure(let error):
-                fatalError(error.localizedDescription)
+                fatalError("Error deleting")
             }
         }
       /*  self.rbUserStore.retrieve(userId: userId) { [weak self] result in

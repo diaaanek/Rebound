@@ -117,7 +117,7 @@ public class MainItemController: CellController  {
             urlCell.webView.configuration.allowsInlineMediaPlayback = true
             urlCell.webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
-               if url.state {
+               if url.isShown {
                    urlCell.bottomCenterLabel.text = "Shown on profile"
                } else {
                    urlCell.bottomCenterLabel.text = "Removed from profile"

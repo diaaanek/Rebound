@@ -20,7 +20,7 @@ extension CoreDataStore: RBUserStore {
                     var localuser = LocalRBUser(userId: result.objectID.uriRepresentation().absoluteString, userName: result.username!, createdDate: result.createdDate!)
                     localuser.urls = result.urls!.map { item in
                         let item = item as! ManagedRBUrl
-                         return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.state, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
+                         return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
                      }
                     return localuser
                    }
@@ -45,7 +45,7 @@ extension CoreDataStore: RBUserStore {
                     var user = LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
                     user.urls = managedRBUser.urls!.map { item in
                        let item = item as! ManagedRBUrl
-                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.state, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
+                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
                     }.sorted(by: { lhs, rhs in
                         lhs.lastModified > rhs.lastModified
                     })

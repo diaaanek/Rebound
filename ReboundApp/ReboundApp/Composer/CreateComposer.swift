@@ -22,18 +22,20 @@ class CreateComposer {
         
         var itemControllers = [EditItemController]()
         if let rb = rbUser {
-            itemControllers.append(EditItemController(topLabelText: "Name", url: nil, placeHolder: "username", displayText: rb.userName, delegate: nil))
+            itemControllers.append(EditItemController(topLabelText: "Target's Instagram Username", url: nil, placeHolder: "username", displayText: rb.userName, delegate: nil))
+            var count = 1
             itemControllers.append(contentsOf:rb.urls.map { rbUrl in
               let presenter = EditPresenter()
-              let editItem = EditItemController(topLabelText: "Photo Url", url: URL(string: rbUrl.url), placeHolder: "Copy Instagram photo url", displayText: rbUrl.url, delegate: EditValidationPresenterAdapter(presenter: presenter))
+              let editItem = EditItemController(topLabelText: "Photo Url \(count):", url: URL(string: rbUrl.url), placeHolder: "Copy Instagram photo url", displayText: rbUrl.url, delegate: EditValidationPresenterAdapter(presenter: presenter))
                 presenter.editView = WeakVirtualProxy(editItem)
+                count += 1
                 return editItem
             })
         } else {
-            itemControllers.append(EditItemController(topLabelText: "Name", url: nil, placeHolder: "username", delegate: nil))
-            for _ in 0..<4 {
+            itemControllers.append(EditItemController(topLabelText: "Target's Instagram Username", url: nil, placeHolder: "username", delegate: nil))
+            for i in 0..<4 {
                 let presenter = EditPresenter()
-                let controller = EditItemController(topLabelText: "Photo Url", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditValidationPresenterAdapter(presenter: presenter))
+                let controller = EditItemController(topLabelText: "Photo Url \(i+1):", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditValidationPresenterAdapter(presenter: presenter))
                 let editItem = controller
                   presenter.editView = WeakVirtualProxy(editItem)
                 editItem.refresh = {

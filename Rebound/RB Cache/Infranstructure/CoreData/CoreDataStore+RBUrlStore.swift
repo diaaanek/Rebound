@@ -17,7 +17,7 @@ extension CoreDataStore: RBUrlStore {
                 }
                 let managedObject = context.object(with: strongSelf.objectId(stringId: item.urlId)!) as! ManagedRBUrl
                 managedObject.isprimary = item.isPrimary
-                managedObject.state = item.state
+                managedObject.isshown = item.isShown
                 managedObject.uri = URL(string:item.url)
                 managedObject.lastmodified = item.lastModified
                 managedObject.viewedlastmodified = item.viewedLastModified
@@ -34,22 +34,24 @@ extension CoreDataStore: RBUrlStore {
     public func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion) {
         deleteItem(objectId: urlId, completion: completion)
     }
-
+    
+    @available(*, deprecated, message: "Not Used")
     public func insert(rbUrl local: LocalRBUrl, userId: String, completion: @escaping (Result<LocalRBUrl, Error>) -> () ) {
         perform { [weak self] context in
             completion( Result {
                 guard let strongSelf = self else {
                     fatalError()
                 }
+               
                 let managedObject = context.object(with: strongSelf.objectId(stringId: userId)!) as! ManagedRBUser
-                let rbUrl = ManagedRBUrl(context: context)
-                rbUrl.createdDate = local.createdDate
-                rbUrl.isprimary = local.isPrimary
-                rbUrl.state = local.state
-                rbUrl.uri = URL(string:local.url)
-                rbUrl.user = managedObject
+                let managedUrl = ManagedRBUrl(context: context)
+                managedUrl.createdDate = local.createdDate
+                managedUrl.isprimary = local.isPrimary
+                managedUrl.isshown = local.isShown
+                managedUrl.uri = URL(string:local.url)
+                managedUrl.user = managedObject
                 try context.save()
-                let newItem = LocalRBUrl(urlId: rbUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.state, viewedLastModified: rbUrl.viewedlastmodified, lastModified: rbUrl.lastmodified!)
+                let newItem = LocalRBUrl(urlId: managedUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, viewedLastModified: managedUrl.viewedlastmodified, lastModified: managedUrl.lastmodified!)
                 
                 return newItem
             })
@@ -59,21 +61,23 @@ extension CoreDataStore: RBUrlStore {
     public func insert(rbUrl item: [LocalRBUrl], user: LocalRBUser, timestamp: Date, completion: @escaping InsertionCompletion) {
         perform { context in
             completion( Result {
-                
+                if let error = RBUrlModelValidation.validateSave(user: user, urls: item) {
+                    throw error
+                }
                 let rbUser = ManagedRBUser(context: context)
                 rbUser.createdDate = timestamp
                 rbUser.username = user.userName
                 try context.save()
                 let newUser = LocalRBUser(userId: rbUser.objectID.uriRepresentation().absoluteString, userName: user.userName, createdDate: timestamp)
                 for local in item {
-                    let rbUrl = ManagedRBUrl(context: context)
-                    rbUrl.createdDate = local.createdDate
-                    rbUrl.lastmodified = local.lastModified
-                    rbUrl.viewedlastmodified = local.viewedLastModified
-                    rbUrl.isprimary = local.isPrimary
-                    rbUrl.state = local.state
-                    rbUrl.uri = URL(string:local.url)
-                    rbUrl.user = rbUser
+                    let managedUrl = ManagedRBUrl(context: context)
+                    managedUrl.createdDate = local.createdDate
+                    managedUrl.lastmodified = local.lastModified
+                    managedUrl.viewedlastmodified = local.viewedLastModified
+                    managedUrl.isprimary = local.isPrimary
+                    managedUrl.isshown = local.isShown
+                    managedUrl.uri = URL(string:local.url)
+                    managedUrl.user = rbUser
                 }
                 try context.save()
                 return newUser
@@ -98,7 +102,7 @@ extension CoreDataStore: RBUrlStore {
                 request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
                 let result = try context.fetch(request)
                 return result.map { managed in
-                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.state, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
+                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
                 }
             })
         }
