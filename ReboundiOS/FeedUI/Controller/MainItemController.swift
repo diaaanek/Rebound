@@ -114,6 +114,8 @@ public class MainItemController: CellController  {
             }
             let urlCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UrlCollectionViewCell", for: indexPath) as! UrlCollectionViewCell
             let url = strongSelf.user.urls[indexPath.row]
+            urlCell.webView.configuration.allowsInlineMediaPlayback = true
+            urlCell.webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
                if url.state {
                    urlCell.bottomCenterLabel.text = "Shown on profile"

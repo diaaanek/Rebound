@@ -1,13 +1,15 @@
 //
-//  SearchResultController.swift
+//  AccountTableViewController.swift
 //  ReboundiOS
 //
-//  Created by Ethan Keiser on 3/10/22.
+//  Created by Ethan Keiser on 3/21/22.
 //
 
 import UIKit
 
-public class SearchResultController: UITableViewController, UISearchResultsUpdating {
+public class AccountTableViewController: UITableViewController {
+   // public var didSelectRowAtIndex:((IndexPath)->())?
+    public var logOut:(()->())?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,34 +20,32 @@ public class SearchResultController: UITableViewController, UISearchResultsUpdat
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    public func updateSearchResults(for searchController: UISearchController){
-      // print(searchController.searchBar.text)
-    }
+
     // MARK: - Table view data source
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        return 1
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = "Log Out"
 
         return cell
     }
-    */
+    
 
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       logOut?()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

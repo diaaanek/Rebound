@@ -25,9 +25,7 @@ class MainFeedComposer {
         mainViewController.navigateCreate = {
             mainNavigationFlow.navigateToCreate(rbUser: nil)
         }
-        let searchDisplayController = SearchResultController()
-        let searchBarController = SearchController(searchDisplayController, resultUpdate: searchDisplayController)
-        searchBarController.searchBar.placeholder = "Username"
+
        // mainViewController.navigationItem.searchController = searchBarController
         mainViewController.navigationItem.hidesSearchBarWhenScrolling = true
         let loaderAdapter = MainLoaderPresentationAdapter(cache:cache)
@@ -47,6 +45,10 @@ class MainFeedComposer {
                 mainViewController.reloadCollectionView()
 
             }
+        }
+        mainViewController.navigateAccount = {
+            
+            mainNavigationFlow.navigateToAccount()
         }
         return mainViewController
     }

@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29261B8727E1609600CD2FF8 /* WkWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */; };
 		29261B8D27E256DE00CD2FF8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8C27E256DE00CD2FF8 /* HttpClient.swift */; };
 		29261B8F27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */; };
 		29261B9127E25C1500CD2FF8 /* WebUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */; };
 		29261B9427E25E9800CD2FF8 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9327E25E9800CD2FF8 /* Sync.swift */; };
 		29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9527E3F68400CD2FF8 /* IntroController.swift */; };
+		29261B9A27E9462900CD2FF8 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9927E9462900CD2FF8 /* AccountTableViewController.swift */; };
 		2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076027C59F450002FF39 /* MainCollectionViewCell.swift */; };
 		2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */; };
-		2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957690F27D7F8900080A5A5 /* WkWebViewController.swift */; };
 		2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958258627DD668B00AC65BF /* InstagramLoginController.swift */; };
 		2958258A27DD66D800AC65BF /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 2958258927DD66D800AC65BF /* Swiftagram */; };
 		2958258C27DD66D800AC65BF /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 2958258B27DD66D800AC65BF /* SwiftagramCrypto */; };
@@ -61,8 +60,6 @@
 		29BEF5ED27C8A05D0002614C /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BEF5EC27C8A05D0002614C /* SectionHeader.xib */; };
 		29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBCF27DAC17600138DC0 /* CreateCell.swift */; };
 		29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD127DAECB900138DC0 /* EmptyCell.swift */; };
-		29CDCBD427DAF55A00138DC0 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD327DAF55A00138DC0 /* SearchController.swift */; };
-		29CDCBD627DAF91800138DC0 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD527DAF91800138DC0 /* SearchResultController.swift */; };
 		29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */; };
 		29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */; };
 		29CDCBDF27DBBB4500138DC0 /* String+UrlValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDE27DBBB4500138DC0 /* String+UrlValidation.swift */; };
@@ -102,12 +99,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewDelegate.swift; sourceTree = "<group>"; };
 		29261B8C27E256DE00CD2FF8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewUrlLoader.swift; sourceTree = "<group>"; };
 		29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUrlLoader.swift; sourceTree = "<group>"; };
 		29261B9327E25E9800CD2FF8 /* Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		29261B9527E3F68400CD2FF8 /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
+		29261B9927E9462900CD2FF8 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		293A87C027C32555005A2BDE /* ReboundV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReboundV2.xcdatamodel; sourceTree = "<group>"; };
 		293A87CE27C32662005A2BDE /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		293A87D027C32723005A2BDE /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
@@ -125,7 +122,6 @@
 		2950076027C59F450002FF39 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		2950076727C5A73C0002FF39 /* UICollectionView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeueing.swift"; sourceTree = "<group>"; };
 		295007A927C604E50002FF39 /* ReboundApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReboundApp.xcodeproj; path = ReboundApp/ReboundApp.xcodeproj; sourceTree = "<group>"; };
-		2957690F27D7F8900080A5A5 /* WkWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewController.swift; sourceTree = "<group>"; };
 		2958258627DD668B00AC65BF /* InstagramLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLoginController.swift; sourceTree = "<group>"; };
 		2958259027DDA3FB00AC65BF /* EditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresenter.swift; sourceTree = "<group>"; };
 		2958259227DDA45A00AC65BF /* EditItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemController.swift; sourceTree = "<group>"; };
@@ -156,8 +152,6 @@
 		29BEF5EC27C8A05D0002614C /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		29CDCBCF27DAC17600138DC0 /* CreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCell.swift; sourceTree = "<group>"; };
 		29CDCBD127DAECB900138DC0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
-		29CDCBD327DAF55A00138DC0 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		29CDCBD527DAF91800138DC0 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 		29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRBUserController.swift; sourceTree = "<group>"; };
 		29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserEditCell.swift; sourceTree = "<group>"; };
 		29CDCBDE27DBBB4500138DC0 /* String+UrlValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrlValidation.swift"; sourceTree = "<group>"; };
@@ -374,14 +368,11 @@
 				29CDCBDD27DBBAFA00138DC0 /* Extensions */,
 				29751BD027C567C100E97E16 /* MainViewController.swift */,
 				2958258627DD668B00AC65BF /* InstagramLoginController.swift */,
-				2957690F27D7F8900080A5A5 /* WkWebViewController.swift */,
 				29ECBDC527C6942900AB92A2 /* MainItemController.swift */,
-				29CDCBD327DAF55A00138DC0 /* SearchController.swift */,
-				29CDCBD527DAF91800138DC0 /* SearchResultController.swift */,
 				29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */,
 				2958259227DDA45A00AC65BF /* EditItemController.swift */,
-				29261B8627E1609600CD2FF8 /* WkWebViewDelegate.swift */,
 				29261B9527E3F68400CD2FF8 /* IntroController.swift */,
+				29261B9927E9462900CD2FF8 /* AccountTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -640,24 +631,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29CDCBD627DAF91800138DC0 /* SearchResultController.swift in Sources */,
 				29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */,
 				29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */,
 				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
 				29CDCBDF27DBBB4500138DC0 /* String+UrlValidation.swift in Sources */,
-				2957691127D7F8900080A5A5 /* WkWebViewController.swift in Sources */,
-				29261B8727E1609600CD2FF8 /* WkWebViewDelegate.swift in Sources */,
 				29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */,
 				29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */,
 				29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
 				29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */,
 				2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */,
-				29CDCBD427DAF55A00138DC0 /* SearchController.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
 				2958259327DDA45A00AC65BF /* EditItemController.swift in Sources */,
+				29261B9A27E9462900CD2FF8 /* AccountTableViewController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

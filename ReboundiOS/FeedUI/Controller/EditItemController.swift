@@ -64,6 +64,9 @@ public class EditItemController:NSObject, EditView {
         cell.errorLabel.isHidden = !(errorMessage.count > 0)
         if let webUrl = webUrl {
             cell.wkwebView.isHidden = false
+            cell.wkwebView.configuration.allowsInlineMediaPlayback = true
+            cell.wkwebView.configuration.allowsAirPlayForMediaPlayback = true
+            cell.wkwebView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             cell.wkwebView.load(URLRequest(url: webUrl))
             cell.wkwebView.navigationDelegate = self
         }
@@ -108,5 +111,6 @@ extension EditItemController : UITextFieldDelegate {
                 displayText = userInputText
             }
         }
+        refresh?()
     }
 }

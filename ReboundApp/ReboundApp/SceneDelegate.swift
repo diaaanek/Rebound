@@ -34,9 +34,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             navigationController = UINavigationController(rootViewController: rv)
         }
+        mainNavigationFlow.accountNavigation = AccountNavigation(intro: introController, navigation: self.navigationController)
+        
+        
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    func makeMain() -> MainViewController {
+        let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
+        let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
+        mainNavigationFlow.refreshData = {rv.reloadCollectionView()}
+        return rv
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -17,7 +17,6 @@ class UrlCollectionViewCell: UICollectionViewCell, WKNavigationDelegate {
         webView.contentScaleFactor = 2.0
         webView.isUserInteractionEnabled = false
         webView.clipsToBounds = true
-
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         

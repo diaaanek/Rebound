@@ -39,13 +39,12 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         configureDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = setupLayout()
-        //collectionView.delegate = self
         self.title = "Rebound"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
         refreshControl.attributedTitle = NSAttributedString(string: "Syncing...")
         refreshControl.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
-         self.collectionView.addSubview(refreshControl) // not required when using UITableViewController
+        self.collectionView.addSubview(refreshControl) // not required when using UITableViewController
         self.collectionView.refreshControl = refreshControl
         didRequestSync?()
     }
@@ -61,8 +60,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     }
     
     private func setupLayout() -> UICollectionViewCompositionalLayout {
-        
-        
         return UICollectionViewCompositionalLayout { sectionId, layout in
             if sectionId == 0 || (sectionId == 1 && self.recentUpdates.count == 0) {
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -156,16 +153,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
     
     public func displayError(errorModelView: ErrorModelView) {
         self.refreshControl.endRefreshing()
-
-        print("No Error")
     }
 }
-//extension MainViewController : UICollectionViewDelegate {
-//    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.section == 1 && indexPath.row < recentUpdates.count {
-//            cellSelected?(recentUpdates[indexPath.row].user)
-//        } else if indexPath.section == 2 {
-//            cellSelected?(noUpdates[indexPath.row].user)
-//        }
-//    }
-//}
+
