@@ -61,7 +61,7 @@ extension CoreDataStore: RBUrlStore {
     public func insert(rbUrl item: [LocalRBUrl], user: LocalRBUser, timestamp: Date, completion: @escaping InsertionCompletion) {
         perform { context in
             completion( Result {
-                if let error = RBUrlModelValidation.validateSave(user: user, urls: item) {
+                if let error = LocalUrlModelValidation.validateSave(user: user, urls: item) {
                     throw error
                 }
                 let rbUser = ManagedRBUser(context: context)

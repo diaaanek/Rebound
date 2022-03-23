@@ -9,8 +9,8 @@ import UIKit
 import Rebound
 
 public protocol EditRBUserDelegate {
-    func createdNewUser(name: String, urls: [EditUrl], creationDate: Date)
-    func editExistingUser(userId: String, name: String, urls:[EditUrl])
+    func createdNewUser(name: EditItemController, urls: [EditItemController], creationDate: Date)
+    func editExistingUser(userId: String, name: EditItemController, urls:[EditItemController])
     func deleteUser(userId: String?)
 }
 public struct EditUser {
@@ -74,16 +74,14 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     
     @IBAction func saveButtonSelected(_ sender: Any) {
         if let firstItem = modelViews.first {
-            let name = firstItem.displayText
-            let urlStrings : [EditUrl] = modelViews[1...].compactMap({ item in
+            let name = firstItem
+            let urlStrings : [EditItemController] = modelViews[1...].compactMap({ item in
                 if item.displayText.count == 0 {
                     return nil
                 }
-                return EditUrl(urlString: item.displayText, isShownOnProfile: item.isShownOnProfile)
+                return item
             })
-            if urlStrings.count == 0 {
-                delegate?.deleteUser(userId: rbUser?.userId)
-            }else if let rbUser = rbUser {
+           if let rbUser = rbUser {
                 delegate?.editExistingUser(userId: rbUser.userId, name: name, urls: urlStrings)
             } else {
                 delegate?.createdNewUser(name: name, urls: urlStrings, creationDate: Date())

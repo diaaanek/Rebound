@@ -31,7 +31,6 @@ public class InstagramLoginController: UIViewController {
             }
         }
     }
-
     /// The dispose bag.
     private var bin: Set<AnyCancellable> = []
 }

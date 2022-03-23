@@ -25,6 +25,9 @@ public class EditPresenter {
     public func showValidInput(displayText: String, url: URL) {
         self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: "", wkWebViewHidden: false))
     }
+    public func showValidName(displayText: String) {
+        self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: nil, isError: false, errorMessage: "", wkWebViewHidden: true))
+    }
     public func showError(errorMessage: String) {
         self.editView?.display(modelView: EditItemModelView(displayText: "", url: nil, isError: true, errorMessage: errorMessage, wkWebViewHidden: true))
     }

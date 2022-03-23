@@ -15,14 +15,14 @@ public protocol EditItemControllerDelegate: NSObject {
 public class EditItemController:NSObject, EditView {
     var delegate : EditItemControllerDelegate?
     var cell : RBUserEditCell?
-    var displayText : String = ""
+    public var displayText : String = ""
+    public var isShownOnProfile : Bool = true
     public var refresh : (()->())?
     var errorMessage : String = ""
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
     var hideErrorMessage : Bool = true
-    var isShownOnProfile : Bool = true
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
@@ -38,12 +38,13 @@ public class EditItemController:NSObject, EditView {
                 self.errorMessage = errorMessage
                 displayText = ""
                 webUrl = nil
-
             } else if let url = modelView.url {
                 displayText = modelView.displayText
                 webUrl = url
                 hideErrorMessage = true
                 cell.wkwebView.load(URLRequest(url: url))
+            } else {
+                hideErrorMessage = true
             }
             cell.errorLabel.text = errorMessage
             cell.wkwebView.isHidden = modelView.wkWebViewHidden
@@ -62,7 +63,9 @@ public class EditItemController:NSObject, EditView {
         cell.textField.text = self.displayText
         cell.topLabel.text = self.topLabelText
         cell.wkwebView.isHidden = true
-        cell.errorLabel.isHidden = !(errorMessage.count > 0)
+        cell.errorLabel.isHidden = hideErrorMessage
+        cell.selectionStyle = .none
+        cell.errorLabel.text = errorMessage
         if let webUrl = webUrl {
             cell.wkwebView.isHidden = false
             cell.wkwebView.configuration.allowsInlineMediaPlayback = true

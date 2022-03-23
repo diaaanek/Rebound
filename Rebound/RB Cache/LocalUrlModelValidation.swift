@@ -6,14 +6,14 @@
 //
 
 import Foundation
-public enum RBUrlModelValidationError: Error {
+public enum LocalUrlModelValidationError: Error {
     case noUserName
     case notEnoughUrls
 }
 
-public class RBUrlModelValidation {
+public class LocalUrlModelValidation {
     
-    public static func validateSave(user: LocalRBUser, urls: [LocalRBUrl]) -> RBUrlModelValidationError? {
+    public static func validateSave(user: LocalRBUser, urls: [LocalRBUrl]) -> LocalUrlModelValidationError? {
         if user.userName.count == 0 {
             return .noUserName
         } else if urls.isEmpty {
