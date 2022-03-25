@@ -34,7 +34,7 @@ class CreateComposer {
             itemControllers.append(contentsOf:rb.urls.map { rbUrl in
                 let presenter = EditPresenter()
                 presenters.append(presenter)
-                let editItem = EditItemController(topLabelText: "Photo Url \(count):", url: URL(string: rbUrl.url), placeHolder: "Copy Instagram photo url", displayText: rbUrl.url, delegate: EditValidationPresenterAdapter(presenter: presenter))
+                let editItem = EditItemController(topLabelText: "Photo Url \(count):", url: URL(string: rbUrl.url), placeHolder: "Copy Instagram photo url", displayText: rbUrl.url, delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
                 presenter.editView = WeakVirtualProxy(editItem)
                 editItem.refresh = {
                     editRBUserController.tableView.reloadData()
@@ -54,7 +54,7 @@ class CreateComposer {
             for i in 0..<4 {
                 let presenter = EditPresenter()
                 presenters.append(presenter)
-                let controller = EditItemController(topLabelText: "Photo Url \(i+1):", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditValidationPresenterAdapter(presenter: presenter))
+                let controller = EditItemController(topLabelText: "Photo Url \(i+1):", url: nil, placeHolder: "Copy Instagram photo url", delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
                 let editItem = controller
                   presenter.editView = WeakVirtualProxy(editItem)
                 editItem.refresh = {

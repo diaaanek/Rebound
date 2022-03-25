@@ -64,43 +64,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
                 fatalError("Error deleting")
             }
         }
-        /*  self.rbUserStore.retrieve(userId: userId) { [weak self] result in
-         switch result {
-         case .success(.some(let user)):
-         guard let self = self else {
-         return
-         }
-         var urlDict = [String: LocalRBUrl]()
-         user.urls.forEach { local in
-         urlDict[local.url] = local
-         }
-         let dispatchGroup = DispatchGroup()
-         let today = Date()
-         for editUrl in urls {
-         dispatchGroup.enter()
-         if let localUrl = urlDict[editUrl.urlString] {
-         self.rbUrlStore.merge(rbUrl: LocalRBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: editUrl.urlString, state: editUrl.isShownOnProfile, viewedLastModified: today, lastModified: today)) { result in
-         dispatchGroup.leave()
-         }
-         } else {
-         self.rbUrlStore.insert(rbUrl: LocalRBUrl(urlId: "", isPrimary: true, createdDate: today, url: editUrl.urlString, state: editUrl.isShownOnProfile, viewedLastModified: today, lastModified: today), userId: userId) { result in
-         dispatchGroup.leave()
-         }
-         }
-         }
-         dispatchGroup.notify(queue: .main) {
-         self.refreshData?()
-         self.editNavigation.navigateToSuccessSave()
-         }
-         
-         case .failure(let error):
-         fatalError(error.localizedDescription)
-         break
-         case .success(.none):
-         fatalError("User Not found")
-         }
-         }
-         */
+
     }
     
     func deleteUser(userId: String?) {

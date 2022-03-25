@@ -9,7 +9,7 @@ import Foundation
 import ReboundiOS
 import Rebound
 
-class EditValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
+class EditUrlValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
     let editPresenter : EditPresenter
     
     init(presenter: EditPresenter){

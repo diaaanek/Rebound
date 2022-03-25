@@ -351,6 +351,54 @@
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="41.517857142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="IN0-C4-SAK">
+            <objects>
+                <viewController id="ZbK-WZ-xjV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhG-dl-UKi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wUT-31-Juh">
+                                <rect key="frame" x="8" y="52" width="398" height="518.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findig" translatesAutoresizingMaskIntoConstraints="NO" id="FPj-hc-eKr">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="440"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the target's instagram username?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2p-UV-0SE">
+                                        <rect key="frame" x="0.0" y="452" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="joe_smith123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-id-RtN">
+                                        <rect key="frame" x="0.0" y="484.5" width="398" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-LM-I6O">
+                                <rect key="frame" x="138" y="600" width="138" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pKy-37-xSd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wUT-31-Juh" firstAttribute="top" secondItem="pKy-37-xSd" secondAttribute="top" constant="8" id="M8i-BJ-ADT"/>
+                            <constraint firstItem="wUT-31-Juh" firstAttribute="leading" secondItem="hhG-dl-UKi" secondAttribute="leading" constant="8" id="QJy-R1-dug"/>
+                            <constraint firstItem="wUT-31-Juh" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pKy-37-xSd" secondAttribute="bottom" priority="997" constant="8" id="QXy-51-MDT"/>
+                            <constraint firstItem="pKy-37-xSd" firstAttribute="trailing" secondItem="wUT-31-Juh" secondAttribute="trailing" constant="8" id="q4l-xq-DOs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qeq-Tb-zqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2579.7101449275365" y="41.517857142857139"/>
+        </scene>
         <!--Intro Controller-->
         <scene sceneID="1Ay-Vz-DPZ">
             <objects>
@@ -359,18 +407,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5d-9l-Rtp">
-                                <rect key="frame" x="115" y="433" width="184" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login with instagram"/>
-                                <connections>
-                                    <action selector="loginButton:" destination="LNK-dr-wVm" eventType="touchUpInside" id="X6b-kT-b5c"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 1" translatesAutoresizingMaskIntoConstraints="NO" id="V1j-Rq-tdO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="okC-4S-qtk">
+                                <rect key="frame" x="33" y="44" width="348" height="470"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="cOC-Sc-cv5">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="324"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Relationships in Real-Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03E-7q-H8i">
+                                        <rect key="frame" x="25.5" y="332" width="297" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get notified when relationships end" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voB-w4-T9s">
+                                        <rect key="frame" x="67" y="364" width="214.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everything is completely private" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBB-1Q-yQJ">
+                                        <rect key="frame" x="77.5" y="388" width="193.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="They'll never know" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-ql-oWK">
+                                        <rect key="frame" x="117.5" y="412" width="113" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5d-9l-Rtp">
+                                        <rect key="frame" x="76.5" y="436" width="195" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Login with instagram" titleAlignment="center">
+                                            <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButton:" destination="LNK-dr-wVm" eventType="touchUpInside" id="X6b-kT-b5c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nsD-As-P5R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1j-Rq-tdO" firstAttribute="leading" secondItem="nsD-As-P5R" secondAttribute="leading" id="2cr-Qs-lgJ"/>
+                            <constraint firstItem="V1j-Rq-tdO" firstAttribute="top" secondItem="UoI-jF-bDM" secondAttribute="top" id="RwX-Jq-2bY"/>
+                            <constraint firstItem="okC-4S-qtk" firstAttribute="top" secondItem="nsD-As-P5R" secondAttribute="top" id="Zo7-DW-Zo4"/>
+                            <constraint firstAttribute="bottom" secondItem="V1j-Rq-tdO" secondAttribute="bottom" id="a6p-cr-sCu"/>
+                            <constraint firstItem="nsD-As-P5R" firstAttribute="trailing" secondItem="okC-4S-qtk" secondAttribute="trailing" constant="33" id="mKQ-Y0-WdO"/>
+                            <constraint firstItem="okC-4S-qtk" firstAttribute="leading" secondItem="nsD-As-P5R" secondAttribute="leading" constant="33" id="nXr-7W-mtg"/>
+                            <constraint firstItem="V1j-Rq-tdO" firstAttribute="trailing" secondItem="nsD-As-P5R" secondAttribute="trailing" id="pwC-cd-A5T"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="L5d-9l-Rtp" id="pwK-Jv-FVd"/>
@@ -382,8 +477,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background 1" width="375" height="812"/>
+        <image name="Loader" width="348" height="324"/>
+        <image name="findig" width="375" height="440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

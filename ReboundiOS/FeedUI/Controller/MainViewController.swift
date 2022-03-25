@@ -141,7 +141,6 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         dataSource.apply(snapShot,animatingDifferences: false)
     }
 
-    
     public func displayLoading(loadingModelView: LoadingModelView) {
         if loadingModelView.isLoading && !refreshControl.isRefreshing {
             self.refreshControl.beginRefreshing()

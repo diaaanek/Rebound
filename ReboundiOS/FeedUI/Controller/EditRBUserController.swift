@@ -13,15 +13,7 @@ public protocol EditRBUserDelegate {
     func editExistingUser(userId: String, name: EditItemController, urls:[EditItemController])
     func deleteUser(userId: String?)
 }
-public struct EditUser {
-    var name = ""
-    var urls = [String]()
-}
-public struct EditUrl {
-   public var urlId : String?
-   public var urlString: String
-   public var isShownOnProfile : Bool
-}
+
 public class EditRBUserController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     public var modelViews = [EditItemController]()
     @IBOutlet public weak var tableView: UITableView!
