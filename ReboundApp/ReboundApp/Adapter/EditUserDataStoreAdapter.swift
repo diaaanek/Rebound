@@ -21,7 +21,9 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
         self.presenters = presenters
     }
     
-    func createdNewUser(name: EditItemController, urls: [EditItemController], creationDate: Date) {
+    func createdNewUser(items: [EditItemController], creationDate: Date) {
+        let name = items.first!
+        let urls = items[1...]
         self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
             LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
         }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
@@ -55,11 +57,13 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
         }
     }
     
-    func editExistingUser(userId: String, name: EditItemController, urls: [EditItemController]) {
+    func editExistingUser(userId: String, items: [EditItemController]) {
+        let name = items.first!
+        let urls = items[1...]
         self.rbUserStore.deleteRBUser(rbUserId: userId) { result in
             switch result {
             case .success():
-                self.createdNewUser(name: name, urls: urls, creationDate: Date())
+                self.createdNewUser(items: items, creationDate: Date())
             case .failure(let error):
                 fatalError("Error deleting")
             }

@@ -10,7 +10,7 @@ import Rebound
 import UIKit
 import WebKit
 public protocol EditItemControllerDelegate: NSObject {
-    func validate(string: String)
+    func validate(string: String) -> Bool
 }
 public class EditItemController:NSObject, EditView {
     var delegate : EditItemControllerDelegate?
@@ -22,6 +22,7 @@ public class EditItemController:NSObject, EditView {
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
+    public var isValidated = false
     var hideErrorMessage : Bool = true
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
@@ -110,8 +111,9 @@ extension EditItemController : UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         if let userInputText = textField.text {
             if let delegate = delegate {
-                delegate.validate(string: userInputText)
+                isValidated = delegate.validate(string: userInputText)
             } else {
+                isValidated = true
                 displayText = userInputText
             }
         }

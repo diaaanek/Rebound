@@ -59,6 +59,8 @@
 		29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4E27C598DD00E97E16 /* SectionHeader.swift */; };
 		29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */; };
 		29BEF5ED27C8A05D0002614C /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BEF5EC27C8A05D0002614C /* SectionHeader.xib */; };
+		29CD1EC727EE8AF800F526DF /* ImageTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1EC627EE8AF800F526DF /* ImageTextFieldCell.swift */; };
+		29CD1ECB27EE977900F526DF /* ImageTextFieldItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */; };
 		29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBCF27DAC17600138DC0 /* CreateCell.swift */; };
 		29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD127DAECB900138DC0 /* EmptyCell.swift */; };
 		29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */; };
@@ -152,6 +154,8 @@
 		29751C4E27C598DD00E97E16 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCollectionViewCell.swift; sourceTree = "<group>"; };
 		29BEF5EC27C8A05D0002614C /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		29CD1EC627EE8AF800F526DF /* ImageTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldCell.swift; sourceTree = "<group>"; };
+		29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldItemController.swift; sourceTree = "<group>"; };
 		29CDCBCF27DAC17600138DC0 /* CreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCell.swift; sourceTree = "<group>"; };
 		29CDCBD127DAECB900138DC0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRBUserController.swift; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 				2958259227DDA45A00AC65BF /* EditItemController.swift */,
 				29261B9527E3F68400CD2FF8 /* IntroController.swift */,
 				29261B9927E9462900CD2FF8 /* AccountTableViewController.swift */,
+				29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				29CDCBCF27DAC17600138DC0 /* CreateCell.swift */,
 				29CDCBD127DAECB900138DC0 /* EmptyCell.swift */,
 				29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */,
+				29CD1EC627EE8AF800F526DF /* ImageTextFieldCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 			files = (
 				29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */,
 				29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */,
+				29CD1ECB27EE977900F526DF /* ImageTextFieldItemController.swift in Sources */,
 				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
@@ -647,6 +654,7 @@
 				29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */,
 				2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
+				29CD1EC727EE8AF800F526DF /* ImageTextFieldCell.swift in Sources */,
 				2958259327DDA45A00AC65BF /* EditItemController.swift in Sources */,
 				29261B9A27E9462900CD2FF8 /* AccountTableViewController.swift in Sources */,
 				29751C2027C569A500E97E16 /* MainViewController.swift in Sources */,

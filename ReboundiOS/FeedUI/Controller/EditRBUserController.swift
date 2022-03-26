@@ -9,8 +9,8 @@ import UIKit
 import Rebound
 
 public protocol EditRBUserDelegate {
-    func createdNewUser(name: EditItemController, urls: [EditItemController], creationDate: Date)
-    func editExistingUser(userId: String, name: EditItemController, urls:[EditItemController])
+    func createdNewUser(items: [EditItemController], creationDate: Date)
+    func editExistingUser(userId: String, items:[EditItemController])
     func deleteUser(userId: String?)
 }
 
@@ -30,7 +30,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //EditUser
-     
+        
         
         assert(validateUrl != nil)
     }
@@ -65,19 +65,12 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func saveButtonSelected(_ sender: Any) {
-        if let firstItem = modelViews.first {
-            let name = firstItem
-            let urlStrings : [EditItemController] = modelViews[1...].compactMap({ item in
-                if item.displayText.count == 0 {
-                    return nil
-                }
-                return item
-            })
-           if let rbUser = rbUser {
-                delegate?.editExistingUser(userId: rbUser.userId, name: name, urls: urlStrings)
-            } else {
-                delegate?.createdNewUser(name: name, urls: urlStrings, creationDate: Date())
-            }
+        let items : [EditItemController] = modelViews
+        if let rbUser = rbUser {
+            delegate?.editExistingUser(userId: rbUser.userId, items: items)
+        } else {
+            delegate?.createdNewUser(items:items, creationDate: Date())
         }
     }
+    
 }

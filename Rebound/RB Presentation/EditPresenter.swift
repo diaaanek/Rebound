@@ -22,7 +22,7 @@ public class EditPresenter {
     
    public var editView : EditView? = nil
     public init(){}
-    public func showValidInput(displayText: String, url: URL) {
+    public func showValidInput(displayText: String, url: URL?) {
         self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: "", wkWebViewHidden: false))
     }
     public func showValidName(displayText: String) {
