@@ -9,6 +9,20 @@ import Foundation
 import CoreData
 
 extension CoreDataStore: RBUserStore {
+    
+    public func replaceRBUser(rbUserId: String, localRbUser: LocalRBUser, completion: @escaping (Result<LocalRBUser?, Error>) -> ()) {
+        self.deleteItem(objectId: rbUserId) { result in
+            self.insert(rbUrl: localRbUser.urls, user: localRbUser, timestamp: Date()) { result in
+                switch result {
+                case .success(let user):
+                    completion(.success(user))
+                case .failure(let error):
+                    break
+                }
+            }
+        }
+    }
+    
     public func retrieve(userId: String, completion: @escaping (Result<LocalRBUser?, Error>) -> ()) {
         perform { context in
             completion(Result {

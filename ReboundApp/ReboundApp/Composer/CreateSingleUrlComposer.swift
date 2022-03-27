@@ -28,7 +28,7 @@ class CreateSingleUrlComposer {
             }
         createNameController.editItems.append(nameEditItem)
             presenter.editView = nameEditItem
-        createNameController.imageTextItem = ImageTextFieldItemController(imageString: "copylink", text: "Go to Instagram and copy the link of a relationship photo.")
+        createNameController.imageTextItem = ImageTextFieldItemController(imageString: "copylink", text: "Go to Instagram and copy the link of a relationship image or video. We'll let you know when they delete it. That's a good indicator that the relationship has ended.")
         createNameController.configDelegate = EditImageTextFieldConfig()
         createNameController.delegate = CreateUrlAdapterNavigation(nav: navigationController, nameItem: nameString, coreDataStore: self.coreData, refreshData: refreshData ?? {}) // revisit
         return createNameController

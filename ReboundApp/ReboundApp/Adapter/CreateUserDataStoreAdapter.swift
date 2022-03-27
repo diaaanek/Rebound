@@ -8,7 +8,7 @@
 import Foundation
 import ReboundiOS
 import Rebound
-class EditUserDataStoreAdapter : EditRBUserDelegate {
+class CreateUserDataStoreAdapter : EditRBUserDelegate {
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
     let editNavigation : EditControllerNavigation
@@ -36,24 +36,6 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
             switch result {
             case .failure(let error):
                 break
-//                if let namePresenter = strongSelf.presenters.getName(), let requiredUrl = strongSelf.presenters.requiredUrl()  {
-//
-//                    DispatchQueue.main.async {
-//                        switch error {
-//                        case LocalUrlModelValidationError.noUserName:
-//                            namePresenter.showError(errorMessage: "Must input a valid instagram username.")
-//
-//                        case LocalUrlModelValidationError.notEnoughUrls:
-//                            namePresenter.showValidName(displayText: name.displayText)
-//                            requiredUrl.showError(errorMessage: "Must input at least one valid instagram photo url.")
-//
-//                        default:
-//                            fatalError(error.localizedDescription)
-//                        }
-//                    }
-//                } else {
-//                    fatalError("Not enough editItems")
-//                }
             case .success(_):
                 self?.refreshData?()
                 self?.editNavigation.navigateToSuccessSave()
@@ -87,6 +69,42 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     }
     
     
+}
+
+class EditUserDataStoreAdapter: CreateUserDataStoreAdapter {
+    let userId : String
+    init(userId: String, rbUserStore: RBUserStore, rbUrlStore: RBUrlStore, editNav: EditControllerNavigation) {
+        self.userId = userId
+        super.init(rbUserStore: rbUserStore, rbUrlStore: rbUrlStore, editNav: editNav)
+    }
+    
+    
+    override func result(items: [EditItemController], creationDate: Date) {
+        let name = items.first!
+        let urls : [EditItemController] = items[1...].compactMap { item in
+            if item.displayText.isEmpty {
+                return nil
+            }
+            return item
+        }
+        var localUser = LocalRBUser(userId: userId, userName: name.displayText, createdDate: creationDate)
+        localUser.urls = urls.map({ urlString in
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
+        })
+        
+        self.rbUserStore.replaceRBUser(rbUserId: userId, localRbUser: localUser) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            switch result {
+            case .failure(let error):
+                break
+            case .success(_):
+                self?.refreshData?()
+                self?.editNavigation.navigateToSuccessSave()
+            }
+        }
+    }
 }
 
 

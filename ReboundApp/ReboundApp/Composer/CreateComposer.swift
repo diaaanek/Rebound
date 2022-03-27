@@ -29,20 +29,18 @@ class CreateComposer {
         let nameEditPresenter = EditPresenter()
         nameEditPresenter.editView = nameEditItem
         presenters.append(nameEditPresenter)
-        var count = 1
         itemControllers.append(contentsOf:rbUser.urls.map { rbUrl in
             let presenter = EditPresenter()
             presenters.append(presenter)
-            let editItem = EditItemController(topLabelText: "Photo Url \(count):", url: URL(string: rbUrl.url), placeHolder: "Copy Instagram photo url", displayText: rbUrl.url, delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
+            let editItem = EditItemController(topLabelText: "Target's Instagram Url:", url: URL(string: rbUrl.url), placeHolder: "Paste link to relationship photo or video here...", displayText: rbUrl.url, delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
             presenter.editView = WeakVirtualProxy(editItem)
             editItem.refresh = {
                 editRBUserController.tableView.reloadData()
             }
-            count += 1
             return editItem
         })
         
-        let adapter = EditUserDataStoreAdapter(rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
+        let adapter = EditUserDataStoreAdapter(userId: rbUser.userId, rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
         editRBUserController.delegate = adapter
         editRBUserController.editItems = itemControllers
         adapter.refreshData = refreshData
@@ -60,10 +58,10 @@ class CreateComposer {
         }
         
         let nameEditPresenter = EditPresenter()
-        let nameItemController = createEditItemController(topLabel: "Target's Instagram Username", placeholder: "username", displayText: nameString, validationDelegate: EditUserNameValidationPresenterAdapter(presenter: nameEditPresenter), presenter: nameEditPresenter, refreshItem: refresh)
+        let nameItemController = createEditItemController(topLabel: "Target's Instagram Username", placeholder: "username", displayText: nameString, validationDelegate: EditUserNameValidationPresenterAdapter(presenter: nameEditPresenter), presenter: nameEditPresenter, url: nil, refreshItem: refresh)
         
         let urlEditPresenter = EditPresenter()
-        let urlItemController = createEditItemController(topLabel: "Target's Instagram Url:", placeholder: "Copy Instagram photo url", displayText: urlString, validationDelegate: EditUrlValidationPresenterAdapter(presenter: urlEditPresenter), presenter: urlEditPresenter, refreshItem: refresh)
+        let urlItemController = createEditItemController(topLabel: "Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: urlString, validationDelegate: EditUrlValidationPresenterAdapter(presenter: urlEditPresenter), presenter: urlEditPresenter, url: URL(string:urlString), refreshItem: refresh)
         
         itemControllers.append(nameItemController)
         itemControllers.append(urlItemController)
@@ -71,18 +69,18 @@ class CreateComposer {
         for i in 2..<4 {
             let presenter = EditPresenter()
             
-            let optionUrlItemControllers = createEditItemController(topLabel: "Optional Photo Url:", placeholder: "Paste link to relationship photo here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, refreshItem: refresh)
+            let optionUrlItemControllers = createEditItemController(topLabel: "Optional Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, url: nil, refreshItem: refresh)
             itemControllers.append(optionUrlItemControllers)
         }
         
-        let adapter = EditUserDataStoreAdapter(rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
+        let adapter = CreateUserDataStoreAdapter(rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
         editRBUserController.delegate = adapter
         editRBUserController.editItems = itemControllers
         adapter.refreshData = refreshData
         return editRBUserController
     }
-    private func createEditItemController(topLabel: String, placeholder: String, displayText: String, validationDelegate: EditItemControllerDelegate?, presenter: EditPresenter, refreshItem: @escaping ()->()) -> EditItemController {
-        let editItemController = EditItemController(topLabelText: topLabel, url: nil, placeHolder: placeholder, displayText: displayText, delegate: validationDelegate)
+    private func createEditItemController(topLabel: String, placeholder: String, displayText: String, validationDelegate: EditItemControllerDelegate?, presenter: EditPresenter, url: URL?,  refreshItem: @escaping ()->()) -> EditItemController {
+        let editItemController = EditItemController(topLabelText: topLabel, url: url, placeHolder: placeholder, displayText: displayText, delegate: validationDelegate)
         editItemController.refresh = refreshItem
         presenter.editView = editItemController
 

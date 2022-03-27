@@ -72,7 +72,6 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         return editItems.count
         
     }
-    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let imageTextItem = imageTextItem, indexPath.section == 0 {
             return imageTextItem.dequeue(tableView: tableView, indexPath: indexPath)
