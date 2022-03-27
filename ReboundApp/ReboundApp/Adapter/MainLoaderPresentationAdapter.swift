@@ -28,7 +28,7 @@ class MainLoaderPresentationAdapter: MainViewDelegate {
                         var user = RBUser(userId: localUser.userId,
                                       userName: localUser.userName, createdDate: localUser.createdDate)
                         user.urls = localUser.urls.map { localUrl in
-                            return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.isShown, lastModified: localUrl.lastModified, viewedLastModified: localUrl.createdDate)
+                            return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.isShown, lastModified: localUrl.lastModified, pageData: localUrl.pageData, viewedLastModified: localUrl.createdDate)
                         }
                         return user
                     })

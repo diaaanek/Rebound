@@ -39,7 +39,7 @@ class MainFeedComposer {
         mainViewController.sectionHeader2 = MainFeedPresenter.noSectionTitle
         mainViewController.didRequestSync = {
             let secret = try! Secret.decoding(UserDefaults.standard.data(forKey: "secret")!)
-            let sync = Sync(webLoader: RemoteWebUrlLoader(httpClient:WkWebViewUrlLoader(headers: secret.header)), rbUserStore: cache, rbUrlStore: cache)
+            let sync = Sync(webLoader: RemoteWebUrlLoader(httpClient:UrlLoader(headers: secret.header)), rbUserStore: cache, rbUrlStore: cache)
           //  mainFeedPresenter.didStartLoading()
             sync.syncAll {
                 mainViewController.reloadCollectionView()

@@ -113,11 +113,11 @@ public class MainItemController: CellController  {
                 return nil
             }
             let urlCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UrlCollectionViewCell", for: indexPath) as! UrlCollectionViewCell
-            let url = strongSelf.user.urls[indexPath.row]
+            let rbUrl = strongSelf.user.urls[indexPath.row]
             urlCell.webView.configuration.allowsInlineMediaPlayback = true
             urlCell.webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
-            urlCell.webView.load(URLRequest(url: URL(string:url.url)!))
-               if url.isShown {
+            urlCell.webView.load(URLRequest(url: URL(string:rbUrl.url)!))
+               if rbUrl.isShown {
                    urlCell.bottomCenterLabel.text = "Shown on profile"
                } else {
                    urlCell.bottomCenterLabel.text = "Removed from profile"

@@ -10,7 +10,7 @@ public enum UrlError: Error {
     case invalidUrl
 }
 
-public class WkWebViewUrlLoader:NSObject, HttpClient {
+public class UrlLoader:NSObject, HttpClient {
     var completion : ((Result<(Data,HTTPURLResponse), Error>) -> Void)?
     var headers : [String:String]
     public init(headers: [String:String]) {

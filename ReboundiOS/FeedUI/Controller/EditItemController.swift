@@ -26,6 +26,7 @@ public class EditItemController:NSObject, EditView {
     var hideErrorMessage : Bool = true
     var indexPath : IndexPath?
     var tableView: UITableView?
+    public var pageData: Data?
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
@@ -111,13 +112,14 @@ extension EditItemController: WKNavigationDelegate {
             guard let self = self else {
                 return
             }
-            
             if let result = value as? String {
+                self.pageData = result.data(using: .utf8)
                 if result.contains("Sorry") {
                     self.isShownOnProfile = false
                 }
-            } else {
-                self.isShownOnProfile = true
+                else {
+                    self.isShownOnProfile = true
+                }
             }
         })
     }

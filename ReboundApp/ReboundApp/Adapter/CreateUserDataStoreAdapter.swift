@@ -28,7 +28,7 @@ class CreateUserDataStoreAdapter : EditRBUserDelegate {
             return item
         }
         self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate)
         }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
             guard let strongSelf = self else {
                 return
@@ -89,7 +89,7 @@ class EditUserDataStoreAdapter: CreateUserDataStoreAdapter {
         }
         var localUser = LocalRBUser(userId: userId, userName: name.displayText, createdDate: creationDate)
         localUser.urls = urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate)
         })
         
         self.rbUserStore.replaceRBUser(rbUserId: userId, localRbUser: localUser) { [weak self] result in

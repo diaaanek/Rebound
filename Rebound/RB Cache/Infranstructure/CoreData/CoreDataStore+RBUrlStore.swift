@@ -51,7 +51,7 @@ extension CoreDataStore: RBUrlStore {
                 managedUrl.uri = URL(string:local.url)
                 managedUrl.user = managedObject
                 try context.save()
-                let newItem = LocalRBUrl(urlId: managedUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, viewedLastModified: managedUrl.viewedlastmodified, lastModified: managedUrl.lastmodified!)
+                let newItem = LocalRBUrl(urlId: managedUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, pageData: local.pageData, viewedLastModified: managedUrl.viewedlastmodified, lastModified: managedUrl.lastmodified!)
                 
                 return newItem
             })
@@ -78,6 +78,7 @@ extension CoreDataStore: RBUrlStore {
                     managedUrl.isshown = local.isShown
                     managedUrl.uri = URL(string:local.url)
                     managedUrl.user = rbUser
+                    managedUrl.pagedata = local.pageData
                 }
                 try context.save()
                 return newUser
@@ -102,7 +103,7 @@ extension CoreDataStore: RBUrlStore {
                 request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
                 let result = try context.fetch(request)
                 return result.map { managed in
-                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
+                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown,pageData: managed.pagedata!, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
                 }
             })
         }

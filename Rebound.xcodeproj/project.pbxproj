@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29261B8D27E256DE00CD2FF8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8C27E256DE00CD2FF8 /* HttpClient.swift */; };
-		29261B8F27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */; };
+		29261B8F27E2578F00CD2FF8 /* UrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B8E27E2578F00CD2FF8 /* UrlLoader.swift */; };
 		29261B9127E25C1500CD2FF8 /* WebUrlLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */; };
 		29261B9427E25E9800CD2FF8 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9327E25E9800CD2FF8 /* Sync.swift */; };
 		29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29261B9527E3F68400CD2FF8 /* IntroController.swift */; };
@@ -102,7 +102,7 @@
 
 /* Begin PBXFileReference section */
 		29261B8C27E256DE00CD2FF8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewUrlLoader.swift; sourceTree = "<group>"; };
+		29261B8E27E2578F00CD2FF8 /* UrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlLoader.swift; sourceTree = "<group>"; };
 		29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUrlLoader.swift; sourceTree = "<group>"; };
 		29261B9327E25E9800CD2FF8 /* Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		29261B9527E3F68400CD2FF8 /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				29261B8C27E256DE00CD2FF8 /* HttpClient.swift */,
-				29261B8E27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift */,
+				29261B8E27E2578F00CD2FF8 /* UrlLoader.swift */,
 				29261B9027E25C1500CD2FF8 /* WebUrlLoader.swift */,
 			);
 			path = Remote;
@@ -690,7 +690,7 @@
 				29751C1F27C5690800E97E16 /* CoreDataStore+RBUserStore.swift in Sources */,
 				29751C1B27C568ED00E97E16 /* LocalRBUrl.swift in Sources */,
 				29751C3F27C57F1700E97E16 /* RBUrlModelView.swift in Sources */,
-				29261B8F27E2578F00CD2FF8 /* WkWebViewUrlLoader.swift in Sources */,
+				29261B8F27E2578F00CD2FF8 /* UrlLoader.swift in Sources */,
 				29751C2E27C56DCD00E97E16 /* RBUser.swift in Sources */,
 				29751C1827C568E700E97E16 /* RBUrlStore.swift in Sources */,
 				29751C3627C575EF00E97E16 /* MainModelView.swift in Sources */,
