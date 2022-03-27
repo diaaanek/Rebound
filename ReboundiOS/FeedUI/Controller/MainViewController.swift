@@ -47,6 +47,9 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         self.collectionView.addSubview(refreshControl) // not required when using UITableViewController
         self.collectionView.refreshControl = refreshControl
         didRequestSync?()
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { [weak self] notification in
+            self?.didRequestSync?()
+        }
     }
 
     @objc func pullToRefresh(_ sender: AnyObject) {
