@@ -22,6 +22,14 @@ public class EditPresenter {
     
    public var editView : EditView? = nil
     public init(){}
+    
+    public func showValidOptionalInput(displayText: String, url: URL?) {
+        var hidewkWeb = true
+        if let url = url {
+            hidewkWeb = false
+        }
+        self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: "", wkWebViewHidden: hidewkWeb))
+    }
     public func showValidInput(displayText: String, url: URL?) {
         self.editView?.display(modelView: EditItemModelView(displayText: displayText, url: url, isError: false, errorMessage: "", wkWebViewHidden: false))
     }

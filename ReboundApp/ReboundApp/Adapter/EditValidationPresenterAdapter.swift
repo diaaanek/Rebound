@@ -18,11 +18,11 @@ class EditUrlValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
     }
     
     func validate(string: String) -> Bool {
-        if let url = URL(string:string) {
+        if let url = URL(string:string), string.contains("instagram.com") {
             editPresenter.showValidInput(displayText: string, url: url)
             return true
         } else {
-            editPresenter.showError(errorMessage: "Invalid Url")
+            editPresenter.showError(errorMessage: "Please enter a valid instagram url.")
             return false
         }
     }
@@ -38,13 +38,14 @@ class EditOptionalUrlValidationPresenterAdapter:NSObject, EditItemControllerDele
     
     func validate(string: String) -> Bool {
         if string.isEmpty {
+            editPresenter.showValidOptionalInput(displayText: string, url: nil)
             return true
         }
         if let url = URL(string:string) {
             editPresenter.showValidInput(displayText: string, url: url)
             return true
         } else {
-            editPresenter.showError(errorMessage: "Invalid Url")
+            editPresenter.showError(errorMessage: "Please enter a valid instagram url.")
             return false
         }
     }

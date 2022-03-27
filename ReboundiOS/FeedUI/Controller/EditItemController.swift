@@ -24,6 +24,8 @@ public class EditItemController:NSObject, EditView {
     var topLabelText : String
     public var isValidated = false
     var hideErrorMessage : Bool = true
+    var indexPath : IndexPath?
+    var tableView: UITableView?
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
@@ -46,6 +48,8 @@ public class EditItemController:NSObject, EditView {
                 cell.wkwebView.load(URLRequest(url: url))
             } else {
                 hideErrorMessage = true
+                webUrl = nil
+                
             }
             cell.errorLabel.text = errorMessage
             cell.wkwebView.isHidden = modelView.wkWebViewHidden
@@ -56,6 +60,8 @@ public class EditItemController:NSObject, EditView {
         }
     }
     public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        self.indexPath = indexPath
+        self.tableView = tableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "RBUserEditCell", for: indexPath) as! RBUserEditCell
         self.cell = cell
         cell.textField.autocorrectionType = .no
@@ -75,6 +81,7 @@ public class EditItemController:NSObject, EditView {
             cell.wkwebView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             cell.wkwebView.load(URLRequest(url: webUrl))
             cell.wkwebView.navigationDelegate = self
+            cell.wkwebView.isUserInteractionEnabled = false
         }
         return cell
     }
@@ -124,5 +131,8 @@ extension EditItemController : UITextFieldDelegate {
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         validate()
+        if let tableView = self.tableView, let indexPath = self.indexPath {
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }

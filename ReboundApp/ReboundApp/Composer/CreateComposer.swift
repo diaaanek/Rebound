@@ -71,7 +71,7 @@ class CreateComposer {
         for i in 2..<4 {
             let presenter = EditPresenter()
             
-            let optionUrlItemControllers = createEditItemController(topLabel: "Optional: Photo Url:", placeholder: "Paste link to relationship photo here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, refreshItem: refresh)
+            let optionUrlItemControllers = createEditItemController(topLabel: "Optional Photo Url:", placeholder: "Paste link to relationship photo here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, refreshItem: refresh)
             itemControllers.append(optionUrlItemControllers)
         }
         

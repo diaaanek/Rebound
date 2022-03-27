@@ -272,6 +272,38 @@
             endingLineNumber = "92"
             landmarkName = "retrieve(userId:count:offset:primary:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3B8D2B0-31FA-4EE4-BB87-596225EF3F95 - 86d790626ccfc665"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUrl&gt;&gt; in closure #1 (__C.NSManagedObjectContext) -&gt; () in Rebound.CoreDataStore.retrieve(userId: Swift.String, count: Swift.Int, offset: Swift.Int, primary: Swift.Optional&lt;Swift.Bool&gt;, completion: (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUrl&gt;&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/RB%20Cache/Infranstructure/CoreData/CoreDataStore+RBUrlStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "D3B8D2B0-31FA-4EE4-BB87-596225EF3F95 - 86d790626ccfc665"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUrl&gt;&gt; in closure #1 (__C.NSManagedObjectContext) -&gt; () in Rebound.CoreDataStore.retrieve(userId: Swift.String, count: Swift.Int, offset: Swift.Int, primary: Swift.Optional&lt;Swift.Bool&gt;, completion: (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUrl&gt;&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/RB%20Cache/Infranstructure/CoreData/CoreDataStore+RBUrlStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -300,8 +332,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "webView(_:didFinish:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,8 +348,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "webView(_:didFinish:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -332,8 +364,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "webView(_:didFinish:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -438,7 +470,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3A8A1D69-9C23-488D-BDD3-4603038165B3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -449,6 +481,36 @@
             landmarkName = "syncAll(completion:)"
             landmarkType = "7">
             <Locations>
+               <Location
+                  uuid = "3A8A1D69-9C23-488D-BDD3-4603038165B3 - d17afa60767cbe03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "517">
+               </Location>
+               <Location
+                  uuid = "3A8A1D69-9C23-488D-BDD3-4603038165B3 - d17afa60767cbe03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "565">
+               </Location>
                <Location
                   uuid = "3A8A1D69-9C23-488D-BDD3-4603038165B3 - d17afa60767cbe03"
                   shouldBeEnabled = "Yes"
@@ -518,7 +580,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0E476D75-B56E-45B5-8C21-41C9C672E811"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -528,6 +590,38 @@
             endingLineNumber = "73"
             landmarkName = "sync(rbUrl:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0E476D75-B56E-45B5-8C21-41C9C672E811 - 835eadd0997371b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1225">
+               </Location>
+               <Location
+                  uuid = "0E476D75-B56E-45B5-8C21-41C9C672E811 - 835eadd0997371b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1328">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -608,6 +702,38 @@
             endingLineNumber = "15"
             landmarkName = "retrieve(userId:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96D4832C-0ECE-4338-A783-D0A4950E3F0D - 5b5fd8b420036adb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;Rebound.LocalRBUser&gt; in closure #1 (__C.NSManagedObjectContext) -&gt; () in Rebound.CoreDataStore.retrieve(userId: Swift.String, completion: (Swift.Result&lt;Swift.Optional&lt;Rebound.LocalRBUser&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/RB%20Cache/Infranstructure/CoreData/CoreDataStore+RBUserStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "460">
+               </Location>
+               <Location
+                  uuid = "96D4832C-0ECE-4338-A783-D0A4950E3F0D - 5b5fd8b420036adb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;Rebound.LocalRBUser&gt; in closure #1 (__C.NSManagedObjectContext) -&gt; () in Rebound.CoreDataStore.retrieve(userId: Swift.String, completion: (Swift.Result&lt;Swift.Optional&lt;Rebound.LocalRBUser&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/RB%20Cache/Infranstructure/CoreData/CoreDataStore+RBUserStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "740">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -988,8 +1114,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditRBUserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1113,8 +1239,8 @@
             filePath = "../Rebound/RB Presentation/EditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "showValidName(displayText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1129,8 +1255,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "display(modelView:)"
             landmarkType = "7">
             <Locations>
@@ -1209,8 +1335,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "display(modelView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1225,8 +1351,8 @@
             filePath = "../ReboundiOS/FeedUI/Controller/EditItemController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "display(modelView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1241,8 +1367,8 @@
             filePath = "ReboundApp/Adapter/EditValidationPresenterAdapter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "validate(string:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1257,8 +1383,8 @@
             filePath = "../Rebound/RB Presentation/EditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "showValidInput(displayText:url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1315,7 +1441,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7A87C347-B1FD-47B5-BAED-0F63F4B0D44C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ReboundiOS/FeedUI/Controller/MainItemController.swift"
@@ -1325,13 +1451,45 @@
             endingLineNumber = "29"
             landmarkName = "dequeue(collectionView:indexPath:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7A87C347-B1FD-47B5-BAED-0F63F4B0D44C - 72e5e5cbb07788c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundiOS.CreateCellController.dequeue(collectionView: __C.UICollectionView, indexPath: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainItemController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "369">
+               </Location>
+               <Location
+                  uuid = "7A87C347-B1FD-47B5-BAED-0F63F4B0D44C - 72e5e5cbb07788c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ReboundiOS.CreateCellController.dequeue(collectionView: __C.UICollectionView, indexPath: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainItemController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "356">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "61A6E6D3-7043-4558-8813-9DFEFA0B7378"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ReboundiOS/FeedUI/Controller/MainViewController.swift"
@@ -1341,6 +1499,38 @@
             endingLineNumber = "95"
             landmarkName = "configureDataSource()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61A6E6D3-7043-4558-8813-9DFEFA0B7378 - e9de172636c2bc3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, Swift.AnyHashable) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in ReboundiOS.MainViewController.configureDataSource() -&gt; ()"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "61A6E6D3-7043-4558-8813-9DFEFA0B7378 - e9de172636c2bc3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, Swift.AnyHashable) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in ReboundiOS.MainViewController.configureDataSource() -&gt; ()"
+                  moduleName = "ReboundiOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/ReboundiOS/FeedUI/Controller/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1363,7 +1553,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6329F744-EB60-4EED-93D4-D05243414C2C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -1373,13 +1563,45 @@
             endingLineNumber = "22"
             landmarkName = "syncAll(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6329F744-EB60-4EED-93D4-D05243414C2C - d17afa60767cbe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "443">
+               </Location>
+               <Location
+                  uuid = "6329F744-EB60-4EED-93D4-D05243414C2C - d17afa60767cbe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "632">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1DC26A75-A0E6-4A69-9DAA-C0FF4AE8C69B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -1389,6 +1611,38 @@
             endingLineNumber = "30"
             landmarkName = "syncAll(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1DC26A75-A0E6-4A69-9DAA-C0FF4AE8C69B - 8404ed46ed6098be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Rebound.RBUrl) -&gt; () in closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "1DC26A75-A0E6-4A69-9DAA-C0FF4AE8C69B - 8404ed46ed6098be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Rebound.RBUrl) -&gt; () in closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1411,7 +1665,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "156ED60F-BC72-4793-87FD-BC4F771C38E4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -1421,6 +1675,38 @@
             endingLineNumber = "48"
             landmarkName = "syncAll(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "156ED60F-BC72-4793-87FD-BC4F771C38E4 - 9987401917a4377c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "156ED60F-BC72-4793-87FD-BC4F771C38E4 - 9987401917a4377c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 (Swift.Result&lt;Swift.Optional&lt;Swift.Array&lt;Rebound.LocalRBUser&gt;&gt;, Swift.Error&gt;) -&gt; () in Rebound.Sync.syncAll(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1443,7 +1729,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "32EFA346-22BF-4750-AF0A-08850788A5DD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -1453,13 +1739,45 @@
             endingLineNumber = "76"
             landmarkName = "sync(rbUrl:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "32EFA346-22BF-4750-AF0A-08850788A5DD - 8facac3796b86da4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "509">
+               </Location>
+               <Location
+                  uuid = "32EFA346-22BF-4750-AF0A-08850788A5DD - 8facac3796b86da4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6EE92D11-C1B9-4BF7-A9B8-EA310BFF3BD3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Sync/Sync.swift"
@@ -1469,13 +1787,45 @@
             endingLineNumber = "65"
             landmarkName = "sync(rbUrl:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EE92D11-C1B9-4BF7-A9B8-EA310BFF3BD3 - 835eadd09973463"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "530">
+               </Location>
+               <Location
+                  uuid = "6EE92D11-C1B9-4BF7-A9B8-EA310BFF3BD3 - 835eadd09973463"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.Sync.sync(rbUrl: Rebound.RBUrl, completion: (Swift.Result&lt;Rebound.RBUrl, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Sync/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FAB67902-51E2-42FB-90BC-D376BDB2AC18"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Rebound/Remote/WebUrlLoader.swift"
@@ -1484,6 +1834,70 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "loadWebUrl(urlString:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FAB67902-51E2-42FB-90BC-D376BDB2AC18 - 8e771fd19656ca35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.RemoteWebUrlLoader.loadWebUrl(urlString: Swift.String, completion: (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Remote/WebUrlLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "245">
+               </Location>
+               <Location
+                  uuid = "FAB67902-51E2-42FB-90BC-D376BDB2AC18 - 8e771fd19656ca35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; () in Rebound.RemoteWebUrlLoader.loadWebUrl(urlString: Swift.String, completion: (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "Rebound"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ethankeiser/Documents/Projects/ReboundV2/Rebound/Remote/WebUrlLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93E87C18-F8C6-42E6-90D2-20C67265F2E9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ReboundiOS/FeedUI/Controller/EditRBUserController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "keyboardWillShow(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFE2219A-369E-4BC7-9106-310C3B78DDDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Rebound/Sync/Sync.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "syncAll(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

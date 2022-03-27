@@ -65,7 +65,6 @@
 		29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD127DAECB900138DC0 /* EmptyCell.swift */; };
 		29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */; };
 		29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */; };
-		29CDCBDF27DBBB4500138DC0 /* String+UrlValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDE27DBBB4500138DC0 /* String+UrlValidation.swift */; };
 		29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC527C6942900AB92A2 /* MainItemController.swift */; };
 		29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */; };
 /* End PBXBuildFile section */
@@ -160,7 +159,6 @@
 		29CDCBD127DAECB900138DC0 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		29CDCBD727DB11D400138DC0 /* EditRBUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRBUserController.swift; sourceTree = "<group>"; };
 		29CDCBD927DB13DB00138DC0 /* RBUserEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserEditCell.swift; sourceTree = "<group>"; };
-		29CDCBDE27DBBB4500138DC0 /* String+UrlValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrlValidation.swift"; sourceTree = "<group>"; };
 		29ECBDC527C6942900AB92A2 /* MainItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemController.swift; sourceTree = "<group>"; };
 		29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,7 +430,6 @@
 		29CDCBDD27DBBAFA00138DC0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				29CDCBDE27DBBB4500138DC0 /* String+UrlValidation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -646,7 +643,6 @@
 				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
 				2950076827C5A73C0002FF39 /* UICollectionView+Dequeueing.swift in Sources */,
 				29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */,
-				29CDCBDF27DBBB4500138DC0 /* String+UrlValidation.swift in Sources */,
 				29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */,
 				29CDCBD827DB11D400138DC0 /* EditRBUserController.swift in Sources */,
 				29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */,
