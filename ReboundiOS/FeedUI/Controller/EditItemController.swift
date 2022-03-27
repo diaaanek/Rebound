@@ -13,7 +13,7 @@ public protocol EditItemControllerDelegate: NSObject {
     func validate(string: String) -> Bool
 }
 public class EditItemController:NSObject, EditView {
-    var delegate : EditItemControllerDelegate?
+    var validationDelegate : EditItemControllerDelegate?
     var cell : RBUserEditCell?
     public var displayText : String = ""
     public var isShownOnProfile : Bool = true
@@ -29,7 +29,7 @@ public class EditItemController:NSObject, EditView {
         webUrl = url
         self.topLabelText = topLabelText
         self.placeHolder = placeHolder
-        self.delegate = delegate
+        self.validationDelegate = delegate
     }
     
     public func display(modelView: EditItemModelView) {
@@ -51,6 +51,7 @@ public class EditItemController:NSObject, EditView {
             cell.wkwebView.isHidden = modelView.wkWebViewHidden
             cell.errorLabel.isHidden = hideErrorMessage
             cell.textField.text = modelView.displayText
+            displayText = modelView.displayText
             refresh?()
         }
     }
@@ -77,12 +78,25 @@ public class EditItemController:NSObject, EditView {
         }
         return cell
     }
+    @discardableResult
+    public func validate() -> Bool {
+        if let cell = cell, let userInputText = cell.textField.text {
+            if let delegate = validationDelegate {
+                isValidated = delegate.validate(string: userInputText)
+            } else {
+                isValidated = true
+                displayText = userInputText
+            }
+        }
+        refresh?()
+        return isValidated
+    }
 }
 extension EditItemController: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.evaluateJavaScript("document.body.innerHTML", completionHandler: { [weak self] (value: Any!, error: Error!) -> Void in
-
+            
             if error != nil {
                 //Error logic
                 return
@@ -90,7 +104,7 @@ extension EditItemController: WKNavigationDelegate {
             guard let self = self else {
                 return
             }
-
+            
             if let result = value as? String {
                 if result.contains("Sorry") {
                     self.isShownOnProfile = false
@@ -109,14 +123,6 @@ extension EditItemController : UITextFieldDelegate {
         return true
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        if let userInputText = textField.text {
-            if let delegate = delegate {
-                isValidated = delegate.validate(string: userInputText)
-            } else {
-                isValidated = true
-                displayText = userInputText
-            }
-        }
-        refresh?()
+        validate()
     }
 }

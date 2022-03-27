@@ -25,7 +25,14 @@ class MainNavigationFlow : MainNavigationItemDelegate {
             self.navigationController.present(accountViewController, animated: true)
         }
     }
-    func navigateToCreate(rbUser: RBUser?) {
+    func navigateToCreate() {
+        let navigation = UINavigationController()
+        let createController = CreateNameComposer().composeCreateViewController(coreData: self.cache, navigationController: navigation, refreshData: refreshData)
+        navigation.setViewControllers([createController], animated: false)
+        self.navigationController.present(navigation, animated: true)
+    }
+
+    func navigateToCreate(rbUser: RBUser) {
         let createController = CreateComposer().composeCreateViewController(rbUser: rbUser, coreDataStore: cache, navigationController: self.navigationController, refreshData: refreshData)
         self.navigationController.present(createController, animated: true)
     }

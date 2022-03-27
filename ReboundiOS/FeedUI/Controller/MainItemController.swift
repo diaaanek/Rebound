@@ -13,7 +13,7 @@ public protocol MainItemDelegate {
     func loadItems() // load cell items
 }
 public protocol MainNavigationItemDelegate {
-    func navigateToCreate(rbUser: RBUser?)
+    func navigateToCreate(rbUser: RBUser)
 }
 public protocol CellController: Hashable {
     func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell

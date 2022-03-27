@@ -28,6 +28,28 @@ class EditUrlValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
     }
 }
 
+class EditOptionalUrlValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
+    
+    let editPresenter : EditPresenter
+    
+    init(presenter: EditPresenter){
+        self.editPresenter = presenter
+    }
+    
+    func validate(string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+        if let url = URL(string:string) {
+            editPresenter.showValidInput(displayText: string, url: url)
+            return true
+        } else {
+            editPresenter.showError(errorMessage: "Invalid Url")
+            return false
+        }
+    }
+}
+
 class EditUserNameValidationPresenterAdapter:NSObject, EditItemControllerDelegate {
     
     let editPresenter : EditPresenter
@@ -46,3 +68,4 @@ class EditUserNameValidationPresenterAdapter:NSObject, EditItemControllerDelegat
         }
     }
 }
+

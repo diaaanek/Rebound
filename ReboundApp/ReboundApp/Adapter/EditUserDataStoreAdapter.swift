@@ -12,18 +12,21 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
     let editNavigation : EditControllerNavigation
-    let presenters : [EditPresenter]
     var refreshData : (()->())?
-    init(rbUserStore: RBUserStore, rbUrlStore: RBUrlStore, editNav: EditControllerNavigation, presenters:[EditPresenter]) {
+    init(rbUserStore: RBUserStore, rbUrlStore: RBUrlStore, editNav: EditControllerNavigation) {
         self.rbUserStore = rbUserStore
         self.rbUrlStore = rbUrlStore
         self.editNavigation = editNav
-        self.presenters = presenters
     }
     
-    func createdNewUser(items: [EditItemController], creationDate: Date) {
+    func result(items: [EditItemController], creationDate: Date) {
         let name = items.first!
-        let urls = items[1...]
+        let urls : [EditItemController] = items[1...].compactMap { item in
+            if item.displayText.isEmpty {
+                return nil
+            }
+            return item
+        }
         self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
             LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate)
         }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
@@ -32,24 +35,25 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
             }
             switch result {
             case .failure(let error):
-                if let namePresenter = strongSelf.presenters.getName(), let requiredUrl = strongSelf.presenters.requiredUrl()  {
-                    
-                    DispatchQueue.main.async {
-                        switch error {
-                        case LocalUrlModelValidationError.noUserName:
-                            namePresenter.showError(errorMessage: "Must input a valid instagram username.")
-                            
-                        case LocalUrlModelValidationError.notEnoughUrls:
-                            namePresenter.showValidName(displayText: name.displayText)
-                            requiredUrl.showError(errorMessage: "Must input at least one valid instagram photo url.")
-                            
-                        default:
-                            fatalError(error.localizedDescription)
-                        }
-                    }
-                } else {
-                    fatalError("Not enough editItems")
-                }
+                break
+//                if let namePresenter = strongSelf.presenters.getName(), let requiredUrl = strongSelf.presenters.requiredUrl()  {
+//
+//                    DispatchQueue.main.async {
+//                        switch error {
+//                        case LocalUrlModelValidationError.noUserName:
+//                            namePresenter.showError(errorMessage: "Must input a valid instagram username.")
+//
+//                        case LocalUrlModelValidationError.notEnoughUrls:
+//                            namePresenter.showValidName(displayText: name.displayText)
+//                            requiredUrl.showError(errorMessage: "Must input at least one valid instagram photo url.")
+//
+//                        default:
+//                            fatalError(error.localizedDescription)
+//                        }
+//                    }
+//                } else {
+//                    fatalError("Not enough editItems")
+//                }
             case .success(_):
                 self?.refreshData?()
                 self?.editNavigation.navigateToSuccessSave()
@@ -63,7 +67,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
         self.rbUserStore.deleteRBUser(rbUserId: userId) { result in
             switch result {
             case .success():
-                self.createdNewUser(items: items, creationDate: Date())
+                self.result(items: items, creationDate: Date())
             case .failure(let error):
                 fatalError("Error deleting")
             }
@@ -71,7 +75,7 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
 
     }
     
-    func deleteUser(userId: String?) {
+    func delete(userId: String?) {
         if let userId = userId {
             self.rbUserStore.deleteRBUser(rbUserId: userId) {[weak self] result in
                 self?.refreshData?()
@@ -85,17 +89,4 @@ class EditUserDataStoreAdapter : EditRBUserDelegate {
     
 }
 
-extension Array where Element: EditPresenter {
-    func getName()->Element?{
-        return self.first
-    }
-    func requiredUrl()->Element? {
-        return self.item(at: 1)
-    }
-}
-extension Array {
-    func item(at index: Int) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}
 

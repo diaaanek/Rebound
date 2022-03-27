@@ -23,7 +23,7 @@ class MainFeedComposer {
             mainNavigationFlow.navigateToCreate(rbUser: user)
         }
         mainViewController.navigateCreate = {
-            mainNavigationFlow.navigateToCreate(rbUser: nil)
+            mainNavigationFlow.navigateToCreate()
         }
 
        // mainViewController.navigationItem.searchController = searchBarController

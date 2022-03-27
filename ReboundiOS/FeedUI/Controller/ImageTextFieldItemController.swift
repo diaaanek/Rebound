@@ -14,14 +14,15 @@ public class ImageTextFieldItemController: NSObject {
     private let text : String
     var cell : ImageTextFieldCell?
     private let reusableIdentifier = "ImageTextFieldCell"
-    init(imageString: String, text: String) {
+   public init(imageString: String, text: String) {
         self.imageString = imageString
         self.text = text
     }
-    func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+   public func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as! ImageTextFieldCell
         cell.topImageView.image = UIImage(named: imageString)
         cell.bottomLabel.text = text
+        cell.selectionStyle = .none
         return cell
     }
     

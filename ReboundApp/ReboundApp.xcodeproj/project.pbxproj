@@ -21,6 +21,9 @@
 		29CDCBDC27DB1A1700138DC0 /* CreateComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */; };
 		29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */; };
 		29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */; };
+		29E330D527EFC5470034B682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E330D427EFC5470034B682 /* Assets.xcassets */; };
+		29E330D727EFD8510034B682 /* CreateSingleUrlComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E330D627EFD8510034B682 /* CreateSingleUrlComposer.swift */; };
+		29E330D927EFD9BA0034B682 /* CreateNameAdapterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E330D827EFD9BA0034B682 /* CreateNameAdapterNavigation.swift */; };
 		29ECBDC027C6060600AB92A2 /* Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBE27C6060600AB92A2 /* Rebound.framework */; };
 		29ECBDC127C6060600AB92A2 /* Rebound.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBE27C6060600AB92A2 /* Rebound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29ECBDC227C6060600AB92A2 /* ReboundiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */; };
@@ -63,6 +66,9 @@
 		29CDCBDB27DB1A1700138DC0 /* CreateComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateComposer.swift; sourceTree = "<group>"; };
 		29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFlow.swift; sourceTree = "<group>"; };
 		29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVirtualProxy.swift; sourceTree = "<group>"; };
+		29E330D427EFC5470034B682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29E330D627EFD8510034B682 /* CreateSingleUrlComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSingleUrlComposer.swift; sourceTree = "<group>"; };
+		29E330D827EFD9BA0034B682 /* CreateNameAdapterNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameAdapterNavigation.swift; sourceTree = "<group>"; };
 		29ECBDBE27C6060600AB92A2 /* Rebound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rebound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ECBDBF27C6060600AB92A2 /* ReboundiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReboundiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ECBDCA27C6A71E00AB92A2 /* MainFeedComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedComposer.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				295007A027C6032B0002FF39 /* LaunchScreen.storyboard */,
 				295007A327C6032B0002FF39 /* Info.plist */,
 				29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */,
+				29E330D427EFC5470034B682 /* Assets.xcassets */,
 			);
 			path = ReboundApp;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 				29B8C5AC27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift */,
 				298FA1F027DD509900642857 /* EditUserDataStoreAdapter.swift */,
 				2958259427DDBD0500AC65BF /* EditValidationPresenterAdapter.swift */,
+				29E330D827EFD9BA0034B682 /* CreateNameAdapterNavigation.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				29261B9727E3F73500CD2FF8 /* IntroComposer.swift */,
 				29261B9B27E949F100CD2FF8 /* AccountTableViewComposer.swift */,
 				29CD1EC827EE93D700F526DF /* CreateNameComposer.swift */,
+				29E330D627EFD8510034B682 /* CreateSingleUrlComposer.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E330D527EFC5470034B682 /* Assets.xcassets in Resources */,
 				295007A227C6032B0002FF39 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CD1EC927EE93D700F526DF /* CreateNameComposer.swift in Sources */,
+				29E330D927EFD9BA0034B682 /* CreateNameAdapterNavigation.swift in Sources */,
 				29261B9827E3F73500CD2FF8 /* IntroComposer.swift in Sources */,
 				29261B9E27E9561400CD2FF8 /* AccountNavigation.swift in Sources */,
 				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
@@ -285,6 +296,7 @@
 				29ECBDCD27C6A8D000AB92A2 /* MainLoaderPresentationAdapter.swift in Sources */,
 				29B8C5AD27C6C58A0012E5AC /* WKViewPresenterDataLoaderAdapter.swift in Sources */,
 				29ECBDCF27C6B95400AB92A2 /* MainPresentationAdapter.swift in Sources */,
+				29E330D727EFD8510034B682 /* CreateSingleUrlComposer.swift in Sources */,
 				298FA1F327DD605C00642857 /* EditControllerNavigation.swift in Sources */,
 				2950079827C6032A0002FF39 /* SceneDelegate.swift in Sources */,
 			);
