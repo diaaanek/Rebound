@@ -25,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
-        
         let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
         mainNavigationFlow.refreshData = { rv.reloadCollectionView() }
         let introController = IntroComposer().makeIntro {

@@ -18,8 +18,14 @@ class ComposeRequestNotificationViewController {
         vc.requestNotifications = {
             UNUserNotificationCenter.current()
               .requestAuthorization(
-                options: [.alert, .sound, .badge]) { [weak self] granted, _ in
-                    NotificationPolicy.getNotificationSettings()
+                options: [.alert, .sound, .badge]) { granted, _ in
+                    NotificationPolicy.getNotificationSettings { status in
+                        if status == .authorized {
+                            DispatchQueue.main.async {
+                              UIApplication.shared.registerForRemoteNotifications()
+                            }
+                        }
+                    }
                     DispatchQueue.main.async {
                         navigationController.dismiss(animated: true)
                     }
