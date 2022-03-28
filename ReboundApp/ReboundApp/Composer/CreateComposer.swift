@@ -25,6 +25,10 @@ class CreateComposer {
         nameEditItem.refresh = {
             editRBUserController.tableView.reloadData()
         }
+        nameEditItem.wknavigationDelegate = WkNavigationDelegateComposite(list: [GetStatusWkNavigationDelegate(completion:{ isShown, pageData in
+            nameEditItem.pageData = pageData
+            nameEditItem.isShownOnProfile = isShown
+        }),RemoveHeadersWkNavigationDelegate()])
         itemControllers.append(nameEditItem)
         let nameEditPresenter = EditPresenter()
         nameEditPresenter.editView = nameEditItem
@@ -34,6 +38,10 @@ class CreateComposer {
             presenters.append(presenter)
             let editItem = EditItemController(topLabelText: "Target's Instagram Url:", url: URL(string: rbUrl.url), placeHolder: "Paste link to relationship photo or video here...", displayText: rbUrl.url, delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
             presenter.editView = WeakVirtualProxy(editItem)
+            editItem.wknavigationDelegate = WkNavigationDelegateComposite(list: [GetStatusWkNavigationDelegate(completion:{ isShown, pageData in
+                nameEditItem.pageData = pageData
+                nameEditItem.isShownOnProfile = isShown
+            }),RemoveHeadersWkNavigationDelegate()])
             editItem.refresh = {
                 editRBUserController.tableView.reloadData()
             }
@@ -66,7 +74,7 @@ class CreateComposer {
         itemControllers.append(nameItemController)
         itemControllers.append(urlItemController)
         
-        for i in 2..<4 {
+        for _ in 2..<4 {
             let presenter = EditPresenter()
             
             let optionUrlItemControllers = createEditItemController(topLabel: "Optional Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, url: nil, refreshItem: refresh)
@@ -83,6 +91,10 @@ class CreateComposer {
         let editItemController = EditItemController(topLabelText: topLabel, url: url, placeHolder: placeholder, displayText: displayText, delegate: validationDelegate)
         editItemController.refresh = refreshItem
         presenter.editView = editItemController
+        editItemController.wknavigationDelegate = WkNavigationDelegateComposite(list: [GetStatusWkNavigationDelegate(completion:{ isShown, pageData in
+            editItemController.pageData = pageData
+            editItemController.isShownOnProfile = isShown
+        }),RemoveHeadersWkNavigationDelegate()])
 
         
         return editItemController

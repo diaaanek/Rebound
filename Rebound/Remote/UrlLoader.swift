@@ -15,6 +15,7 @@ public class UrlLoader:NSObject, HttpClient {
     var headers : [String:String]
     public init(headers: [String:String]) {
         self.headers = headers
+        print(self.headers)
     } 
     public func getResult(urlString: String, completion: @escaping (Result<(Data,HTTPURLResponse), Error>) -> Void) -> URLSessionDataTask {
            // UIApplication.shared.connectedScenes.first!.

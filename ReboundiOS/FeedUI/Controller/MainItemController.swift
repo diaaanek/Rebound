@@ -34,7 +34,7 @@ public class CreateCellController: CellController {
         return true
     }
     public func hash(into hasher: inout Hasher) {
-     
+        
     }
 }
 public class EmptyCellController : CellController {
@@ -48,12 +48,13 @@ public class EmptyCellController : CellController {
         return true
     }
     public func hash(into hasher: inout Hasher) {
-     
+        
     }
 }
-
+import WebKit
 
 public class MainItemController: CellController  {
+    var wkNavigationDelegate : WKNavigationDelegate
     public static func == (lhs: MainItemController, rhs: MainItemController) -> Bool {
         return lhs.user.userName == rhs.user.userName
     }
@@ -67,10 +68,11 @@ public class MainItemController: CellController  {
     let user: RBUser
     private let delegate : MainItemDelegate
     public var navigationDelegate : MainNavigationItemDelegate?
-
-    public init(delegate : MainItemDelegate, model: RBUser) {
+    
+    public init(delegate : MainItemDelegate, model: RBUser, wkNavigation: WKNavigationDelegate = RemoveHeadersWkNavigationDelegate()) {
         self.delegate = delegate
         self.user = model
+        self.wkNavigationDelegate = wkNavigation
     }
     public func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         if let mainCell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainCollectionCell.self)", for: indexPath) as? MainCollectionCell {
@@ -108,7 +110,7 @@ public class MainItemController: CellController  {
         return UICollectionViewCompositionalLayout(section: section)
     }
     private func configureDataSource(collectionView: UICollectionView){
-           dataSource = UICollectionViewDiffableDataSource<Int,RBUrl>(collectionView: collectionView) { [weak self] collectionView, indexPath, itemIdentifier in
+        dataSource = UICollectionViewDiffableDataSource<Int,RBUrl>(collectionView: collectionView) { [weak self] collectionView, indexPath, itemIdentifier in
             guard let strongSelf = self else {
                 return nil
             }
@@ -117,12 +119,15 @@ public class MainItemController: CellController  {
             urlCell.webView.configuration.allowsInlineMediaPlayback = true
             urlCell.webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             urlCell.webView.load(URLRequest(url: URL(string:rbUrl.url)!))
-               if rbUrl.isShown {
-                   urlCell.bottomCenterLabel.text = "Shown on profile"
-               } else {
-                   urlCell.bottomCenterLabel.text = "Removed from profile"
-               }
+            urlCell.webView.navigationDelegate = strongSelf.wkNavigationDelegate
+            if rbUrl.isShown {
+                urlCell.bottomCenterLabel.text = "Shown on profile"
+            } else {
+                urlCell.bottomCenterLabel.text = "Removed from profile"
+            }
             return urlCell
         }
     }
 }
+
+

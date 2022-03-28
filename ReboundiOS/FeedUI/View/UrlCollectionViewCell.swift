@@ -13,7 +13,7 @@ class UrlCollectionViewCell: UICollectionViewCell, WKNavigationDelegate {
     @IBOutlet weak var bottomCenterLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     override func layoutSubviews() {
-        webView.navigationDelegate = self
+       // webView.navigationDelegate = self
         webView.contentScaleFactor = 2.0
         webView.isUserInteractionEnabled = false
         webView.clipsToBounds = true

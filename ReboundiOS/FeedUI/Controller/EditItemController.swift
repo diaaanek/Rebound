@@ -27,6 +27,7 @@ public class EditItemController:NSObject, EditView {
     var indexPath : IndexPath?
     var tableView: UITableView?
     public var pageData: Data?
+    public var wknavigationDelegate : WKNavigationDelegate?
     public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
@@ -81,7 +82,7 @@ public class EditItemController:NSObject, EditView {
             cell.wkwebView.configuration.allowsAirPlayForMediaPlayback = true
             cell.wkwebView.configuration.mediaTypesRequiringUserActionForPlayback = .all
             cell.wkwebView.load(URLRequest(url: webUrl))
-            cell.wkwebView.navigationDelegate = self
+            cell.wkwebView.navigationDelegate = self.wknavigationDelegate
             cell.wkwebView.isUserInteractionEnabled = false
         }
         return cell
@@ -98,30 +99,6 @@ public class EditItemController:NSObject, EditView {
         }
         refresh?()
         return isValidated
-    }
-}
-extension EditItemController: WKNavigationDelegate {
-    
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("document.body.innerHTML", completionHandler: { [weak self] (value: Any!, error: Error!) -> Void in
-            
-            if error != nil {
-                //Error logic
-                return
-            }
-            guard let self = self else {
-                return
-            }
-            if let result = value as? String {
-                self.pageData = result.data(using: .utf8)
-                if result.contains("Sorry") {
-                    self.isShownOnProfile = false
-                }
-                else {
-                    self.isShownOnProfile = true
-                }
-            }
-        })
     }
 }
 
