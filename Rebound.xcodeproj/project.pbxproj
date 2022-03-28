@@ -377,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				29BC197027F1137E0031C680 /* WKNavigationDelegates */,
-				29CDCBDD27DBBAFA00138DC0 /* Extensions */,
 				29751BD027C567C100E97E16 /* MainViewController.swift */,
 				2958258627DD668B00AC65BF /* InstagramLoginController.swift */,
 				29ECBDC527C6942900AB92A2 /* MainItemController.swift */,
@@ -442,13 +441,6 @@
 				29BC196E27F110940031C680 /* RemoveHeadersWkNavigationDelegate.swift */,
 			);
 			path = WKNavigationDelegates;
-			sourceTree = "<group>";
-		};
-		29CDCBDD27DBBAFA00138DC0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
