@@ -24,31 +24,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
+        
         let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
         let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
         mainNavigationFlow.refreshData = { rv.reloadCollectionView() }
-        let introController = IntroComposer().makeIntro {
+        let introController = IntroComposer().makeIntro(navigation: {
             self.navigationController.setViewControllers([rv], animated: true)
-        }
-        if UserDefaults.standard.data(forKey: "secret") == nil {
-            self.navigationController = UINavigationController(rootViewController: introController)
-        } else {
-            navigationController = UINavigationController(rootViewController: rv)
-        }
-        mainNavigationFlow.accountNavigation = AccountNavigation(intro: introController, navigation: self.navigationController)
+        }, secretCompletion: {secret in
+            let data =  try! Secret.encoding(secret)
+            let userDefaults = UserDefaults()
+            userDefaults.set(data, forKey: "secret")
+            userDefaults.synchronize()
+        })
         
+        if let secretData = UserDefaults.standard.data(forKey: "secret") {
+            navigationController = UINavigationController(rootViewController: rv)
+            let secret = try! Secret.decoding(secretData)
+            print(secret.identifier)
+        } else {
+            self.navigationController = UINavigationController(rootViewController: introController)
+        }
+        
+        mainNavigationFlow.accountNavigation = AccountNavigation(intro: introController, navigation: self.navigationController)
         NotificationPolicy.getNotificationSettings()
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-    func makeMain() -> MainViewController {
-        let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
-        let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
-        mainNavigationFlow.refreshData = {rv.reloadCollectionView()}
-        return rv
-    }
-    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

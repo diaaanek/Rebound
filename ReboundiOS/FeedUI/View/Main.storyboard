@@ -263,7 +263,7 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="438"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findig" translatesAutoresizingMaskIntoConstraints="NO" id="FPj-hc-eKr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="410"/>
+                                                            <rect key="frame" x="0.0" y="1.5" width="374" height="407.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="FPj-hc-eKr" secondAttribute="height" multiplier="187:205" id="uPh-NL-krC"/>
                                                             </constraints>

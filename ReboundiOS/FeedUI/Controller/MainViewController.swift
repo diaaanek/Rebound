@@ -42,7 +42,7 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
         collectionView.collectionViewLayout = setupLayout()
         self.title = "Rebound"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Account", style: .done, target: self, action: #selector(navigateToAccount))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName:"gear")!, style: .done, target: self, action: #selector(navigateToAccount))
         refreshControl.attributedTitle = NSAttributedString(string: "Syncing...")
         refreshControl.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
         self.collectionView.addSubview(refreshControl) // not required when using UITableViewController

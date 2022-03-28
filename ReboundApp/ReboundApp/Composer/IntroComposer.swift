@@ -12,17 +12,14 @@ import Swiftagram
 
 public class IntroComposer {
     
-    public func makeIntro(navigation:@escaping()->()) -> UIViewController {
+    public func makeIntro(navigation:@escaping()->(), secretCompletion:@escaping(Secret)->()) -> UIViewController {
         let bundle = Bundle(for: MainViewController.self)
         let introController = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "IntroController") as! IntroController
         introController.loginPressed = {
             let igLogin = InstagramLoginController()
             igLogin.completion = { secret in
                 // Fetch the user.
-                let data =  try! Secret.encoding(secret)
-                let userDefaults = UserDefaults()
-                userDefaults.set(data, forKey: "secret")
-                userDefaults.synchronize()
+                secretCompletion(secret)
                 navigation()
             }
             introController.modalPresentationStyle = .fullScreen
