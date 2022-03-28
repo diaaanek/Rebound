@@ -9,6 +9,8 @@ import UIKit
 import ReboundiOS
 import Rebound
 import WebKit
+import UserNotifications
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     lazy var path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -25,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
         
         let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
-        mainNavigationFlow.refreshData = {rv.reloadCollectionView()}
+        mainNavigationFlow.refreshData = { rv.reloadCollectionView() }
         let introController = IntroComposer().makeIntro {
             self.navigationController.setViewControllers([rv], animated: true)
         }
@@ -36,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         mainNavigationFlow.accountNavigation = AccountNavigation(intro: introController, navigation: self.navigationController)
         
-        
+        NotificationPolicy.getNotificationSettings()
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

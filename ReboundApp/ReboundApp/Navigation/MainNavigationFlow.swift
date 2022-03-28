@@ -33,7 +33,7 @@ class MainNavigationFlow : MainNavigationItemDelegate {
     }
 
     func navigateToCreate(rbUser: RBUser) {
-        let createController = CreateComposer().composeCreateViewController(rbUser: rbUser, coreDataStore: cache, navigationController: self.navigationController, refreshData: refreshData)
+        let createController = CreateEditRbUserComposer().composeEditRBUserViewController(rbUser: rbUser, coreDataStore: cache, navigationController: self.navigationController, refreshData: refreshData)
         self.navigationController.present(createController, animated: true)
     }
 }

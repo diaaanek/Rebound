@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Rebound
+import UserNotifications
 
 public protocol MainViewDelegate {
     func didRefreshData()
@@ -125,6 +126,11 @@ public class MainViewController : UIViewController, LoadingView, ErrorView {
                 fatalError()
             }
         }
+    
+    public func displayAlertView(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        self.present(alert, animated: true)
+    }
     
     public func display(recentUpdates: [MainItemController], noUpdates: [MainItemController]) {
         self.recentUpdates = recentUpdates

@@ -10,9 +10,9 @@ import ReboundiOS
 import UIKit
 import Rebound
 
-class CreateComposer {
+class CreateEditRbUserComposer {
     
-    func composeCreateViewController(rbUser: RBUser, coreDataStore: CoreDataStore, navigationController: UINavigationController, refreshData: (()->())?)  -> EditRBUserController {
+    func composeEditRBUserViewController(rbUser: RBUser, coreDataStore: CoreDataStore, navigationController: UINavigationController, refreshData: (()->())?)  -> EditRBUserController {
         var presenters = [EditPresenter]()
         let bundle = Bundle(for: MainViewController.self)
         let storyBoard = UIStoryboard(name: "Main", bundle: bundle)

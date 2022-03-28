@@ -394,44 +394,59 @@
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="41.517857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Request Notification View Controller-->
         <scene sceneID="IN0-C4-SAK">
             <objects>
-                <viewController id="ZbK-WZ-xjV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestNotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbK-WZ-xjV" customClass="RequestNotificationViewController" customModule="ReboundiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhG-dl-UKi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wUT-31-Juh">
-                                <rect key="frame" x="8" y="52" width="398" height="34"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background 1" translatesAutoresizingMaskIntoConstraints="NO" id="tfj-Gf-H6w">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="LJ6-MO-MvS">
+                                <rect key="frame" x="0.0" y="52" width="414" height="515"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="joe_smith123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-id-RtN">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let us notify you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ft-Qh-Tf4">
+                                        <rect key="frame" x="132.5" y="0.0" width="149.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySa-nC-BZ8">
+                                        <rect key="frame" x="0.0" y="47" width="414" height="414"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ySa-nC-BZ8" secondAttribute="height" multiplier="1:1" id="CBE-js-akl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-LM-I6O">
+                                        <rect key="frame" x="107" y="484" width="200" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="997" constant="200" id="3oc-9k-0gL"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Enable Notifications"/>
+                                        <connections>
+                                            <action selector="enableNotifications_touchupInside:" destination="ZbK-WZ-xjV" eventType="touchUpInside" id="u5p-hu-REw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-LM-I6O">
-                                <rect key="frame" x="138" y="600" width="138" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pKy-37-xSd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wUT-31-Juh" firstAttribute="top" secondItem="pKy-37-xSd" secondAttribute="top" constant="8" id="M8i-BJ-ADT"/>
-                            <constraint firstItem="wUT-31-Juh" firstAttribute="leading" secondItem="hhG-dl-UKi" secondAttribute="leading" constant="8" id="QJy-R1-dug"/>
-                            <constraint firstItem="wUT-31-Juh" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pKy-37-xSd" secondAttribute="bottom" priority="997" constant="8" id="QXy-51-MDT"/>
-                            <constraint firstItem="pKy-37-xSd" firstAttribute="trailing" secondItem="wUT-31-Juh" secondAttribute="trailing" constant="8" id="q4l-xq-DOs"/>
+                            <constraint firstItem="pKy-37-xSd" firstAttribute="trailing" secondItem="LJ6-MO-MvS" secondAttribute="trailing" id="Axb-yT-xdp"/>
+                            <constraint firstItem="LJ6-MO-MvS" firstAttribute="leading" secondItem="pKy-37-xSd" secondAttribute="leading" id="KJn-SM-Wxh"/>
+                            <constraint firstItem="LJ6-MO-MvS" firstAttribute="top" secondItem="pKy-37-xSd" secondAttribute="top" constant="8" id="STf-7Z-QMI"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qeq-Tb-zqR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="42"/>
+            <point key="canvasLocation" x="2562" y="42"/>
         </scene>
         <!--Intro Controller-->
         <scene sceneID="1Ay-Vz-DPZ">

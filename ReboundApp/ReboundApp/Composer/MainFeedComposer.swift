@@ -47,7 +47,6 @@ class MainFeedComposer {
             }
         }
         mainViewController.navigateAccount = {
-            
             mainNavigationFlow.navigateToAccount()
         }
         return mainViewController

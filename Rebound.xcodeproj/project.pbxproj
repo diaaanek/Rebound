@@ -59,6 +59,8 @@
 		29751C4F27C598DD00E97E16 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29751C4E27C598DD00E97E16 /* SectionHeader.swift */; };
 		29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */; };
 		29BC196F27F110940031C680 /* RemoveHeadersWkNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC196E27F110940031C680 /* RemoveHeadersWkNavigationDelegate.swift */; };
+		29BC197627F155180031C680 /* NotificationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC197527F155180031C680 /* NotificationPolicy.swift */; };
+		29BC197A27F159A10031C680 /* RequestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC197927F159A10031C680 /* RequestNotificationViewController.swift */; };
 		29BEF5ED27C8A05D0002614C /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BEF5EC27C8A05D0002614C /* SectionHeader.xib */; };
 		29CD1EC727EE8AF800F526DF /* ImageTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1EC627EE8AF800F526DF /* ImageTextFieldCell.swift */; };
 		29CD1ECB27EE977900F526DF /* ImageTextFieldItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */; };
@@ -154,6 +156,8 @@
 		29751C4E27C598DD00E97E16 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		29AEA89127CAFBEB0076FAEC /* UrlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCollectionViewCell.swift; sourceTree = "<group>"; };
 		29BC196E27F110940031C680 /* RemoveHeadersWkNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveHeadersWkNavigationDelegate.swift; sourceTree = "<group>"; };
+		29BC197527F155180031C680 /* NotificationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPolicy.swift; sourceTree = "<group>"; };
+		29BC197927F159A10031C680 /* RequestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNotificationViewController.swift; sourceTree = "<group>"; };
 		29BEF5EC27C8A05D0002614C /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		29CD1EC627EE8AF800F526DF /* ImageTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldCell.swift; sourceTree = "<group>"; };
 		29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextFieldItemController.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				29261B9527E3F68400CD2FF8 /* IntroController.swift */,
 				29261B9927E9462900CD2FF8 /* AccountTableViewController.swift */,
 				29CD1ECA27EE977900F526DF /* ImageTextFieldItemController.swift */,
+				29BC197927F159A10031C680 /* RequestNotificationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			children = (
 				29751C4227C5888000E97E16 /* Controller */,
 				29751C4327C5888C00E97E16 /* View */,
+				29BC197527F155180031C680 /* NotificationPolicy.swift */,
 			);
 			path = FeedUI;
 			sourceTree = "<group>";
@@ -649,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AEA89227CAFBEB0076FAEC /* UrlCollectionViewCell.swift in Sources */,
+				29BC197A27F159A10031C680 /* RequestNotificationViewController.swift in Sources */,
 				29261B9627E3F68400CD2FF8 /* IntroController.swift in Sources */,
 				29CD1ECB27EE977900F526DF /* ImageTextFieldItemController.swift in Sources */,
 				29CDCBDA27DB13DB00138DC0 /* RBUserEditCell.swift in Sources */,
@@ -659,6 +666,7 @@
 				29CDCBD227DAECB900138DC0 /* EmptyCell.swift in Sources */,
 				29751BDB27C5683A00E97E16 /* ReboundiOS.docc in Sources */,
 				29CDCBD027DAC17600138DC0 /* CreateCell.swift in Sources */,
+				29BC197627F155180031C680 /* NotificationPolicy.swift in Sources */,
 				2958258727DD668B00AC65BF /* InstagramLoginController.swift in Sources */,
 				2950076127C59F450002FF39 /* MainCollectionViewCell.swift in Sources */,
 				29CD1EC727EE8AF800F526DF /* ImageTextFieldCell.swift in Sources */,

@@ -52,7 +52,7 @@ class CreateUrlAdapterNavigation: EditRBUserDelegate {
     
     func result(items: [EditItemController], creationDate: Date) {
         if let urlItem = items.first {
-            let createController =  CreateComposer().composeCreateViewController(nameString: nameItem, urlString: urlItem.displayText, coreDataStore: coreDataStore, navigationController: nav, refreshData: refresh)
+            let createController =  CreateEditRbUserComposer().composeCreateViewController(nameString: nameItem, urlString: urlItem.displayText, coreDataStore: coreDataStore, navigationController: nav, refreshData: refresh)
         self.nav.pushViewController(createController, animated: true)
         }
     }
