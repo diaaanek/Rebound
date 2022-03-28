@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainNavigationFlow.refreshData = { rv.reloadCollectionView() }
         let introController = IntroComposer().makeIntro(navigation: {
             self.navigationController.setViewControllers([rv], animated: true)
-        }, secretCompletion: {secret in
+        }, secretCompletion: { secret in
             let data =  try! Secret.encoding(secret)
             let userDefaults = UserDefaults()
             userDefaults.set(data, forKey: "secret")
