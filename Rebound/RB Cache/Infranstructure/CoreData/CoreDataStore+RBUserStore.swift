@@ -92,4 +92,23 @@ extension CoreDataStore: RBUserStore {
             })
         }
     }
+    public func retrieve(userId:String, completion: @escaping (Result<LocalRBUser,Error>)->()) {
+        perform { [ weak self] context in
+            completion(Result {
+                guard let self = self else {
+                    fatalError()
+                }
+                let managedRBUser = try! context.existingObject(with: self.objectId(stringId: userId)!) as! ManagedRBUser
+               
+                var user =  LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
+                user.urls = managedRBUser.urls!.map { item in
+                   let item = item as! ManagedRBUrl
+                    return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, pageData: item.pagedata!, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!, urlStatusId: Int(item.urlstatusid))
+                }.sorted(by: { lhs, rhs in
+                    lhs.lastModified > rhs.lastModified
+                })
+                return user
+            })
+        }
+    }
 }

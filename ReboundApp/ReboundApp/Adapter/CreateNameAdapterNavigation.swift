@@ -31,7 +31,7 @@ class CreateNameAdapterNavigation: EditRBUserDelegate {
         fatalError("Should not be called")
     }
     
-    func delete(userId: String?) {
+    func delete(userId: String?, items: [EditItemController]) {
         fatalError("Should not be called")
     }
     
@@ -61,7 +61,7 @@ class CreateUrlAdapterNavigation: EditRBUserDelegate {
         fatalError("Should not be called")
     }
     
-    func delete(userId: String?) {
+    func delete(userId: String?, items: [EditItemController]) {
         fatalError("Should not be called")
     }
     

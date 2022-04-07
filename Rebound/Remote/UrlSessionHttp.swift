@@ -40,6 +40,7 @@ public class UrlSessionHttpClient:NSObject, HttpClient {
             completion(.failure(UrlError.invalidUrl))
             fatalError("Invalid Url")
         }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "Delete"
         let task = URLSession.shared.dataTask(with:request) { data, urlresponse, error in

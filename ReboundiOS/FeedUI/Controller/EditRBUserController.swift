@@ -11,7 +11,7 @@ import Rebound
 public protocol EditRBUserDelegate {
     func result(items: [EditItemController], creationDate: Date)
     func editExistingUser(userId: String, items:[EditItemController])
-    func delete(userId: String?)
+    func delete(userId: String?, items:[EditItemController])
 }
 public protocol EditConfigDelegate {
     func configButtons(saveButton: UIButton, deleteButton: UIButton)
@@ -81,7 +81,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func deletedButtonSelected(_ sender: Any) {
-        delegate?.delete(userId: rbUser?.userId)
+        delegate?.delete(userId: rbUser?.userId,items: editItems)
     }
     
     @IBAction func saveButtonSelected(_ sender: Any) {

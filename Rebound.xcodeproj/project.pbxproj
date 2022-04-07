@@ -76,6 +76,7 @@
 		29DB9E0B27FE2F4C00450488 /* PostAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E0A27FE2F4C00450488 /* PostAccount.swift */; };
 		29DB9E0D27FE2F5B00450488 /* PostAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */; };
 		29DB9E0F27FE673B00450488 /* PostDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E0E27FE673B00450488 /* PostDevice.swift */; };
+		29DB9E1127FF4ECE00450488 /* DeleteUrlStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */; };
 		29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC527C6942900AB92A2 /* MainItemController.swift */; };
 		29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */; };
 /* End PBXBuildFile section */
@@ -181,6 +182,7 @@
 		29DB9E0A27FE2F4C00450488 /* PostAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAccount.swift; sourceTree = "<group>"; };
 		29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthorization.swift; sourceTree = "<group>"; };
 		29DB9E0E27FE673B00450488 /* PostDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDevice.swift; sourceTree = "<group>"; };
+		29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUrlStatus.swift; sourceTree = "<group>"; };
 		29ECBDC527C6942900AB92A2 /* MainItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemController.swift; sourceTree = "<group>"; };
 		29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +238,7 @@
 				29DB9E0A27FE2F4C00450488 /* PostAccount.swift */,
 				29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */,
 				29DB9E0E27FE673B00450488 /* PostDevice.swift */,
+				29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				29DB9E0F27FE673B00450488 /* PostDevice.swift in Sources */,
 				29751C2227C569E000E97E16 /* ReboundV2.xcdatamodeld in Sources */,
 				29C1850E27F2C22200A9D255 /* RemoteUrlPost.swift in Sources */,
+				29DB9E1127FF4ECE00450488 /* DeleteUrlStatus.swift in Sources */,
 				29C1851427F2CBAE00A9D255 /* RemoteRBUrl.swift in Sources */,
 				29261B8D27E256DE00CD2FF8 /* HttpClient.swift in Sources */,
 				29DB9E0D27FE2F5B00450488 /* PostAuthorization.swift in Sources */,

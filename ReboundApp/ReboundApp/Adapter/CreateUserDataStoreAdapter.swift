@@ -72,8 +72,22 @@ class CreateUserDataStoreAdapter : EditRBUserDelegate {
 
     }
     
-    func delete(userId: String?) {
+    func delete(userId: String?, items: [EditItemController]) {
         if let userId = userId {
+            let deleteCompletion = DeleteUrlStatus(httpClient: UrlSessionHttpClient())
+           
+            self.rbUserStore.retrieve(userId: userId) { result in
+                switch result {
+                case .success(let user):
+                    for url in user!.urls {
+                        deleteCompletion.deleteUrlStatus(urlStatusId: String(url.urlStatusId!)) { result in
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+               
+            }
             self.rbUserStore.deleteRBUser(rbUserId: userId) {[weak self] result in
                 self?.refreshData?()
                 self?.editNavigation.navigateToSuccessDelete()
