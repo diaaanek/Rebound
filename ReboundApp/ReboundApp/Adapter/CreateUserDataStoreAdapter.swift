@@ -8,6 +8,7 @@
 import Foundation
 import ReboundiOS
 import Rebound
+import Swiftagram
 class CreateUserDataStoreAdapter : EditRBUserDelegate {
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
@@ -27,18 +28,32 @@ class CreateUserDataStoreAdapter : EditRBUserDelegate {
             }
             return item
         }
-        self.rbUrlStore.insert(rbUrl: urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate)
-        }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
-            guard let strongSelf = self else {
-                return
-            }
-            switch result {
-            case .failure(let error):
-                break
-            case .success(_):
-                self?.refreshData?()
-                self?.editNavigation.navigateToSuccessSave()
+        if let secretData = UserDefaults().data(forKey:"secret") {
+            let secret = try! Secret.decoding(secretData)
+            var user = RBUser(userId: "", userName: name.displayText, createdDate: creationDate)
+            user.urls = urls.enumerated().map({ (index, element) in
+                RBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, lastModified: creationDate, pageData: element.pageData!, viewedLastModified: creationDate, urlStatusId: nil)
+            })
+            RemoteSaveRbUser(client: UrlSessionHttpClient(), identity: secret.identifier).save(rbuser: user) { result in
+                switch result {
+                case .success(let list):
+                self.rbUrlStore.insert(rbUrl: urls.enumerated().map({ index,element in
+                    LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, pageData: element.pageData!, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: list[index])
+                }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
+                    guard let strongSelf = self else {
+                        return
+                    }
+                    switch result {
+                    case .failure(let error):
+                        break
+                    case .success(_):
+                        self?.refreshData?()
+                        self?.editNavigation.navigateToSuccessSave()
+                    }
+                }
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }
@@ -89,7 +104,7 @@ class EditUserDataStoreAdapter: CreateUserDataStoreAdapter {
         }
         var localUser = LocalRBUser(userId: userId, userName: name.displayText, createdDate: creationDate)
         localUser.urls = urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate)
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: nil)
         })
         
         self.rbUserStore.replaceRBUser(rbUserId: userId, localRbUser: localUser) { [weak self] result in

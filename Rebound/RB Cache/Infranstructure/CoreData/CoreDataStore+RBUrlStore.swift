@@ -21,6 +21,7 @@ extension CoreDataStore: RBUrlStore {
                 managedObject.uri = URL(string:item.url)
                 managedObject.lastmodified = item.lastModified
                 managedObject.viewedlastmodified = item.viewedLastModified
+                managedObject.urlstatusid = Int32(item.urlStatusId!)
                 try context.save()
                 return item
             })
@@ -35,29 +36,29 @@ extension CoreDataStore: RBUrlStore {
         deleteItem(objectId: urlId, completion: completion)
     }
     
-    @available(*, deprecated, message: "Not Used")
-    public func insert(rbUrl local: LocalRBUrl, userId: String, completion: @escaping (Result<LocalRBUrl, Error>) -> () ) {
-        perform { [weak self] context in
-            completion( Result {
-                guard let strongSelf = self else {
-                    fatalError()
-                }
-               
-                let managedObject = context.object(with: strongSelf.objectId(stringId: userId)!) as! ManagedRBUser
-                let managedUrl = ManagedRBUrl(context: context)
-                managedUrl.createdDate = local.createdDate
-                managedUrl.isprimary = local.isPrimary
-                managedUrl.isshown = local.isShown
-                managedUrl.uri = URL(string:local.url)
-                managedUrl.user = managedObject
-                try context.save()
-                let newItem = LocalRBUrl(urlId: managedUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, pageData: local.pageData, viewedLastModified: managedUrl.viewedlastmodified, lastModified: managedUrl.lastmodified!)
-                
-                return newItem
-            })
-        }
-    }
-    
+//    @available(*, deprecated, message: "Not Used")
+//    public func insert(rbUrl local: LocalRBUrl, userId: String, completion: @escaping (Result<LocalRBUrl, Error>) -> () ) {
+//        perform { [weak self] context in
+//            completion( Result {
+//                guard let strongSelf = self else {
+//                    fatalError()
+//                }
+//               
+//                let managedObject = context.object(with: strongSelf.objectId(stringId: userId)!) as! ManagedRBUser
+//                let managedUrl = ManagedRBUrl(context: context)
+//                managedUrl.createdDate = local.createdDate
+//                managedUrl.isprimary = local.isPrimary
+//                managedUrl.isshown = local.isShown
+//                managedUrl.uri = URL(string:local.url)
+//                managedUrl.user = managedObject
+//                try context.save()
+//                let newItem = LocalRBUrl(urlId: managedUrl.objectID.uriRepresentation().absoluteString, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, pageData: local.pageData, viewedLastModified: managedUrl.viewedlastmodified, lastModified: managedUrl.lastmodified!)
+//                
+//                return newItem
+//            })
+//        }
+//    }
+//    
     public func insert(rbUrl item: [LocalRBUrl], user: LocalRBUser, timestamp: Date, completion: @escaping InsertionCompletion) {
         perform { context in
             completion( Result {
@@ -79,6 +80,7 @@ extension CoreDataStore: RBUrlStore {
                     managedUrl.uri = URL(string:local.url)
                     managedUrl.user = rbUser
                     managedUrl.pagedata = local.pageData
+                    managedUrl.urlstatusid = Int32(local.urlStatusId!)
                 }
                 try context.save()
                 return newUser
@@ -103,7 +105,7 @@ extension CoreDataStore: RBUrlStore {
                 request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
                 let result = try context.fetch(request)
                 return result.map { managed in
-                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown,pageData: managed.pagedata!, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!)
+                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown,pageData: managed.pagedata!, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!,urlStatusId: Int(managed.urlstatusid))
                 }
             })
         }

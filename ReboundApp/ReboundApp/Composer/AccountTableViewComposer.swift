@@ -7,10 +7,13 @@
 
 import Foundation
 import ReboundiOS
+import Rebound
 import UIKit
 public class AccountTableViewComposer {
     let accountNavigation: AccountNavigation
-    init(accountNavigation: AccountNavigation){
+    let userStore : RBUserStore
+    init(accountNavigation: AccountNavigation, coreData: RBUserStore){
+        self.userStore = coreData
         self.accountNavigation = accountNavigation
     }
     
@@ -21,6 +24,9 @@ public class AccountTableViewComposer {
             let shared = UserDefaults()
              shared.set(nil, forKey: "secret")
              shared.synchronize()
+            self.userStore.deleteRBUser { result in
+                
+            }
             self.accountNavigation.navigateToIntro()
            
         }

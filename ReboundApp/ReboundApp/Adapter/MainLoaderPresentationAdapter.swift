@@ -25,12 +25,7 @@ class MainLoaderPresentationAdapter: MainViewDelegate {
                 switch result {
                 case .success(.some(let users)):
                     self?.presenter?.didDisplay(rbUser:  users.map { localUser in
-                        var user = RBUser(userId: localUser.userId,
-                                      userName: localUser.userName, createdDate: localUser.createdDate)
-                        user.urls = localUser.urls.map { localUrl in
-                            return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.isShown, lastModified: localUrl.lastModified, pageData: localUrl.pageData, viewedLastModified: localUrl.createdDate)
-                        }
-                        return user
+                        return localUser.getRBUser()
                     })
                 case .failure(let error):
                     DispatchQueue.main.async {

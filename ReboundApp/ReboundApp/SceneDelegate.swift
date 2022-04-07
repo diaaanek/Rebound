@@ -32,21 +32,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.navigationController.setViewControllers([rv], animated: true)
         }, secretCompletion: { secret in
             let data =  try! Secret.encoding(secret)
+            print(secret.header)
             let userDefaults = UserDefaults()
             userDefaults.set(data, forKey: "secret")
             userDefaults.synchronize()
+            NotificationPolicy.getNotificationSettings { status in
+                if status == .authorized {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
         })
-        
+       
         if let secretData = UserDefaults.standard.data(forKey: "secret") {
-            navigationController = UINavigationController(rootViewController: rv)
             let secret = try! Secret.decoding(secretData)
-            print(secret.identifier)
+            print(secret.header)
+            navigationController = UINavigationController(rootViewController: rv)
+            NotificationPolicy.getNotificationSettings { status in
+                if status == .authorized {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
         } else {
             self.navigationController = UINavigationController(rootViewController: introController)
         }
         
         mainNavigationFlow.accountNavigation = AccountNavigation(intro: introController, navigation: self.navigationController)
-        NotificationPolicy.getNotificationSettings()
         mainNavigationFlow.navigationController = navigationController
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

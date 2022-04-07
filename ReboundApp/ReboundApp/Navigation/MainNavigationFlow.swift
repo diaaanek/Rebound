@@ -21,7 +21,7 @@ class MainNavigationFlow : MainNavigationItemDelegate {
     }
     func navigateToAccount() {
         if let accountNavigation = accountNavigation {
-            let accountViewController = AccountTableViewComposer(accountNavigation: accountNavigation).makeAccountTableView()
+            let accountViewController = AccountTableViewComposer(accountNavigation: accountNavigation, coreData: self.cache).makeAccountTableView()
             self.navigationController.present(accountViewController, animated: true)
         }
     }

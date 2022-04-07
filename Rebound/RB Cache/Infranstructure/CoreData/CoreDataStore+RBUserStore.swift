@@ -9,6 +9,21 @@ import Foundation
 import CoreData
 
 extension CoreDataStore: RBUserStore {
+    public func deleteRBUser(completion: @escaping DeleteCompletion) {
+        perform { context in
+            completion(Result {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ManagedRBUser")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.persistentStoreCoordinator!.execute(deleteRequest, with: context)
+        } catch let error as NSError {
+            print(error)
+        }
+            })
+        }
+    }
+    
     
     public func replaceRBUser(rbUserId: String, localRbUser: LocalRBUser, completion: @escaping (Result<LocalRBUser?, Error>) -> ()) {
         self.deleteItem(objectId: rbUserId) { result in
@@ -34,7 +49,7 @@ extension CoreDataStore: RBUserStore {
                     var localuser = LocalRBUser(userId: result.objectID.uriRepresentation().absoluteString, userName: result.username!, createdDate: result.createdDate!)
                     localuser.urls = result.urls!.map { item in
                         let item = item as! ManagedRBUrl
-                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, pageData: item.pagedata!, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
+                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, pageData: item.pagedata!, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!, urlStatusId: Int(item.urlstatusid))
                      }
                     return localuser
                    }
@@ -59,7 +74,7 @@ extension CoreDataStore: RBUserStore {
                     var user = LocalRBUser(userId:managedRBUser.objectID.uriRepresentation().absoluteString, userName: managedRBUser.username!, createdDate: managedRBUser.createdDate!)
                     user.urls = managedRBUser.urls!.map { item in
                        let item = item as! ManagedRBUrl
-                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, pageData: item.pagedata!, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!)
+                        return LocalRBUrl(urlId: item.objectID.uriRepresentation().absoluteString, isPrimary: item.isprimary, createdDate: item.createdDate!, url: item.uri!.absoluteString, state: item.isshown, pageData: item.pagedata!, viewedLastModified: item.viewedlastmodified, lastModified: item.lastmodified!, urlStatusId: Int(item.urlstatusid))
                     }.sorted(by: { lhs, rhs in
                         lhs.lastModified > rhs.lastModified
                     })

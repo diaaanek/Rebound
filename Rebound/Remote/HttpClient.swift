@@ -8,5 +8,8 @@
 import Foundation
 
 public protocol HttpClient {
-    func getResult(urlString: String, completion: @escaping (Result<(Data,HTTPURLResponse),Error>)->Void) -> URLSessionDataTask
+    func get(urlString: String, completion: @escaping (Result<(Data,HTTPURLResponse),Error>)->Void) -> URLSessionDataTask
+    func post(urlString:String, body: Data?, completion: @escaping (Result<(Data,HTTPURLResponse), Error>) -> Void) -> URLSessionDataTask
+    func delete(urlString: String, completion: @escaping (Result<(Data,HTTPURLResponse), Error>) -> Void) -> URLSessionDataTask
+
 }

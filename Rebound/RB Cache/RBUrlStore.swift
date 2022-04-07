@@ -19,22 +19,23 @@ public protocol RBUrlStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion)
-    
+    /// // not used
+//    func deleteRBUrl(rbUrl urlId: String, completion: @escaping DeletionCompletion)
+//    func retrievePrimary(userId :String,completion: @escaping RetrievalCompletion)
+//    func retrieve(userId :String, count:Int, offset: Int, completion: @escaping RetrievalCompletion)
+
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func insert(rbUrl item: LocalRBUrl,userId :String, completion: @escaping  (Result<LocalRBUrl, Error>) -> ())
+   // func insert(rbUrl item: LocalRBUrl,userId :String, completion: @escaping  (Result<LocalRBUrl, Error>) -> ())
     
     // Creates a User and assocaites the LocalRBUrl.
     func insert(rbUrl item: [LocalRBUrl],user :LocalRBUser, timestamp: Date, completion: @escaping InsertionCompletion)
     
-    // Merge URl
+    // Merge updates the stored rbUrl to the provided one using the same id. Mainly used to update isShown property.
     func merge(rbUrl item: LocalRBUrl, completion: @escaping  (Result<LocalRBUrl, Error>) -> ())
 
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func retrievePrimary(userId :String,completion: @escaping RetrievalCompletion)
     
-    func retrieve(userId :String, count:Int, offset: Int, completion: @escaping RetrievalCompletion)
 }

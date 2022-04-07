@@ -7,6 +7,7 @@
         <attribute name="lastmodified" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="pagedata" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="uri" attributeType="URI"/>
+        <attribute name="urlstatusid" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="viewedlastmodified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedRBUser" inverseName="urls" inverseEntity="ManagedRBUser"/>
     </entity>
@@ -16,7 +17,7 @@
         <relationship name="urls" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedRBUrl" inverseName="user" inverseEntity="ManagedRBUrl"/>
     </entity>
     <elements>
-        <element name="ManagedRBUrl" positionX="-54" positionY="9" width="128" height="149"/>
+        <element name="ManagedRBUrl" positionX="-54" positionY="9" width="128" height="164"/>
         <element name="ManagedRBUser" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>
