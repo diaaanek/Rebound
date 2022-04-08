@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     lazy var path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
     lazy var cache = try! CoreDataStore(storeURL: path.appendingPathComponent("test.sqlite"))
-
+    var loader : LoadRemoteUserAndCache?
     var window: UIWindow?
     var bin: Set<AnyCancellable> = []
     @Published private(set) var current: User?
@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainNavigationFlow = MainNavigationFlow(coreDateCache: cache)
         let rv = MainFeedComposer().makeMainFeedController(cache: self.cache, mainNavigationFlow: mainNavigationFlow)
         mainNavigationFlow.refreshData = { rv.reloadCollectionView() }
-        let introController = IntroComposer().makeIntro(navigation: {
+        let introController = IntroComposer(urlStore: cache).makeIntro(navigation: {
             self.navigationController.setViewControllers([rv], animated: true)
         }, secretCompletion: { secret in
             let data =  try! Secret.encoding(secret)
@@ -43,6 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 }
             }
+            rv.didRequestSync?()
         })
        
         if let secretData = UserDefaults.standard.data(forKey: "secret") {

@@ -8,24 +8,23 @@
 import Foundation
 
 public struct RemoteRBUrl: Codable {
-    public let urlId : String
     public let isPrimary: Bool
     public  let createdDate: Date
     public  let lastModified: Date
     public  let viewedLastModified: Date?
     public  let url : String
     public let isShown: Bool
-    public let pageData: Data
+    public let urlStatusId: Int
+
   
-    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, lastModified: Date, pageData: Data, viewedLastModified: Date?){
-        self.urlId = urlId
+    public init(urlStatusId: Int, isPrimary: Bool, createdDate: Date, url: String, state: Bool, lastModified: Date, viewedLastModified: Date?){
+        self.urlStatusId = urlStatusId
         self.isPrimary = isPrimary
         self.createdDate = createdDate
         self.url = url
         self.isShown = state
         self.lastModified = lastModified
         self.viewedLastModified = viewedLastModified
-        self.pageData = pageData
         
     }
 }

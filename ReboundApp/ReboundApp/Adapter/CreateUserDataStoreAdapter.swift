@@ -32,13 +32,13 @@ class CreateUserDataStoreAdapter : EditRBUserDelegate {
             let secret = try! Secret.decoding(secretData)
             var user = RBUser(userId: "", userName: name.displayText, createdDate: creationDate)
             user.urls = urls.enumerated().map({ (index, element) in
-                RBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, lastModified: creationDate, pageData: element.pageData!, viewedLastModified: creationDate, urlStatusId: nil)
+                RBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, lastModified: creationDate, viewedLastModified: creationDate, urlStatusId: nil)
             })
             RemoteSaveRbUser(client: UrlSessionHttpClient(), identity: secret.identifier).save(rbuser: user) { result in
                 switch result {
                 case .success(let list):
                 self.rbUrlStore.insert(rbUrl: urls.enumerated().map({ index,element in
-                    LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, pageData: element.pageData!, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: list[index])
+                    LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: element.displayText, state: element.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: list[index])
                 }), user: LocalRBUser(userId: "", userName: name.displayText, createdDate: creationDate), timestamp: creationDate) { [weak self] result in
                     guard let strongSelf = self else {
                         return
@@ -118,7 +118,7 @@ class EditUserDataStoreAdapter: CreateUserDataStoreAdapter {
         }
         var localUser = LocalRBUser(userId: userId, userName: name.displayText, createdDate: creationDate)
         localUser.urls = urls.map({ urlString in
-            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, pageData: urlString.pageData!, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: nil)
+            LocalRBUrl(urlId: "", isPrimary: true, createdDate: creationDate, url: urlString.displayText, state: urlString.isShownOnProfile, viewedLastModified: creationDate, lastModified: creationDate, urlStatusId: nil)
         })
         
         self.rbUserStore.replaceRBUser(rbUserId: userId, localRbUser: localUser) { [weak self] result in

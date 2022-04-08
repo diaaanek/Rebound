@@ -12,7 +12,7 @@ public struct RemoteRBUser : Codable{
     public let userName : String
     public let createdDate : Date
     public var urls : [RemoteRBUrl]
-    public init(userId: String, userName: String, createdDate: Date) {
+    public init(userId: String, userName: String, createdDate: Date, remoteUrls: [RemoteRBUrl] = [RemoteRBUrl]()) {
         self.userId = userId
         self.userName = userName
         self.createdDate = createdDate

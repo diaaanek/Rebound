@@ -21,6 +21,7 @@
 		29BC197827F159130031C680 /* ComposeRequestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC197727F159130031C680 /* ComposeRequestNotificationViewController.swift */; };
 		29CD1EC927EE93D700F526DF /* CreateNameComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1EC827EE93D700F526DF /* CreateNameComposer.swift */; };
 		29CDCBDC27DB1A1700138DC0 /* CreateEditRbUserComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CDCBDB27DB1A1700138DC0 /* CreateEditRbUserComposer.swift */; };
+		29DB9E1527FF965C00450488 /* LoadRemoteRBUserAndCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E1427FF965C00450488 /* LoadRemoteRBUserAndCache.swift */; };
 		29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */; };
 		29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */; };
 		29E330D527EFC5470034B682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E330D427EFC5470034B682 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		29BC197727F159130031C680 /* ComposeRequestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeRequestNotificationViewController.swift; sourceTree = "<group>"; };
 		29CD1EC827EE93D700F526DF /* CreateNameComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameComposer.swift; sourceTree = "<group>"; };
 		29CDCBDB27DB1A1700138DC0 /* CreateEditRbUserComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditRbUserComposer.swift; sourceTree = "<group>"; };
+		29DB9E1427FF965C00450488 /* LoadRemoteRBUserAndCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRemoteRBUserAndCache.swift; sourceTree = "<group>"; };
 		29DBCAE627C833DF008BF65C /* MainNavigationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationFlow.swift; sourceTree = "<group>"; };
 		29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVirtualProxy.swift; sourceTree = "<group>"; };
 		29E330D427EFC5470034B682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				295007A327C6032B0002FF39 /* Info.plist */,
 				29DBCAEA27C83F80008BF65C /* WeakVirtualProxy.swift */,
 				29E330D427EFC5470034B682 /* Assets.xcassets */,
+				29DB9E1427FF965C00450488 /* LoadRemoteRBUserAndCache.swift */,
 			);
 			path = ReboundApp;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				29BC197327F115DA0031C680 /* WkNavigationDelegateComposite.swift in Sources */,
 				29E330D927EFD9BA0034B682 /* CreateNameAdapterNavigation.swift in Sources */,
 				29261B9827E3F73500CD2FF8 /* IntroComposer.swift in Sources */,
+				29DB9E1527FF965C00450488 /* LoadRemoteRBUserAndCache.swift in Sources */,
 				29261B9E27E9561400CD2FF8 /* AccountNavigation.swift in Sources */,
 				29DBCAEB27C83F80008BF65C /* WeakVirtualProxy.swift in Sources */,
 				29DBCAE727C833DF008BF65C /* MainNavigationFlow.swift in Sources */,

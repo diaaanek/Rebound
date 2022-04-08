@@ -15,10 +15,9 @@ public struct RBUrl: Hashable {
     public  let viewedLastModified: Date?
     public  let url : String
     public let isShown: Bool
-    public let pageData: Data
     public var urlStatusId : Int?
   
-    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, lastModified: Date, pageData: Data, viewedLastModified: Date?, urlStatusId: Int?){
+    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, lastModified: Date, viewedLastModified: Date?, urlStatusId: Int?){
         self.urlId = urlId
         self.isPrimary = isPrimary
         self.createdDate = createdDate
@@ -26,7 +25,6 @@ public struct RBUrl: Hashable {
         self.isShown = state
         self.lastModified = lastModified
         self.viewedLastModified = viewedLastModified
-        self.pageData = pageData
         self.urlStatusId = urlStatusId
     }
     

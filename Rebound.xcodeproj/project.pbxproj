@@ -77,6 +77,7 @@
 		29DB9E0D27FE2F5B00450488 /* PostAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */; };
 		29DB9E0F27FE673B00450488 /* PostDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E0E27FE673B00450488 /* PostDevice.swift */; };
 		29DB9E1127FF4ECE00450488 /* DeleteUrlStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */; };
+		29DB9E1327FF6F6700450488 /* GetUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB9E1227FF6F6700450488 /* GetUrls.swift */; };
 		29ECBDC627C6942900AB92A2 /* MainItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC527C6942900AB92A2 /* MainItemController.swift */; };
 		29ECBDC927C69A5800AB92A2 /* RBUserModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */; };
 /* End PBXBuildFile section */
@@ -183,6 +184,7 @@
 		29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAuthorization.swift; sourceTree = "<group>"; };
 		29DB9E0E27FE673B00450488 /* PostDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDevice.swift; sourceTree = "<group>"; };
 		29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUrlStatus.swift; sourceTree = "<group>"; };
+		29DB9E1227FF6F6700450488 /* GetUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUrls.swift; sourceTree = "<group>"; };
 		29ECBDC527C6942900AB92A2 /* MainItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemController.swift; sourceTree = "<group>"; };
 		29ECBDC827C69A5800AB92A2 /* RBUserModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBUserModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +241,7 @@
 				29DB9E0C27FE2F5B00450488 /* PostAuthorization.swift */,
 				29DB9E0E27FE673B00450488 /* PostDevice.swift */,
 				29DB9E1027FF4ECE00450488 /* DeleteUrlStatus.swift */,
+				29DB9E1227FF6F6700450488 /* GetUrls.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				29261BA027E9726600CD2FF8 /* LocalUrlModelValidation.swift in Sources */,
 				29751C1D27C5690800E97E16 /* CoreDataStore.swift in Sources */,
 				29C1851227F2CB8200A9D255 /* RemoteRBUser.swift in Sources */,
+				29DB9E1327FF6F6700450488 /* GetUrls.swift in Sources */,
 				29751C3D27C57E7800E97E16 /* RBUrlPresenter.swift in Sources */,
 				29751C1C27C5690800E97E16 /* CoreDataHelpers.swift in Sources */,
 				29751C1927C568ED00E97E16 /* RBUserStore.swift in Sources */,

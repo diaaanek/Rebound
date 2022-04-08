@@ -15,9 +15,8 @@ public struct LocalRBUrl {
     public  let lastModified: Date
     public  let url : String
     public let isShown: Bool
-    public let pageData: Data
     public var urlStatusId: Int?
-    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, pageData: Data, viewedLastModified: Date?, lastModified: Date, urlStatusId: Int?){
+    public init(urlId: String, isPrimary: Bool, createdDate: Date, url: String, state: Bool, viewedLastModified: Date?, lastModified: Date, urlStatusId: Int?){
         self.urlId = urlId
         self.isPrimary = isPrimary
         self.createdDate = createdDate
@@ -25,7 +24,6 @@ public struct LocalRBUrl {
         self.isShown = state
         self.viewedLastModified = viewedLastModified
         self.lastModified = lastModified
-        self.pageData = pageData
         self.urlStatusId = urlStatusId
     }
 }

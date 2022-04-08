@@ -79,7 +79,6 @@ extension CoreDataStore: RBUrlStore {
                     managedUrl.isshown = local.isShown
                     managedUrl.uri = URL(string:local.url)
                     managedUrl.user = rbUser
-                    managedUrl.pagedata = local.pageData
                     managedUrl.urlstatusid = Int32(local.urlStatusId!)
                 }
                 try context.save()
@@ -105,7 +104,7 @@ extension CoreDataStore: RBUrlStore {
                 request.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: false)]
                 let result = try context.fetch(request)
                 return result.map { managed in
-                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown,pageData: managed.pagedata!, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!,urlStatusId: Int(managed.urlstatusid))
+                    return LocalRBUrl(urlId: managed.objectID.uriRepresentation().absoluteString, isPrimary: managed.isprimary, createdDate: managed.createdDate!, url: managed.uri!.absoluteString, state: managed.isshown, viewedLastModified: managed.viewedlastmodified, lastModified: managed.lastmodified!,urlStatusId: Int(managed.urlstatusid))
                 }
             })
         }

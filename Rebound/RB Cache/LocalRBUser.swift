@@ -26,7 +26,7 @@ extension LocalRBUser {
         var user = RBUser(userId: self.userId,
                           userName: self.userName, createdDate: self.createdDate)
         user.urls = self.urls.map { localUrl in
-            return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.isShown, lastModified: localUrl.lastModified, pageData: localUrl.pageData, viewedLastModified: localUrl.createdDate, urlStatusId: localUrl.urlStatusId)
+            return RBUrl(urlId: localUrl.urlId, isPrimary: localUrl.isPrimary, createdDate: localUrl.createdDate, url: localUrl.url, state: localUrl.isShown, lastModified: localUrl.lastModified, viewedLastModified: localUrl.createdDate, urlStatusId: localUrl.urlStatusId)
         }
         return user
     }

@@ -20,6 +20,10 @@ class CreateEditRbUserComposer {
         let editRBUserController = storyBoard.instantiateViewController(withIdentifier: "EditRBUserController") as! EditRBUserController
         editRBUserController.rbUser = rbUser
         
+        let refresh = {
+            editRBUserController.tableView.reloadData()
+        }
+        
         var itemControllers = [EditItemController]()
         let nameEditItem = EditItemController(topLabelText: "Target's Instagram Username", url: nil, placeHolder: "username", displayText: rbUser.userName, delegate: nil)
         nameEditItem.refresh = {
@@ -33,20 +37,25 @@ class CreateEditRbUserComposer {
         let nameEditPresenter = EditPresenter()
         nameEditPresenter.editView = nameEditItem
         presenters.append(nameEditPresenter)
-        itemControllers.append(contentsOf:rbUser.urls.map { rbUrl in
-            let presenter = EditPresenter()
+        let url = rbUser.urls.first!
+        let urlEditPresenter = EditPresenter()
+        let urlItemController = createEditItemController(topLabel: "Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: url.url, validationDelegate: EditUrlValidationPresenterAdapter(presenter: urlEditPresenter), presenter: urlEditPresenter, url: URL(string:url.url), refreshItem: refresh)
+        itemControllers.append(urlItemController)
+        presenters.append(urlEditPresenter)
+        itemControllers.append(contentsOf:rbUser.urls[1...].map { rbUrl in
+            
+        let presenter = EditPresenter()
+        let editItem = createEditItemController(topLabel: "Optional Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: rbUrl.url, validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, url: URL(string:rbUrl.url), refreshItem: refresh)
             presenters.append(presenter)
-            let editItem = EditItemController(topLabelText: "Target's Instagram Url:", url: URL(string: rbUrl.url), placeHolder: "Paste link to relationship photo or video here...", displayText: rbUrl.url, delegate: EditUrlValidationPresenterAdapter(presenter: presenter))
-            presenter.editView = WeakVirtualProxy(editItem)
-            editItem.wknavigationDelegate = WkNavigationDelegateComposite(list: [GetStatusWkNavigationDelegate(completion:{ isShown, pageData in
-                nameEditItem.pageData = pageData
-                nameEditItem.isShownOnProfile = isShown
-            }),RemoveHeadersWkNavigationDelegate()])
-            editItem.refresh = {
-                editRBUserController.tableView.reloadData()
-            }
             return editItem
         })
+        var i = itemControllers.count
+        while i < 5 {
+            let presenter = EditPresenter()
+            let optionUrlItemControllers = createEditItemController(topLabel: "Optional Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, url: nil, refreshItem: refresh)
+            itemControllers.append(optionUrlItemControllers)
+            i += 1
+        }
         
         let adapter = EditUserDataStoreAdapter(userId: rbUser.userId, rbUserStore: coreDataStore, rbUrlStore: coreDataStore, editNav: EditControllerNavigation(navigationController: navigationController))
         editRBUserController.delegate = adapter
@@ -76,7 +85,6 @@ class CreateEditRbUserComposer {
         
         for _ in 2..<4 {
             let presenter = EditPresenter()
-            
             let optionUrlItemControllers = createEditItemController(topLabel: "Optional Target's Instagram Url:", placeholder: "Paste link to relationship photo or video here...", displayText: "", validationDelegate:  EditOptionalUrlValidationPresenterAdapter(presenter: presenter), presenter: presenter, url: nil, refreshItem: refresh)
             itemControllers.append(optionUrlItemControllers)
         }

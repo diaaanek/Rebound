@@ -17,6 +17,7 @@ public class Sync  {
         self.rbUrlStore = rbUrlStore
     }
     public func syncAll(completion: @escaping ()->()){
+ 
         rbUserStore.retrieve { result in
             switch result {
             case .success(let localUsers):
@@ -24,7 +25,7 @@ public class Sync  {
                 if let localUsers = localUsers {
                     for user in localUsers {
                         user.urls.map({ local in
-                            return RBUrl(urlId: local.urlId, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, lastModified: local.lastModified, pageData: local.pageData, viewedLastModified: local.viewedLastModified, urlStatusId: local.urlStatusId)
+                            return RBUrl(urlId: local.urlId, isPrimary: local.isPrimary, createdDate: local.createdDate, url: local.url, state: local.isShown, lastModified: local.lastModified, viewedLastModified: local.viewedLastModified, urlStatusId: local.urlStatusId)
                         }).forEach { url in
                             
                             dispatchGroup.enter()
@@ -32,7 +33,7 @@ public class Sync  {
                               switch syncedUrl {
                               case .success(let rbUrl):
                                   // merge
-                                  self.rbUrlStore.merge(rbUrl: LocalRBUrl(urlId: rbUrl.urlId, isPrimary: rbUrl.isPrimary, createdDate: rbUrl.createdDate, url: rbUrl.url, state: rbUrl.isShown, pageData: rbUrl.pageData, viewedLastModified: rbUrl.viewedLastModified, lastModified: rbUrl.lastModified, urlStatusId: rbUrl.urlStatusId)) { result in
+                                  self.rbUrlStore.merge(rbUrl: LocalRBUrl(urlId: rbUrl.urlId, isPrimary: rbUrl.isPrimary, createdDate: rbUrl.createdDate, url: rbUrl.url, state: rbUrl.isShown, viewedLastModified: rbUrl.viewedLastModified, lastModified: rbUrl.lastModified, urlStatusId: rbUrl.urlStatusId)) { result in
                                       dispatchGroup.leave()
                                   }
                                   print(rbUrl.url)
@@ -65,7 +66,7 @@ public class Sync  {
                 let isShown = httpUrlResponse.statusCode == 200
                 if rbUrl.isShown != isShown {
                     let today = Date()
-                    completion(.success(RBUrl(urlId: rbUrl.urlId, isPrimary: rbUrl.isPrimary, createdDate: rbUrl.createdDate, url: rbUrl.url, state: isShown, lastModified: today,pageData: rbUrl.pageData, viewedLastModified: today, urlStatusId: rbUrl.urlStatusId)))
+                    completion(.success(RBUrl(urlId: rbUrl.urlId, isPrimary: rbUrl.isPrimary, createdDate: rbUrl.createdDate, url: rbUrl.url, state: isShown, lastModified: today, viewedLastModified: today, urlStatusId: rbUrl.urlStatusId)))
                 } else {
                     completion(.success(rbUrl))
                 }
