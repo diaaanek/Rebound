@@ -8,9 +8,20 @@
 import UIKit
 import Rebound
 
+public enum ChangeAction {
+    case add
+    case delete
+    case unchanged
+}
+public struct ChangeItem<T> {
+    let item : T
+    let change: ChangeAction
+    
+}
+
 public protocol EditRBUserDelegate {
     func result(items: [EditItemController], creationDate: Date)
-    func editExistingUser(userId: String, items:[EditItemController])
+    func editExistingUser(userId: String, addedItems:[String], deletedItems: [Int])
     func delete(userId: String?, items:[EditItemController])
 }
 public protocol EditConfigDelegate {
@@ -26,6 +37,7 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet public weak var tableView: UITableView!
     public var rbUser : RBUser?
     public var configDelegate : EditConfigDelegate?
+    private var originalSetIds = Set<Int>()
     
     @IBOutlet public weak var deleteButton: UIButton!
     @IBOutlet public weak var saveButton: UIButton!
@@ -41,6 +53,9 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //EditUser
+        originalSetIds = Set<Int> (editItems.compactMap({ item in
+            return item.remoteId
+        }))
         self.configDelegate?.configButtons(saveButton: saveButton, deleteButton: deleteButton)
         //    assert(validateText != nil)
     }
@@ -88,11 +103,23 @@ public class EditRBUserController: UIViewController, UITableViewDelegate, UITabl
         if !validateDelegate.validate(items: editItems) {
             return
         }
-        let items : [EditItemController] = editItems
+        let idSet = Set<Int>(editItems.compactMap( { item in
+            return item.remoteId
+        }))
+        
+        let deletedItems = originalSetIds.subtracting(idSet)
+      //  newItems
+       let addedString = editItems.filter { editItem in
+           return editItem.remoteId == nil  && !editItem.displayText.isEmpty
+       }.map { editItem in
+           return editItem.displayText
+       }
+        
         if let rbUser = rbUser {
-            delegate?.editExistingUser(userId: rbUser.userId, items: items)
+            
+            delegate?.editExistingUser(userId: rbUser.userId, addedItems: addedString, deletedItems: Array(deletedItems))
         } else {
-            delegate?.result(items:items, creationDate: Date())
+            delegate?.result(items:editItems, creationDate: Date())
         }
         
     }

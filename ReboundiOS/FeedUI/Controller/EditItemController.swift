@@ -22,18 +22,20 @@ public class EditItemController:NSObject, EditView {
     var webUrl: URL?
     var placeHolder : String
     var topLabelText : String
+    public var remoteId : Int?
     public var isValidated = false
     var hideErrorMessage : Bool = true
     var indexPath : IndexPath?
     var tableView: UITableView?
     public var pageData: Data?
     public var wknavigationDelegate : WKNavigationDelegate?
-    public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", delegate: EditItemControllerDelegate?) {
+    public init(topLabelText: String, url: URL?, placeHolder: String = "", displayText: String = "", remoteId: Int?, delegate: EditItemControllerDelegate?) {
         self.displayText = displayText
         webUrl = url
         self.topLabelText = topLabelText
         self.placeHolder = placeHolder
         self.validationDelegate = delegate
+        self.remoteId = remoteId
     }
     
     public func display(modelView: EditItemModelView) {

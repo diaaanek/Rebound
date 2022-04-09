@@ -23,7 +23,7 @@ class CreateSingleUrlComposer {
         let createNameController = storyBoard.instantiateViewController(withIdentifier: "EditRBUserController") as! EditRBUserController
         let nameValidation = EditUrlValidationPresenterAdapter(presenter: presenter)
         
-        let nameEditItem = EditItemController(topLabelText: "Target's url link", url: nil, placeHolder: "Paste link to relationship photo here...", displayText: "", delegate: nameValidation)
+        let nameEditItem = EditItemController(topLabelText: "Target's url link", url: nil, placeHolder: "Paste link to relationship photo here...", displayText: "", remoteId: nil, delegate: nameValidation)
         nameEditItem.wknavigationDelegate = WkNavigationDelegateComposite(list: [GetStatusWkNavigationDelegate(completion:{ isShown, pageData in
             nameEditItem.pageData = pageData
             nameEditItem.isShownOnProfile = isShown

@@ -10,6 +10,8 @@ import ReboundiOS
 import Rebound
 import Swiftagram
 class CreateUserDataStoreAdapter : EditRBUserDelegate {
+
+    
     let rbUserStore : RBUserStore
     let rbUrlStore: RBUrlStore
     let editNavigation : EditControllerNavigation
@@ -57,20 +59,22 @@ class CreateUserDataStoreAdapter : EditRBUserDelegate {
             }
         }
     }
-    
-    func editExistingUser(userId: String, items: [EditItemController]) {
-        let name = items.first!
-        let urls = items[1...]
-        self.rbUserStore.deleteRBUser(rbUserId: userId) { result in
-            switch result {
-            case .success():
-                self.result(items: items, creationDate: Date())
-            case .failure(let error):
-                fatalError("Error deleting")
-            }
-        }
-
+    func editExistingUser(userId: String, addedItems: [String], deletedItems: [Int]) {
+//        let name = items.first!
+//        let urls = items[1...]
+//        self.rbUserStore.deleteRBUser(rbUserId: userId) { result in
+//            switch result {
+//            case .success():
+//                self.result(items: items, creationDate: Date())
+//            case .failure(let error):
+//                fatalError("Error deleting")
+//            }
+//        }
     }
+    
+
+
+    
     
     func delete(userId: String?, items: [EditItemController]) {
         if let userId = userId {

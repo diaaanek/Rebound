@@ -11,6 +11,8 @@ import ReboundiOS
 import UIKit
 
 class CreateNameAdapterNavigation: EditRBUserDelegate {
+
+    
     let nav : UINavigationController
     let coreData:CoreDataStore
     let refresh : ()->()
@@ -27,9 +29,10 @@ class CreateNameAdapterNavigation: EditRBUserDelegate {
         }
     }
     
-    func editExistingUser(userId: String, items: [EditItemController]) {
+    func editExistingUser(userId: String, addedItems: [String], deletedItems: [Int]) {
         fatalError("Should not be called")
     }
+
     
     func delete(userId: String?, items: [EditItemController]) {
         fatalError("Should not be called")
@@ -39,6 +42,8 @@ class CreateNameAdapterNavigation: EditRBUserDelegate {
 }
 
 class CreateUrlAdapterNavigation: EditRBUserDelegate {
+    
+    
     let nav : UINavigationController
     let nameItem : String
     let coreDataStore : CoreDataStore
@@ -56,9 +61,9 @@ class CreateUrlAdapterNavigation: EditRBUserDelegate {
         self.nav.pushViewController(createController, animated: true)
         }
     }
-    
-    func editExistingUser(userId: String, items: [EditItemController]) {
+    func editExistingUser(userId: String, addedItems: [String], deletedItems: [Int]) {
         fatalError("Should not be called")
+
     }
     
     func delete(userId: String?, items: [EditItemController]) {

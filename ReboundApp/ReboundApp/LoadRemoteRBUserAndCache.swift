@@ -18,6 +18,7 @@ class LoadRemoteUserAndCache {
     public func getUrls(ig_id: String, completion: @escaping () -> Void) {
         self.remoteStore.getUrls(ig_id: ig_id) { [ weak self] result in
             guard let self = self else {
+                completion()
                 return
             }
             let dispatchGroup = DispatchGroup()
@@ -33,9 +34,9 @@ class LoadRemoteUserAndCache {
                     self.cacheUrlStore.insert(rbUrl: user.urls, user: user, timestamp: Date()) { result in
                         dispatchGroup.leave()
                     }
-                    dispatchGroup.notify(queue: .main) {
-                        completion()
-                    }
+                }
+                dispatchGroup.notify(queue: .main) {
+                    completion()
                 }
             case .failure(let error):
                 print(error)

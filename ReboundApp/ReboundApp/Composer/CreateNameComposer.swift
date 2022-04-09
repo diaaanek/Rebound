@@ -18,7 +18,7 @@ class CreateNameComposer {
 
         let createNameController = storyBoard.instantiateViewController(withIdentifier: "EditRBUserController") as! EditRBUserController
         let nameValidation = EditUserNameValidationPresenterAdapter(presenter: presenter)
-            let nameEditItem = EditItemController(topLabelText: "Target's Instagram Username", url: nil, placeHolder: "username", displayText: "", delegate: nameValidation)
+        let nameEditItem = EditItemController(topLabelText: "Target's Instagram Username", url: nil, placeHolder: "username", displayText: "", remoteId: nil, delegate: nameValidation)
             nameEditItem.refresh = {
                 createNameController.tableView.reloadData()
             }
